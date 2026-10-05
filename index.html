@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>អាពាហ៍ពិពាហ៍ សេងហ័រ &amp; វិច្ឆិកា | Wedding Invitation</title>
+    
+    <!-- Meta & OpenGraph for Social Sharing (Telegram, Facebook, Messenger) -->
+    <meta name="description" content="សិរីមង្គលអាពាហ៍ពិពាហ៍ ម៉េង សេងហ័រ និង កង ច័ន្ទវិច្ឆិកា ថ្ងៃអាទិត្យ ទី ២២ ខែវិច្ឆិកា ឆ្នាំ២០២៦">
+    <meta property="og:title" content="សិរីមង្គលអាពាហ៍ពិពាហ៍ សេងហ័រ &amp; វិច្ឆិកា">
+    <meta property="og:description" content="យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា ចូលរួមពិធីមង្គលការរបស់យើងខ្ញុំ">
+    <meta property="og:image" content="assets/images/couple-cover.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: Moul for Khmer titles, Kantumruy Pro for body, Playfair Display for accents -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Moul&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/qr-code.png">
+</head>
+<body>
+
+    <!-- ========================================================
+         FRONT PAGE / WELCOME COVER OVERLAY (Angkor Wat Background)
+         ======================================================== -->
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <!-- Ambient Vignette & Warm Lighting -->
+        <div class="cover-overlay-vignette"></div>
+
+        <!-- Top Area: Royal Khmer Crest & Greeting -->
+        <div class="cover-top-content">
+            <!-- Golden Monogram Crest Emblem -->
+            <div class="cover-crest">
+                <div class="crest-frame">
+                    <svg class="crest-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="crestGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fff8db"/>
+                                <stop offset="25%" stop-color="#e5c05c"/>
+                                <stop offset="50%" stop-color="#a47514"/>
+                                <stop offset="75%" stop-color="#f8dc81"/>
+                                <stop offset="100%" stop-color="#7a4f08"/>
+                            </linearGradient>
+                            <filter id="crestGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.5)"/>
+                                <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="rgba(212,175,55,0.4)"/>
+                            </filter>
+                        </defs>
+                        <g filter="url(#crestGlow)">
+                            <!-- Top Flame Crown -->
+                            <path d="M80 5 C75 14 73 21 80 27 C87 21 85 14 80 5Z" fill="url(#crestGoldGrad)"/>
+                            <circle cx="80" cy="3.5" r="2.5" fill="#fffbe8"/>
+                            <!-- Bottom Flame Tip -->
+                            <path d="M80 155 C75 146 73 139 80 133 C87 139 85 146 80 155Z" fill="url(#crestGoldGrad)"/>
+                            <circle cx="80" cy="156.5" r="2.5" fill="#fffbe8"/>
+                            <!-- Left Flame Tip -->
+                            <path d="M5 80 C14 75 21 73 27 80 C21 87 14 85 5 80Z" fill="url(#crestGoldGrad)"/>
+                            <circle cx="3.5" cy="80" r="2.5" fill="#fffbe8"/>
+                            <!-- Right Flame Tip -->
+                            <path d="M155 80 C146 75 139 73 133 80 C139 87 146 85 155 80Z" fill="url(#crestGoldGrad)"/>
+                            <circle cx="156.5" cy="80" r="2.5" fill="#fffbe8"/>
+                            <!-- Diagonal Leaf Scrolls -->
+                            <path d="M27 27 C34 34 39 37 38 44 C31 43 28 37 27 27Z" fill="url(#crestGoldGrad)"/>
+                            <path d="M133 27 C126 34 121 37 122 44 C129 43 132 37 133 27Z" fill="url(#crestGoldGrad)"/>
+                            <path d="M27 133 C34 126 39 123 38 116 C31 117 28 123 27 133Z" fill="url(#crestGoldGrad)"/>
+                            <path d="M133 133 C126 126 121 123 122 116 C129 117 132 123 133 133Z" fill="url(#crestGoldGrad)"/>
+                            <!-- Outer Beaded Ring -->
+                            <circle cx="80" cy="80" r="58" stroke="url(#crestGoldGrad)" stroke-width="1.8" stroke-dasharray="2 6" stroke-linecap="round"/>
+                            <!-- Middle Filigree Ring -->
+                            <circle cx="80" cy="80" r="51" stroke="url(#crestGoldGrad)" stroke-width="1.6"/>
+                            <!-- Inner Fine Ring -->
+                            <circle cx="80" cy="80" r="44" stroke="url(#crestGoldGrad)" stroke-width="1" stroke-dasharray="1 3"/>
+                            <!-- Center Disc Tint -->
+                            <circle cx="80" cy="80" r="42" fill="rgba(255, 248, 235, 0.18)" stroke="url(#crestGoldGrad)" stroke-width="0.8"/>
+                        </g>
+                    </svg>
+                    <div class="crest-monogram-inner">
+                        <span id="sealMonogramText" class="crest-monogram-text">ស វ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Greeting Text -->
+            <h1 id="coverGreetingTitle" class="cover-greeting-title">សូមគោរពអញ្ជើញ</h1>
+
+            <!-- Personalized Guest Box (Appears when ?to=... is in URL) -->
+            <div id="guestCardBox" class="cover-guest-box" style="display: none;">
+                <span class="cover-guest-label">សូមគោរពអញ្ជើញ</span>
+                <span id="guestNameText" class="cover-guest-name">ភ្ញៀវកិត្តិយសដ៏ខ្ពង់ខ្ពស់</span>
+            </div>
+        </div>
+
+        <!-- Center Area: Action Button with Kbach Flourishes -->
+        <div class="cover-center-content">
+            <div class="cover-action-wrapper">
+                <!-- Top Flourish -->
+                <div class="cover-flourish flourish-top">
+                    <svg viewBox="0 0 240 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="flourishGoldTop" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="rgba(212, 175, 55, 0.15)"/>
+                                <stop offset="25%" stop-color="#dfb74b"/>
+                                <stop offset="50%" stop-color="#fff2c6"/>
+                                <stop offset="75%" stop-color="#dfb74b"/>
+                                <stop offset="100%" stop-color="rgba(212, 175, 55, 0.15)"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M120 2L124 9L120 16L116 9Z" fill="url(#flourishGoldTop)"/>
+                        <circle cx="120" cy="9" r="1.5" fill="#fff9e6"/>
+                        <path d="M113 9H52C42 9 34 4 24 8C18 10 12 7 6 5" stroke="url(#flourishGoldTop)" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M6 5C3 3 6 1 8 2C11 3 9 7 6 7C3 7 1 4 3 2" stroke="url(#flourishGoldTop)" stroke-width="1.4" stroke-linecap="round"/>
+                        <circle cx="52" cy="9" r="2.2" fill="url(#flourishGoldTop)"/>
+                        <circle cx="84" cy="9" r="1.8" fill="url(#flourishGoldTop)"/>
+                        <path d="M127 9H188C198 9 206 4 216 8C222 10 228 7 234 5" stroke="url(#flourishGoldTop)" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M234 5C237 3 234 1 232 2C229 3 231 7 234 7C237 7 239 4 237 2" stroke="url(#flourishGoldTop)" stroke-width="1.4" stroke-linecap="round"/>
+                        <circle cx="188" cy="9" r="2.2" fill="url(#flourishGoldTop)"/>
+                        <circle cx="156" cy="9" r="1.8" fill="url(#flourishGoldTop)"/>
+                    </svg>
+                </div>
+
+                <!-- Open Invitation Button -->
+                <button id="btnOpenEnvelope" class="btn-cover-open" type="button" aria-label="សូមចុចដើម្បីបើកសំបុត្រ">
+                    <span>សូមចុចដើម្បីបើកសំបុត្រ</span>
+                </button>
+
+                <!-- Bottom Flourish (Mirrored) -->
+                <div class="cover-flourish flourish-bottom">
+                    <svg viewBox="0 0 240 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="flourishGoldBtm" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="rgba(212, 175, 55, 0.15)"/>
+                                <stop offset="25%" stop-color="#dfb74b"/>
+                                <stop offset="50%" stop-color="#fff2c6"/>
+                                <stop offset="75%" stop-color="#dfb74b"/>
+                                <stop offset="100%" stop-color="rgba(212, 175, 55, 0.15)"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M120 2L124 9L120 16L116 9Z" fill="url(#flourishGoldBtm)"/>
+                        <circle cx="120" cy="9" r="1.5" fill="#fff9e6"/>
+                        <path d="M113 9H52C42 9 34 4 24 8C18 10 12 7 6 5" stroke="url(#flourishGoldBtm)" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M6 5C3 3 6 1 8 2C11 3 9 7 6 7C3 7 1 4 3 2" stroke="url(#flourishGoldBtm)" stroke-width="1.4" stroke-linecap="round"/>
+                        <circle cx="52" cy="9" r="2.2" fill="url(#flourishGoldBtm)"/>
+                        <circle cx="84" cy="9" r="1.8" fill="url(#flourishGoldBtm)"/>
+                        <path d="M127 9H188C198 9 206 4 216 8C222 10 228 7 234 5" stroke="url(#flourishGoldBtm)" stroke-width="1.8" stroke-linecap="round"/>
+                        <path d="M234 5C237 3 234 1 232 2C229 3 231 7 234 7C237 7 239 4 237 2" stroke="url(#flourishGoldBtm)" stroke-width="1.4" stroke-linecap="round"/>
+                        <circle cx="188" cy="9" r="2.2" fill="url(#flourishGoldBtm)"/>
+                        <circle cx="156" cy="9" r="1.8" fill="url(#flourishGoldBtm)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         FLOATING MUSIC CONTROLLER & AUDIO PLAYERS
+         ======================================================== -->
+    <button id="musicToggleBtn" class="music-toggle-btn" aria-label="Play/Pause Background Music">
+        <div class="music-disc"></div>
+        <span id="musicTooltipText" class="music-tooltip">តន្ត្រីកំដរ៖ ជំហានទី ១ (First Step)</span>
+    </button>
+    <audio id="bgAudioElement" preload="auto" loop playsinline>
+        <source src="assets/audio/wedding-song.mp3" type="audio/mpeg">
+        <source src="assets/audio/wedding-song.m4a" type="audio/mp4">
+    </audio>
+
+    <!-- ========================================================
+         MAIN INVITATION CONTAINER
+         ======================================================== -->
+    <div class="page-container">
+
+        <!-- ====================================================
+             SECTION 1: HERO & COVER
+             ==================================================== -->
+        <section id="home" class="hero-section">
+            <div class="hero-arch-frame">
+                <!-- Golden Emblem -->
+                <div class="hero-logo-box">
+                    <div class="golden-emblem">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <span class="section-tag">សិរីសួស្ដីពិធីមង្គលការ</span>
+                <h1 id="heroCeremonyTitle" class="hero-ceremony-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+
+                <!-- Couple Names -->
+                <div id="heroCoupleNames" class="hero-couple-names">
+                    <span id="heroGroomName">សេងហ័រ</span>
+                    <span class="heart-icon">❤️</span>
+                    <span id="heroBrideName">វិច្ឆិកា</span>
+                </div>
+
+                <!-- Cover Image -->
+                <div class="hero-cover-image">
+                    <img id="heroCoverImg" src="assets/images/couple-cover.jpg" alt="Wedding Cover">
+                </div>
+
+                <!-- Date Banner -->
+                <div class="hero-date-banner">
+                    <span id="heroDateKhmer" class="hero-date-khmer">ថ្ងៃអាទិត្យ ទី ២២ ខែវិច្ឆិកា ឆ្នាំ២០២៦</span>
+                    <span id="heroDateEnglish" class="hero-date-english">Sunday, November 22, 2026</span>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-container">
+                    <div class="countdown-label">
+                        <span>💍 រាប់ថយក្រោយទៅកាន់ថ្ងៃពិសេស 💍</span>
+                    </div>
+                    <div class="countdown-grid">
+                        <div class="countdown-box">
+                            <div id="countDays" class="countdown-number">00</div>
+                            <div class="countdown-text">ថ្ងៃ</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div id="countHours" class="countdown-number">00</div>
+                            <div class="countdown-text">ម៉ោង</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div id="countMins" class="countdown-number">00</div>
+                            <div class="countdown-text">នាទី</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div id="countSecs" class="countdown-number">00</div>
+                            <div class="countdown-text">វិនាទី</div>
+                        </div>
+                    </div>
+
+                    <!-- Add to Calendar Button -->
+                    <button id="btnAddCalendar" class="btn-add-calendar">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>រក្សាទុកក្នុងប្រតិទិន (Save the Date)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traditional Khmer Ornament Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <path d="M12,2L14.5,8.5L21,9.2L16,13.8L17.5,20.2L12,17L6.5,20.2L8,13.8L3,9.2L9.5,8.5L12,2Z"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 2: FORMAL INVITATION & FAMILIES
+             ==================================================== -->
+        <section id="couple" class="invitation-section">
+            <div class="section-header">
+                <span class="section-tag">សេចក្តីគោរពអញ្ជើញ</span>
+                <h2 class="section-title">មាតាបិតា &amp; សាមីខ្លួន</h2>
+            </div>
+
+            <!-- Formal Khmer Message -->
+            <div class="invitation-formal-box">
+                <h3 class="invitation-lead">យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ</h3>
+                <p id="invitationMessageText" class="invitation-message">
+                    ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្ដីជ័យមង្គលក្នុង ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ
+                </p>
+            </div>
+
+            <!-- Two Family Columns -->
+            <div class="family-grid">
+                <!-- Groom Side -->
+                <div class="family-column">
+                    <span class="family-tag">មាតាបិតាខាងប្រុស</span>
+                    <div class="family-parents-box">
+                        <span class="parent-role">ឪពុក៖</span>
+                        <div id="groomFatherName" class="parent-name">លោក ម៉េង សេងឡៅ</div>
+                        <span class="parent-role">ម្ដាយ៖</span>
+                        <div id="groomMotherName" class="parent-name">លោកស្រី លាង ជ័ង</div>
+                    </div>
+                    
+                    <div class="couple-portrait-wrapper">
+                        <img id="groomPhoto" src="assets/images/groom.jpg" alt="ម៉េង សេងហ័រ (MENG Senghor)">
+                    </div>
+                    <span class="couple-role-label">កូនប្រុសនាម</span>
+                    <div id="groomKhmerName" class="couple-name">ម៉េង សេងហ័រ</div>
+                    <div id="groomEnglishName" class="couple-latin-name">MENG Senghor</div>
+                </div>
+
+                <!-- Bride Side -->
+                <div class="family-column">
+                    <span class="family-tag">មាតាបិតាខាងស្រី</span>
+                    <div class="family-parents-box">
+                        <span class="parent-role">ឪពុក៖</span>
+                        <div id="brideFatherName" class="parent-name">លោក សៅ វ៉ិធ្វី</div>
+                        <span class="parent-role">ម្ដាយ៖</span>
+                        <div id="brideMotherName" class="parent-name">លោកស្រី ហេង រតនី</div>
+                    </div>
+
+                    <div class="couple-portrait-wrapper">
+                        <img id="bridePhoto" src="assets/images/bride.jpg" alt="កង ច័ន្ទវិច្ឆិកា (KORNG Chanvicheka)">
+                    </div>
+                    <span class="couple-role-label">កូនស្រីនាម</span>
+                    <div id="brideKhmerName" class="couple-name">កង ច័ន្ទវិច្ឆិកា</div>
+                    <div id="brideEnglishName" class="couple-latin-name">KORNG Chanvicheka</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traditional Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 3: WEDDING SCHEDULE / PROGRAM
+             ==================================================== -->
+        <section id="schedule" class="schedule-section">
+            <div class="section-header">
+                <span class="section-tag">ពេលវេលាកម្មវិធី</span>
+                <h2 class="section-title">កម្មវិធីមង្គលការ</h2>
+                <p class="section-desc">កាលវិភាគពិធីមង្គលអាពាហ៍ពិពាហ៍តាមលំដាប់លំដោយ</p>
+            </div>
+
+            <!-- Program Tabs -->
+            <div class="schedule-tabs">
+                <button id="tabMorning" class="tab-btn active">
+                    <span>🌅 កម្មវិធីពេលព្រឹក</span>
+                </button>
+                <button id="tabEvening" class="tab-btn">
+                    <span>🌆 កម្មវិធីពេលល្ងាច</span>
+                </button>
+            </div>
+
+            <!-- Morning Timeline -->
+            <div id="timelineMorning" class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ០៧:០០ ព្រឹក</span>
+                        <h4 class="timeline-title">ពិធីហែជំនូន (កំណត់)</h4>
+                        <p class="timeline-desc">ដង្ហែជំនូនផ្លែឈើ និងគ្រឿងបណ្ណាការចូលគេហដ្ឋាន</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ០៧:៣០ ព្រឹក</span>
+                        <h4 class="timeline-title">ពិធីរៀបរាប់ផ្លែឈើ និងសែនព្រេន</h4>
+                        <p class="timeline-desc">រៀបចំគ្រឿងដង្វាយផ្លែឈើ និងសែនព្រេនជូនដំណឹងដល់ជីដូនជីតា</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ០៨:០០ ព្រឹក</span>
+                        <h4 class="timeline-title">ពិធីបំពាក់ចិញ្ចៀន</h4>
+                        <p class="timeline-desc">កូនប្រុស និងកូនស្រីបំពាក់ចិញ្ចៀនអាពាហ៍ពិពាហ៍ជូនគ្នាទៅវិញទៅមក</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ០៩:០០ ព្រឹក</span>
+                        <h4 class="timeline-title">ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត</h4>
+                        <p class="timeline-desc">ព្រះសង្ឃចម្រើនព្រះបរិត្តប្រសិទ្ធពរជ័យ សិរីសួស្ដី ជ័យមង្គល</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ១០:០០ ព្រឹក</span>
+                        <h4 class="timeline-title">ពិធីកាត់សក់បង្កក់សិរី</h4>
+                        <p class="timeline-desc">ពិធីកាត់សក់ សិតសក់ និងប្រោះព្រំសិរីសួស្តីដល់កូនកំលោះកូនក្រមុំ</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ១១:០០ ព្រឹក</span>
+                        <h4 class="timeline-title">ពិធីក្រាបសំពះផ្ទឹម</h4>
+                        <p class="timeline-desc">ពិធីក្រាបសំពះផ្ទឹម ចងអំបោះក្រហម និងបង្វិលពពិលប្រសិទ្ធពរជ័យ</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ១២:០០ ថ្ងៃត្រង់</span>
+                        <h4 class="timeline-title">អញ្ជើញភ្ញៀវពិសាអាហារថ្ងៃត្រង់</h4>
+                        <p class="timeline-desc">សូមគោរពអញ្ជើញភ្ញៀវកិត្តិយសទាំងអស់រួមពិសាអាហារថ្ងៃត្រង់ជុំគ្នា</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evening Timeline -->
+            <div id="timelineEvening" class="timeline" style="display: none;">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ០៥:០០ ល្ងាច</span>
+                        <h4 class="timeline-title">ទទួលបដិសណ្ឋារកិច្ចភ្ញៀវកិត្តិយស</h4>
+                        <p class="timeline-desc">ស្វាគមន៍ភ្ញៀវកិត្តិយស ថតរូបអនុស្សាវរីយ៍នៅមុខក្លោងទ្វារមង្គល</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-time-badge">ម៉ោង ០៦:០០ ល្ងាច</span>
+                        <h4 class="timeline-title">ពិសាភោជនាហារពេលល្ងាច</h4>
+                        <p class="timeline-desc">ពិសាភោជនាហារ ស្តាប់តន្ត្រីកំដរ កាត់នំអាពាហ៍ពិពាហ៍ និងរាំកម្សាន្ត</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traditional Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 4: VENUE & DIRECTIONS
+             ==================================================== -->
+        <section id="venue" class="venue-section">
+            <div class="section-header">
+                <span class="section-tag">ទីតាំងប្រារព្ធពិធី</span>
+                <h2 class="section-title">ទីតាំង &amp; ផែនទី</h2>
+            </div>
+
+            <div class="venue-card">
+                <div class="venue-icon-wrapper">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+
+                <h3 id="venueNameText" class="venue-name">សណ្ឋាគារភ្នំប្រុស (អគារ B)</h3>
+                <p id="venueAddressText" class="venue-address">ក្រុងកំពង់ចាម ខេត្តកំពង់ចាម</p>
+
+                <!-- Embedded Map Frame -->
+                <div class="map-container">
+                    <iframe 
+                        id="venueMapIframe"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15623.513758249622!2d105.4419515!3d11.9961201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310b82f6e91cb3b5%3A0x6291a182092305!2sKampong%20Cham!5e0!3m2!1sen!2skh!4v1700000000000" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="venue-actions">
+                    <a id="venueGoogleMapsBtn" href="https://maps.app.goo.gl/icsCaF35qS53Zv6G9" target="_blank" rel="noopener noreferrer" class="btn-venue-action btn-open-map">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                        </svg>
+                        <span>បើកមើលក្នុង Google Maps</span>
+                    </a>
+                    
+                    <button id="btnCopyAddress" class="btn-venue-action btn-copy-address">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>ចម្លងទីតាំង</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Traditional Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 5: PHOTO GALLERY
+             ==================================================== -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <span class="section-tag">អនុស្សាវរីយ៍ស្នេហ៍</span>
+                <h2 class="section-title">វិចិត្រសាលរូបថត</h2>
+            </div>
+
+            <!-- Photo Grid -->
+            <div class="gallery-grid">
+                <div class="gallery-item" data-full="assets/images/gallery-1.jpg">
+                    <img src="assets/images/gallery-1.jpg" alt="Wedding Photo 1" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-full="assets/images/gallery-2.jpg">
+                    <img src="assets/images/gallery-2.jpg" alt="Wedding Photo 2" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-full="assets/images/gallery-3.jpg">
+                    <img src="assets/images/gallery-3.jpg" alt="Wedding Photo 3" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-full="assets/images/gallery-4.jpg">
+                    <img src="assets/images/gallery-4.jpg" alt="Wedding Photo 4" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-full="assets/images/gallery-5.jpg">
+                    <img src="assets/images/gallery-5.jpg" alt="Wedding Photo 5" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-full="assets/images/gallery-6.jpg">
+                    <img src="assets/images/gallery-6.jpg" alt="Wedding Photo 6" loading="lazy">
+                    <div class="gallery-overlay">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="galleryLightbox" class="lightbox-modal">
+            <button id="lightboxClose" class="lightbox-close-btn">&times;</button>
+            <img id="lightboxImg" class="lightbox-content" src="" alt="Full view">
+        </div>
+
+        <!-- Traditional Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 6: WEDDING GIFT / KHQR
+             ==================================================== -->
+        <section id="gift" class="gift-section">
+            <div class="section-header">
+                <span class="section-tag">ចំណងដៃអាពាហ៍ពិពាហ៍</span>
+                <h2 class="section-title">ផ្ញើចំណងដៃជូនគូស្នេហ៍</h2>
+            </div>
+
+            <div class="gift-card">
+                <div class="gift-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                        <rect x="2" y="7" width="20" height="5"></rect>
+                        <line x1="12" y1="22" x2="12" y2="7"></line>
+                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                    </svg>
+                    <span>KHQR / ABA BANK</span>
+                </div>
+
+                <h3 class="gift-title">ចំណងដៃមង្គលការ</h3>
+                <p class="gift-desc">លោកអ្នកក៏អាចផ្ញើចំណងដៃតាមរយៈការស្កេន QR Code ខាងក្រោម</p>
+
+                <!-- KHQR Code Box -->
+                <div class="khqr-box">
+                    <img id="giftQrImage" src="assets/images/qr-code.png" alt="Wedding Gift QR Code" class="khqr-image">
+                </div>
+
+                <!-- Account Details -->
+                <div class="account-details-box">
+                    <div class="account-row">
+                        <span class="acc-label">ឈ្មោះគណនី៖</span>
+                        <span id="giftAccName" class="acc-val">KORNG Chanvicheka</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="acc-label">លេខគណនី៖</span>
+                        <span id="giftAccNumber" class="acc-val">010 345 664</span>
+                    </div>
+                    <div class="account-row">
+                        <span class="acc-label">ធនាគារ៖</span>
+                        <span id="giftBankName" class="acc-val">ABA Bank</span>
+                    </div>
+                </div>
+
+                <!-- Copy Account Button -->
+                <button id="btnCopyAccount" class="btn-copy-account">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>ចម្លងលេខគណនី (Copy Account)</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Traditional Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 7: GUESTBOOK & BLESSINGS
+             ==================================================== -->
+        <section id="wishes" class="wishes-section">
+            <div class="section-header">
+                <span class="section-tag">សេចក្តីជូនពរ</span>
+                <h2 class="section-title">សៀវភៅជូនពរ</h2>
+                <p class="section-desc">សូមផ្ញើសារជូនពរដ៏កក់ក្តៅដល់គូស្វាមីភរិយាថ្មី</p>
+            </div>
+
+            <!-- Wish Form -->
+            <div class="wish-form-card">
+                <form id="wishForm">
+                    <div class="form-group">
+                        <label for="wishNameInput">ឈ្មោះរបស់អ្នក ៖</label>
+                        <input type="text" id="wishNameInput" class="form-input" placeholder="ឧទាហរណ៍៖ ពិសិដ្ឋ &amp; ក្រុមគ្រួសារ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wishMessageInput">ពាក្យជូនពរ ៖</label>
+                        <textarea id="wishMessageInput" class="form-textarea" rows="3" placeholder="សូមសរសេរពាក្យជូនពររបស់អ្នកនៅទីនេះ..." required></textarea>
+                    </div>
+
+                    <!-- Quick Blessing Chips -->
+                    <div class="quick-blessings">
+                        <span class="chip-blessing" data-text="សូមជូនពរឱ្យអ្នកទាំងពីរស្រលាញ់គ្នាមាំមួនរហូតដល់ចាស់កោងខ្នង! ❤️">ស្រលាញ់គ្នារហូតចាស់ ❤️</span>
+                        <span class="chip-blessing" data-text="សូមឱ្យមានសុភមង្គល ត្រជាក់ត្រជុំ និងទ្រព្យសម្បត្តិហូរហៀរ! ✨">សុភមង្គលត្រជាក់ត្រជុំ ✨</span>
+                        <span class="chip-blessing" data-text="ជូនពរឱ្យឆាប់បានកូនប្រុសស្រីគួរឱ្យស្រលាញ់ណា៎! 👶">ឆាប់បានកូនប្រុសស្រី 👶</span>
+                    </div>
+
+                    <button type="submit" class="btn-submit-wish">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        <span>ផ្ញើពាក្យជូនពរ</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Wishes List -->
+            <div id="wishesList" class="wishes-list">
+                <!-- Injected via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Traditional Divider -->
+        <div class="kbach-divider">
+            <span class="kbach-line"></span>
+            <svg class="kbach-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+            </svg>
+            <span class="kbach-line"></span>
+        </div>
+
+        <!-- ====================================================
+             SECTION 8: RSVP CONFIRMATION
+             ==================================================== -->
+        <section id="rsvp" class="rsvp-section">
+            <div class="section-header">
+                <span class="section-tag">បញ្ជាក់វត្តមាន</span>
+                <h2 class="section-title">ការបញ្ជាក់ចូលរួម</h2>
+                <p class="section-desc">សូមជួយបញ្ជាក់វត្តមានដើម្បីឱ្យពួកយើងរៀបចំការទទួលបដិសណ្ឋារកិច្ចឱ្យបានល្អប្រសើរ</p>
+            </div>
+
+            <div class="rsvp-card">
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="rsvpNameInput">ឈ្មោះភ្ញៀវកិត្តិយស ៖</label>
+                        <input type="text" id="rsvpNameInput" class="form-input" placeholder="ឈ្មោះរបស់អ្នក" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rsvpGuestCount">ចំនួនអ្នកចូលរួម ៖</label>
+                        <select id="rsvpGuestCount" class="form-input">
+                            <option value="1">១ នាក់</option>
+                            <option value="2">២ នាក់</option>
+                            <option value="3">៣ នាក់</option>
+                            <option value="4">៤ នាក់</option>
+                            <option value="5+">៥ នាក់ឡើងទៅ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ពេលវេលាដែលអ្នកនឹងចូលរួម ៖</label>
+                        <div class="rsvp-options">
+                            <label class="rsvp-radio-card">
+                                <input type="radio" name="rsvpSession" value="កម្មវិធីពេលព្រឹក" checked>
+                                <span>ពេលព្រឹក</span>
+                            </label>
+                            <label class="rsvp-radio-card">
+                                <input type="radio" name="rsvpSession" value="កម្មវិធីពេលល្ងាច">
+                                <span>ពេលល្ងាច</span>
+                            </label>
+                            <label class="rsvp-radio-card">
+                                <input type="radio" name="rsvpSession" value="ពេញមួយថ្ងៃ">
+                                <span>ទាំងពីរពេល</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit-wish">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13"></path>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        <span>បញ្ជាក់ការចូលរួមតាម Telegram</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             FOOTER
+             ==================================================== -->
+        <footer class="wedding-footer">
+            <div id="footerMonogramText" class="footer-monogram">ស❤️វ</div>
+            <p class="footer-thanks">
+                សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅបំផុត ចំពោះវត្តមានដ៏ឧត្តុង្គឧត្តម និងពរជ័យដ៏មានតម្លៃរបស់ឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា!
+            </p>
+            <p id="footerCopyrightText" class="footer-copyright">
+                &copy; 2026 Senghor &amp; Chanvicheka Wedding. All Rights Reserved.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ========================================================
+         BOTTOM MOBILE NAVIGATION BAR
+         ======================================================== -->
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>ទំព័រដើម</span>
+        </a>
+        <a href="#couple" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>សាមីខ្លួន</span>
+        </a>
+        <a href="#schedule" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>កម្មវិធី</span>
+        </a>
+        <a href="#venue" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>ទីតាំង</span>
+        </a>
+        <a href="#gift" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                <rect x="2" y="7" width="20" height="5"></rect>
+                <line x1="12" y1="22" x2="12" y2="7"></line>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+            <span>ចំណងដៃ</span>
+        </a>
+        <a href="#wishes" class="nav-item">
+            <svg viewBox="0 0 24 24">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>ជូនពរ</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

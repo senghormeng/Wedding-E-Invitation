@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>កែប្រែព័ត៌មានសំបុត្រអាពាហ៍ពិពាហ៍ | Edit Wedding Info</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&family=Moul&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #c69229;
+            --gold-gradient: linear-gradient(135deg, #bf8b16 0%, #f7e2a9 45%, #d19f2a 70%, #875c08 100%);
+            --bg-color: #f7f4ee;
+            --text-main: #2b221a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-main);
+            padding: 30px 15px 60px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(198, 146, 41, 0.3);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px dashed rgba(198, 146, 41, 0.3);
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            font-family: 'Moul', cursive;
+            font-size: 20px;
+            color: var(--primary-gold);
+            margin-bottom: 6px;
+        }
+        .header p {
+            font-size: 14px;
+            color: #666;
+        }
+        .section-box {
+            background: #fdfcf9;
+            border: 1px solid #ebdcc1;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .section-box h3 {
+            font-size: 15px;
+            color: var(--primary-gold);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-group {
+            margin-bottom: 14px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d4c5a9;
+            border-radius: 8px;
+            font-family: 'Kantumruy Pro', sans-serif;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(198, 146, 41, 0.2);
+        }
+        .row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .actions-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .btn {
+            padding: 13px;
+            border-radius: 50px;
+            border: none;
+            font-family: 'Kantumruy Pro', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .btn-save {
+            background: var(--gold-gradient);
+            color: #2b1f0c;
+            box-shadow: 0 4px 15px rgba(198, 146, 41, 0.4);
+        }
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(198, 146, 41, 0.5);
+        }
+        .btn-download {
+            background: #2b221a;
+            color: #f7e2a9;
+        }
+        .btn-download:hover {
+            background: #413428;
+        }
+        .btn-view {
+            background: #ffffff;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+        }
+        .btn-reset {
+            background: transparent;
+            color: #999;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: #2b221a;
+            color: #f7e2a9;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease;
+            z-index: 9999;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toast" class="toast">បានរក្សាទុករួចរាល់!</div>
+
+    <div class="container">
+        <div class="header">
+            <h1>កែប្រែព័ត៌មានសំបុត្រអាពាហ៍ពិពាហ៍</h1>
+            <p>អ្នកអាចផ្លាស់ប្តូរឈ្មោះ ថ្ងៃខែ ទីតាំង និងធនាគារដោយផ្ទាល់នៅទីនេះ</p>
+        </div>
+
+        <form id="editForm">
+            <!-- ព័ត៌មានទូទៅ -->
+            <div class="section-box">
+                <h3>💍 កម្មវិធី &amp; កាលបរិច្ឆេទ</h3>
+                <div class="form-group">
+                    <label>ចំណងជើងកម្មវិធី ៖</label>
+                    <input type="text" id="weddingTitle" class="form-control" value="សិរីមង្គលអាពាហ៍ពិពាហ៍">
+                </div>
+                <div class="form-group">
+                    <label>កាលបរិច្ឆេទ (ខ្មែរ) ៖</label>
+                    <input type="text" id="weddingDateKhmer" class="form-control" value="ថ្ងៃអាទិត្យ ទី ២២ ខែវិច្ឆិកា ឆ្នាំ២០២៦">
+                </div>
+                <div class="form-group">
+                    <label>កាលបរិច្ឆេទ (English) ៖</label>
+                    <input type="text" id="weddingDateEnglish" class="form-control" value="Sunday, November 22, 2026">
+                </div>
+                <div class="form-group">
+                    <label>កាលបរិច្ឆេទម៉ោង (ISO - សម្រាប់ Countdown) ៖</label>
+                    <input type="text" id="weddingDateISO" class="form-control" value="2026-11-22T07:00:00+07:00">
+                </div>
+            </div>
+
+            <!-- ខាងប្រុស -->
+            <div class="section-box">
+                <h3>🤵 ព័ត៌មានខាងកូនប្រុស</h3>
+                <div class="row-2">
+                    <div class="form-group">
+                        <label>ឈ្មោះកូនប្រុស (ខ្មែរ) ៖</label>
+                        <input type="text" id="groomKhmerName" class="form-control" value="ម៉េង សេងហ័រ">
+                    </div>
+                    <div class="form-group">
+                        <label>ឈ្មោះជាឡាតាំង ៖</label>
+                        <input type="text" id="groomEnglishName" class="form-control" value="MENG Senghor">
+                    </div>
+                </div>
+                <div class="row-2">
+                    <div class="form-group">
+                        <label>ឪពុកកូនប្រុស ៖</label>
+                        <input type="text" id="groomFather" class="form-control" value="លោក ម៉េង សេងឡៅ">
+                    </div>
+                    <div class="form-group">
+                        <label>ម្ដាយកូនប្រុស ៖</label>
+                        <input type="text" id="groomMother" class="form-control" value="លោកស្រី លាង ជ័ង">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ខាងស្រី -->
+            <div class="section-box">
+                <h3>👰 ព័ត៌មានខាងកូនស្រី</h3>
+                <div class="row-2">
+                    <div class="form-group">
+                        <label>ឈ្មោះកូនស្រី (ខ្មែរ) ៖</label>
+                        <input type="text" id="brideKhmerName" class="form-control" value="កង ច័ន្ទវិច្ឆិកា">
+                    </div>
+                    <div class="form-group">
+                        <label>ឈ្មោះជាឡាតាំង ៖</label>
+                        <input type="text" id="brideEnglishName" class="form-control" value="KORNG Chanvicheka">
+                    </div>
+                </div>
+                <div class="row-2">
+                    <div class="form-group">
+                        <label>ឪពុកកូនស្រី ៖</label>
+                        <input type="text" id="brideFather" class="form-control" value="លោក សៅ វ៉ិធ្វី">
+                    </div>
+                    <div class="form-group">
+                        <label>ម្ដាយកូនស្រី ៖</label>
+                        <input type="text" id="brideMother" class="form-control" value="លោកស្រី ហេង រតនី">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ទីតាំង -->
+            <div class="section-box">
+                <h3>📍 ទីតាំងប្រារព្ធពិធី</h3>
+                <div class="form-group">
+                    <label>ឈ្មោះទីតាំង ៖</label>
+                    <input type="text" id="venueName" class="form-control" value="សាលពិធី ដឹម៉ៃប៊េនព្រេមៀសេនធ័រ ក្រុងកំពង់ចាម">
+                </div>
+                <div class="form-group">
+                    <label>អាសយដ្ឋាន ៖</label>
+                    <input type="text" id="venueAddress" class="form-control" value="ក្រុងកំពង់ចាម ខេត្តកំពង់ចាម">
+                </div>
+                <div class="form-group">
+                    <label>តំណភ្ជាប់ Google Maps ៖</label>
+                    <input type="text" id="googleMapsUrl" class="form-control" value="https://maps.app.goo.gl/wcXT9QLLvdLVvjgZ7">
+                </div>
+            </div>
+
+            <!-- ចំណងដៃ -->
+            <div class="section-box">
+                <h3>🎁 ព័ត៌មានចំណងដៃ &amp; ធនាគារ</h3>
+                <div class="form-group">
+                    <label>ឈ្មោះគណនី ៖</label>
+                    <input type="text" id="giftAccountName" class="form-control" value="KORNG Chanvicheka">
+                </div>
+                <div class="row-2">
+                    <div class="form-group">
+                        <label>លេខគណនី ៖</label>
+                        <input type="text" id="giftAccountNumber" class="form-control" value="010 345 664">
+                    </div>
+                    <div class="form-group">
+                        <label>ធនាគារ ៖</label>
+                        <input type="text" id="giftBankName" class="form-control" value="ABA Bank">
+                    </div>
+                </div>
+            </div>
+
+            <!-- ចម្រៀងកំដរ -->
+            <div class="section-box">
+                <h3>🎵 ចម្រៀងកំដរ</h3>
+                <div class="form-group">
+                    <label>ចំណងជើងបទចម្រៀង ៖</label>
+                    <input type="text" id="bgMusicTitle" class="form-control" value="ជំហានទី ១ (First Step) - Olica">
+                </div>
+            </div>
+
+            <!-- ទំនាក់ទំនង & Telegram -->
+            <div class="section-box">
+                <h3>📲 គណនី Telegram (ទទួល RSVP)</h3>
+                <div class="form-group">
+                    <label>Telegram Username (ដោយមិនបាច់មាន @) ៖</label>
+                    <input type="text" id="telegramUsername" class="form-control" value="Senghor_Vicheka_wedding">
+                </div>
+            </div>
+
+            <!-- សកម្មភាព -->
+            <div class="actions-box">
+                <button type="button" id="btnSaveAndPreview" class="btn btn-save">
+                    💾 រក្សាទុក &amp; បើកមើលសំបុត្រ (Save &amp; View)
+                </button>
+                <button type="button" id="btnDownloadConfig" class="btn btn-download">
+                    📥 ទាញយកឯកសារ config.js
+                </button>
+                <a href="index.html" class="btn btn-view">
+                    👀 ត្រឡប់ទៅមើលសំបុត្រ
+                </a>
+                <button type="button" id="btnResetDefault" class="btn-reset">
+                    🔄 កំណត់ដើមឡើងវិញ (Reset to Default)
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script>
+        // Load initial data from WEDDING_CONFIG or localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            let data = window.WEDDING_CONFIG || {};
+            const saved = localStorage.getItem('wedding_custom_config');
+            if (saved) {
+                try {
+                    data = Object.assign({}, data, JSON.parse(saved));
+                } catch(e) {}
+            }
+
+            if (data.weddingTitle) document.getElementById('weddingTitle').value = data.weddingTitle;
+            if (data.weddingDateKhmer) document.getElementById('weddingDateKhmer').value = data.weddingDateKhmer;
+            if (data.weddingDateEnglish) document.getElementById('weddingDateEnglish').value = data.weddingDateEnglish;
+            if (data.weddingDateISO) document.getElementById('weddingDateISO').value = data.weddingDateISO;
+
+            if (data.groom) {
+                document.getElementById('groomKhmerName').value = data.groom.khmerName || '';
+                document.getElementById('groomEnglishName').value = data.groom.englishName || '';
+                document.getElementById('groomFather').value = data.groom.father || '';
+                document.getElementById('groomMother').value = data.groom.mother || '';
+            }
+
+            if (data.bride) {
+                document.getElementById('brideKhmerName').value = data.bride.khmerName || '';
+                document.getElementById('brideEnglishName').value = data.bride.englishName || '';
+                document.getElementById('brideFather').value = data.bride.father || '';
+                document.getElementById('brideMother').value = data.bride.mother || '';
+            }
+
+            if (data.venue) {
+                document.getElementById('venueName').value = data.venue.name || '';
+                document.getElementById('venueAddress').value = data.venue.address || '';
+                document.getElementById('googleMapsUrl').value = data.venue.googleMapsUrl || '';
+            }
+
+            if (data.gift) {
+                document.getElementById('giftAccountName').value = data.gift.accountName || '';
+                document.getElementById('giftAccountNumber').value = data.gift.accountNumber || '';
+                document.getElementById('giftBankName').value = data.gift.bankName || '';
+            }
+
+            if (data.bgMusic && data.bgMusic.title) {
+                document.getElementById('bgMusicTitle').value = data.bgMusic.title;
+            }
+
+            if (data.contact) {
+                document.getElementById('telegramUsername').value = data.contact.telegramUsername || '';
+            }
+        });
+
+        function collectFormData() {
+            return {
+                weddingTitle: document.getElementById('weddingTitle').value.trim(),
+                weddingDateKhmer: document.getElementById('weddingDateKhmer').value.trim(),
+                weddingDateEnglish: document.getElementById('weddingDateEnglish').value.trim(),
+                weddingDateISO: document.getElementById('weddingDateISO').value.trim(),
+                groom: {
+                    khmerName: document.getElementById('groomKhmerName').value.trim(),
+                    englishName: document.getElementById('groomEnglishName').value.trim(),
+                    father: document.getElementById('groomFather').value.trim(),
+                    mother: document.getElementById('groomMother').value.trim(),
+                    photo: "assets/images/groom.jpg"
+                },
+                bride: {
+                    khmerName: document.getElementById('brideKhmerName').value.trim(),
+                    englishName: document.getElementById('brideEnglishName').value.trim(),
+                    father: document.getElementById('brideFather').value.trim(),
+                    mother: document.getElementById('brideMother').value.trim(),
+                    photo: "assets/images/bride.jpg"
+                },
+                venue: {
+                    name: document.getElementById('venueName').value.trim(),
+                    address: document.getElementById('venueAddress').value.trim(),
+                    googleMapsUrl: document.getElementById('googleMapsUrl').value.trim(),
+                    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15623.513758249622!2d105.4419515!3d11.9961201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310b82f6e91cb3b5%3A0x6291a182092305!2sKampong%20Cham!5e0!3m2!1sen!2skh!4v1700000000000"
+                },
+                gift: {
+                    accountName: document.getElementById('giftAccountName').value.trim(),
+                    accountNumber: document.getElementById('giftAccountNumber').value.trim(),
+                    bankName: document.getElementById('giftBankName').value.trim(),
+                    qrImage: "assets/images/qr-code.png"
+                },
+                bgMusic: {
+                    title: document.getElementById('bgMusicTitle').value.trim(),
+                    audioFile: (window.WEDDING_CONFIG && window.WEDDING_CONFIG.bgMusic && window.WEDDING_CONFIG.bgMusic.audioFile) || "assets/audio/wedding-song.mp3"
+                },
+                contact: {
+                    telegramUsername: document.getElementById('telegramUsername').value.trim()
+                }
+            };
+        }
+
+        // Save & View
+        document.getElementById('btnSaveAndPreview').addEventListener('click', () => {
+            const data = collectFormData();
+            localStorage.setItem('wedding_custom_config', JSON.stringify(data));
+            showToast('បានរក្សាទុកព័ត៌មានដោយជោគជ័យ!');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        });
+
+        // Download config.js file
+        document.getElementById('btnDownloadConfig').addEventListener('click', () => {
+            const data = collectFormData();
+            const configContent = `const WEDDING_CONFIG = ${JSON.stringify(Object.assign({}, window.WEDDING_CONFIG, data), null, 4)};\n\nwindow.WEDDING_CONFIG = WEDDING_CONFIG;\n`;
+            
+            const blob = new Blob([configContent], { type: 'application/javascript;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'config.js';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('បានទាញយកឯកសារ config.js! សូមយកវាទៅដាក់ក្នុង folder js/');
+        });
+
+        // Reset
+        document.getElementById('btnResetDefault').addEventListener('click', () => {
+            if (confirm('តើអ្នកពិតជាចង់កំណត់ព័ត៌មានដើមឡើងវិញមែនទេ?')) {
+                localStorage.removeItem('wedding_custom_config');
+                location.reload();
+            }
+        });
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+    </script>
+</body>
+</html>
