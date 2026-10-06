@@ -58,6 +58,8 @@ function renderDynamicContent() {
     if (monogram) {
         if (sealText) sealText.textContent = monogram;
         if (footerMono) footerMono.textContent = monogram;
+        const royalMono = document.getElementById('royalMonogramText');
+        if (royalMono) royalMono.textContent = monogram;
     }
 
     // Footer Copyright
@@ -69,9 +71,11 @@ function renderDynamicContent() {
         footCopy.innerHTML = `&copy; ${year} ${gEng} &amp; ${bEng} Wedding. All Rights Reserved.`;
     }
 
-    // Title & Hero
+    // Title & Hero & Royal Ceremony
     const heroTitle = document.getElementById('heroCeremonyTitle');
     if (heroTitle && cfg.weddingTitle) heroTitle.textContent = cfg.weddingTitle;
+    const royalTitle = document.getElementById('royalCeremonyTitle');
+    if (royalTitle && cfg.weddingTitle) royalTitle.textContent = cfg.weddingTitle;
     
     const heroGroom = document.getElementById('heroGroomName');
     const heroBride = document.getElementById('heroBrideName');
@@ -94,6 +98,8 @@ function renderDynamicContent() {
     if (heroDateKh && cfg.weddingDateKhmer) heroDateKh.textContent = cfg.weddingDateKhmer;
     const heroDateEn = document.getElementById('heroDateEnglish');
     if (heroDateEn && cfg.weddingDateEnglish) heroDateEn.textContent = cfg.weddingDateEnglish;
+    const royalDate = document.getElementById('royalWeddingDate');
+    if (royalDate && cfg.weddingDateKhmer) royalDate.textContent = cfg.weddingDateKhmer;
     
     // Invitation message
     const invMsg = document.getElementById('invitationMessageText');
@@ -268,11 +274,20 @@ function initEnvelopeOpen() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     
+    // Auto open if url param ?open=1 is passed (e.g. for previews/screenshots)
+    if (new URLSearchParams(window.location.search).get('open') === '1') {
+        overlay.classList.add('opened');
+        overlay.style.display = 'none';
+        document.body.classList.add('envelope-open');
+        document.documentElement.classList.add('envelope-open');
+    }
+
     // 1. Direct button tap/click
     if (openBtn) {
         openBtn.addEventListener('click', handleOpen);
         openBtn.addEventListener('touchend', handleOpen, { passive: false });
     }
+
     
     // 2. Tap anywhere on the cover overlay to open (intuitive for mobile/tablet)
     overlay.addEventListener('click', handleOpen);
@@ -473,6 +488,16 @@ function playPluckNote(freq) {
     osc.stop(now + 1.25);
 }
 
+function toKhmerNumber(num, pad = 2) {
+    const khmerDigits = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'];
+    const str = String(num).padStart(pad, '0');
+    return str.split('').map(ch => {
+        const d = parseInt(ch, 10);
+        return isNaN(d) ? ch : khmerDigits[d];
+    }).join('');
+}
+window.toKhmerNumber = toKhmerNumber;
+
 /* ========================================================
    4. COUNTDOWN TIMER
    ======================================================== */
@@ -489,10 +514,10 @@ function initCountdown() {
         const distance = targetDate - now;
         
         if (distance < 0) {
-            if (daysEl) daysEl.textContent = '00';
-            if (hoursEl) hoursEl.textContent = '00';
-            if (minsEl) minsEl.textContent = '00';
-            if (secsEl) secsEl.textContent = '00';
+            if (daysEl) daysEl.textContent = '០០';
+            if (hoursEl) hoursEl.textContent = '០០';
+            if (minsEl) minsEl.textContent = '០០';
+            if (secsEl) secsEl.textContent = '០០';
             return;
         }
         
@@ -501,15 +526,16 @@ function initCountdown() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
-        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
-        if (minsEl) minsEl.textContent = String(minutes).padStart(2, '0');
-        if (secsEl) secsEl.textContent = String(seconds).padStart(2, '0');
+        if (daysEl) daysEl.textContent = toKhmerNumber(days);
+        if (hoursEl) hoursEl.textContent = toKhmerNumber(hours);
+        if (minsEl) minsEl.textContent = toKhmerNumber(minutes);
+        if (secsEl) secsEl.textContent = toKhmerNumber(seconds);
     }
     
     updateTimer();
     setInterval(updateTimer, 1000);
 }
+
 
 /* ========================================================
    5. SCHEDULE / PROGRAM TABS
@@ -520,21 +546,75 @@ function initScheduleTabs() {
     const morningTimeline = document.getElementById('timelineMorning');
     const eveningTimeline = document.getElementById('timelineEvening');
     
-    if (!morningTabBtn || !eveningTabBtn) return;
-    
-    morningTabBtn.addEventListener('click', () => {
-        morningTabBtn.classList.add('active');
-        eveningTabBtn.classList.remove('active');
-        if (morningTimeline) morningTimeline.style.display = 'block';
-        if (eveningTimeline) eveningTimeline.style.display = 'none';
-    });
-    
-    eveningTabBtn.addEventListener('click', () => {
-        eveningTabBtn.classList.add('active');
-        morningTabBtn.classList.remove('active');
-        if (morningTimeline) morningTimeline.style.display = 'none';
-        if (eveningTimeline) eveningTimeline.style.display = 'block';
-    });
+    if (morningTabBtn && eveningTabBtn) {
+        morningTabBtn.addEventListener('click', () => {
+            morningTabBtn.classList.add('active');
+            eveningTabBtn.classList.remove('active');
+            if (morningTimeline) morningTimeline.style.display = 'block';
+            if (eveningTimeline) eveningTimeline.style.display = 'none';
+        });
+        
+        eveningTabBtn.addEventListener('click', () => {
+            eveningTabBtn.classList.add('active');
+            morningTabBtn.classList.remove('active');
+            if (morningTimeline) morningTimeline.style.display = 'none';
+            if (eveningTimeline) eveningTimeline.style.display = 'block';
+        });
+    }
+
+    // Modal Zoom for Botanical Poster
+    const modal = document.getElementById('schedulePosterModal');
+    const btnZoom = document.getElementById('btnScheduleZoom');
+    const cardFrame = document.getElementById('botanicalCardFrame');
+    const btnClose = document.getElementById('btnPosterModalClose');
+    const backdrop = document.getElementById('modalBackdrop');
+
+    const openModal = () => {
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+    const closeModal = () => {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (btnZoom) btnZoom.addEventListener('click', openModal);
+    if (cardFrame) cardFrame.addEventListener('click', openModal);
+    if (btnClose) btnClose.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    // Toggle Timeline Details Accordion
+    const btnToggle = document.getElementById('btnToggleTimelineDetails');
+    const collapseContent = document.getElementById('timelineDetailsCollapse');
+    if (btnToggle && collapseContent) {
+        btnToggle.addEventListener('click', () => {
+            const isOpen = collapseContent.style.display !== 'none';
+            if (isOpen) {
+                collapseContent.style.display = 'none';
+                btnToggle.classList.remove('open');
+                btnToggle.setAttribute('aria-expanded', 'false');
+            } else {
+                collapseContent.style.display = 'block';
+                btnToggle.classList.add('open');
+                btnToggle.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+
+    // Schedule Add to Calendar Button
+    const btnSchedCal = document.getElementById('btnScheduleAddCalendar');
+    if (btnSchedCal) {
+        btnSchedCal.addEventListener('click', () => {
+            const btnCal = document.getElementById('btnAddCalendar');
+            if (btnCal) {
+                btnCal.click();
+            }
+        });
+    }
 }
 
 /* ========================================================

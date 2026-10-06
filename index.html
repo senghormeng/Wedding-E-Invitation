@@ -12,10 +12,11 @@
     <meta property="og:image" content="assets/images/couple-cover.jpg">
     <meta property="og:type" content="website">
     
-    <!-- Google Fonts: Moul for Khmer titles, Kantumruy Pro for body, Playfair Display for accents -->
+    <!-- Google Fonts: Moul & Moulpali for Khmer titles, Siemreap & Kantumruy Pro for body, Playfair Display for accents -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Moul&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Moul&family=Moulpali&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Siemreap&display=swap" rel="stylesheet">
+
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -215,21 +216,22 @@
                     </div>
                     <div class="countdown-grid">
                         <div class="countdown-box">
-                            <div id="countDays" class="countdown-number">00</div>
+                            <div id="countDays" class="countdown-number">០០</div>
                             <div class="countdown-text">ថ្ងៃ</div>
                         </div>
                         <div class="countdown-box">
-                            <div id="countHours" class="countdown-number">00</div>
+                            <div id="countHours" class="countdown-number">០០</div>
                             <div class="countdown-text">ម៉ោង</div>
                         </div>
                         <div class="countdown-box">
-                            <div id="countMins" class="countdown-number">00</div>
+                            <div id="countMins" class="countdown-number">០០</div>
                             <div class="countdown-text">នាទី</div>
                         </div>
                         <div class="countdown-box">
-                            <div id="countSecs" class="countdown-number">00</div>
+                            <div id="countSecs" class="countdown-number">០០</div>
                             <div class="countdown-text">វិនាទី</div>
                         </div>
+
                     </div>
 
                     <!-- Add to Calendar Button -->
@@ -256,58 +258,142 @@
         </div>
 
         <!-- ====================================================
-             SECTION 2: FORMAL INVITATION & FAMILIES
+             SECTION 2: FORMAL INVITATION & ROYAL CEREMONY (សាមីខ្លួន)
              ==================================================== -->
-        <section id="couple" class="invitation-section">
-            <div class="section-header">
-                <span class="section-tag">សេចក្តីគោរពអញ្ជើញ</span>
-                <h2 class="section-title">មាតាបិតា &amp; សាមីខ្លួន</h2>
-            </div>
+        <section id="couple" class="invitation-section royal-ceremony-section">
+            <div class="royal-ceremony-overlay"></div>
+            
+            <div class="royal-ceremony-content">
+                <!-- Grand Ceremony Header -->
+                <h2 id="royalCeremonyTitle" class="royal-ceremony-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h2>
 
-            <!-- Formal Khmer Message -->
-            <div class="invitation-formal-box">
-                <h3 class="invitation-lead">យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ</h3>
-                <p id="invitationMessageText" class="invitation-message">
-                    ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្ដីជ័យមង្គលក្នុង ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ
-                </p>
-            </div>
+                <!-- Parents Row (Two Balanced Columns) -->
+                <div class="royal-parents-row">
+                    <!-- Groom Parents (Left) -->
+                    <div class="royal-parents-col groom-parents-col">
+                        <div id="groomFatherName" class="royal-parent-name">លោក ម៉េង សេងឡោ</div>
+                        <div id="groomMotherName" class="royal-parent-name">លោកស្រី លាង គុយជ័ង</div>
+                    </div>
 
-            <!-- Two Family Columns -->
-            <div class="family-grid">
-                <!-- Groom Side -->
-                <div class="family-column">
-                    <span class="family-tag">មាតាបិតាខាងប្រុស</span>
-                    <div class="family-parents-box">
-                        <span class="parent-role">ឪពុក៖</span>
-                        <div id="groomFatherName" class="parent-name">លោក ម៉េង សេងឡោ</div>
-                        <span class="parent-role">ម្ដាយ៖</span>
-                        <div id="groomMotherName" class="parent-name">លោកស្រី លាង គុយជ័ង</div>
+                    <!-- Bride Parents (Right) -->
+                    <div class="royal-parents-col bride-parents-col">
+                        <div id="brideFatherName" class="royal-parent-name">លោក សៅ វុទ្ធី</div>
+                        <div id="brideMotherName" class="royal-parent-name">លោកស្រី ហេង រ័ត្មនី</div>
                     </div>
-                    
-                    <div class="couple-portrait-wrapper">
-                        <img id="groomPhoto" src="assets/images/groom.jpg" alt="ម៉េង សេងហ័រ (MENG Senghor)">
-                    </div>
-                    <span class="couple-role-label">កូនប្រុសនាម</span>
-                    <div id="groomKhmerName" class="couple-name">ម៉េង សេងហ័រ</div>
-                    <div id="groomEnglishName" class="couple-latin-name">MENG Senghor</div>
                 </div>
 
-                <!-- Bride Side -->
-                <div class="family-column">
-                    <span class="family-tag">មាតាបិតាខាងស្រី</span>
-                    <div class="family-parents-box">
-                        <span class="parent-role">ឪពុក៖</span>
-                        <div id="brideFatherName" class="parent-name">លោក សៅ វុទ្ធី</div>
-                        <span class="parent-role">ម្ដាយ៖</span>
-                        <div id="brideMotherName" class="parent-name">លោកស្រី ហេង រ័ត្មនី</div>
+
+                <!-- Formal Invitation Text Block -->
+                <div class="royal-invitation-block">
+                    <h3 class="royal-invitation-lead">យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ</h3>
+                    <p id="invitationMessageText" class="royal-invitation-body">
+                        ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្ដីជ័យមង្គលក្នុង ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ
+                    </p>
+                </div>
+
+                <!-- Couple & Royal Monogram Crest Row -->
+                <div class="royal-couple-row">
+                    <!-- Groom Column (Left) -->
+                    <div class="royal-couple-col groom-col">
+                        <span class="royal-role-tag">កូនប្រុសនាម</span>
+                        <div id="groomKhmerName" class="royal-couple-name">ម៉េង សេងហ័រ</div>
+                        <div id="groomEnglishName" style="display:none;">MENG Senghor</div>
                     </div>
 
-                    <div class="couple-portrait-wrapper">
-                        <img id="bridePhoto" src="assets/images/bride.jpg" alt="កង ច័ន្ទវិច្ឆិកា (KORNG Chanvicheka)">
+                    <!-- Center Royal Kbach Crest with Monogram -->
+                    <div class="royal-crest-wrap">
+                        <svg class="royal-crest-svg" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fff8db"/>
+                                    <stop offset="35%" stop-color="#f8dc81"/>
+                                    <stop offset="70%" stop-color="#e0b745"/>
+                                    <stop offset="100%" stop-color="#f8dc81"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Central oval beaded ring -->
+                            <ellipse cx="60" cy="70" rx="35" ry="45" stroke="url(#crestGold)" stroke-width="1.8" stroke-dasharray="2 4"/>
+                            <ellipse cx="60" cy="70" rx="40" ry="51" stroke="url(#crestGold)" stroke-width="1.2"/>
+                            
+                            <!-- Top crown flame / kbach -->
+                            <path d="M60 8 C57 15 54 21 60 25 C66 21 63 15 60 8 Z" fill="url(#crestGold)"/>
+                            <path d="M60 16 C53 18 47 23 51 29 C55 26 58 25 60 25 C62 25 65 26 69 29 C73 23 67 18 60 16 Z" fill="url(#crestGold)"/>
+                            <circle cx="60" cy="6" r="2.2" fill="#fffbe8"/>
+
+                            <!-- Bottom crown flame / kbach -->
+                            <path d="M60 132 C57 125 54 119 60 115 C66 119 63 125 60 132 Z" fill="url(#crestGold)"/>
+                            <path d="M60 124 C53 122 47 117 51 111 C55 114 58 115 60 115 C62 115 65 114 69 111 C73 117 67 122 60 124 Z" fill="url(#crestGold)"/>
+                            <circle cx="60" cy="134" r="2.2" fill="#fffbe8"/>
+
+                            <!-- Left side scroll leaves -->
+                            <path d="M19 70 C14 65 14 58 20 54 C23 60 26 65 19 70 Z" fill="url(#crestGold)"/>
+                            <path d="M19 70 C14 75 14 82 20 86 C23 80 26 75 19 70 Z" fill="url(#crestGold)"/>
+                            <path d="M23 44 C18 39 21 32 28 32 C27 38 27 42 23 44 Z" fill="url(#crestGold)"/>
+                            <path d="M23 96 C18 101 21 108 28 108 C27 102 27 98 23 96 Z" fill="url(#crestGold)"/>
+
+                            <!-- Right side scroll leaves -->
+                            <path d="M101 70 C106 65 106 58 100 54 C97 60 94 65 101 70 Z" fill="url(#crestGold)"/>
+                            <path d="M101 70 C106 75 106 82 100 86 C97 80 94 75 101 70 Z" fill="url(#crestGold)"/>
+                            <path d="M97 44 C102 39 99 32 92 32 C93 38 93 42 97 44 Z" fill="url(#crestGold)"/>
+                            <path d="M97 96 C102 101 99 108 92 108 C93 102 93 98 97 96 Z" fill="url(#crestGold)"/>
+
+                            <!-- Side Accent Pearls -->
+                            <circle cx="15" cy="70" r="2" fill="url(#crestGold)"/>
+                            <circle cx="105" cy="70" r="2" fill="url(#crestGold)"/>
+                        </svg>
+                        <div class="royal-crest-text">
+                            <span id="royalMonogramText">ស វ</span>
+                        </div>
                     </div>
-                    <span class="couple-role-label">កូនស្រីនាម</span>
-                    <div id="brideKhmerName" class="couple-name">កង ច័ន្ទវិច្ឆិកា</div>
-                    <div id="brideEnglishName" class="couple-latin-name">KORNG Chanvicheka</div>
+
+                    <!-- Bride Column (Right) -->
+                    <div class="royal-couple-col bride-col">
+                        <span class="royal-role-tag">កូនស្រីនាម</span>
+                        <div id="brideKhmerName" class="royal-couple-name">កង ច័ន្ទវិច្ឆិកា</div>
+                        <div id="brideEnglishName" style="display:none;">KORNG Chanvicheka</div>
+                    </div>
+                </div>
+
+                <!-- Wedding Date Block -->
+                <div class="royal-date-block">
+                    <span class="royal-date-lead">ដែលនឹងប្រព្រឹត្តទៅនៅ</span>
+                    <div id="royalWeddingDate" class="royal-wedding-date">
+                        ថ្ងៃអាទិត្យ ទី ២២ ខែវិច្ឆិកា ឆ្នាំ២០២៦
+                    </div>
+                </div>
+
+                <!-- Traditional Gold Kbach Bottom Flourish -->
+                <div class="royal-bottom-flourish">
+                    <svg viewBox="0 0 280 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="barGold" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="rgba(223, 183, 75, 0.05)"/>
+                                <stop offset="25%" stop-color="#ecc659"/>
+                                <stop offset="50%" stop-color="#fff8db"/>
+                                <stop offset="75%" stop-color="#ecc659"/>
+                                <stop offset="100%" stop-color="rgba(223, 183, 75, 0.05)"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Left bar -->
+                        <line x1="24" y1="10" x2="128" y2="10" stroke="url(#barGold)" stroke-width="1.8" stroke-linecap="round"/>
+                        <circle cx="24" cy="10" r="2" fill="#ecc659"/>
+                        <!-- Left loop -->
+                        <path d="M74 10 C74 6 80 6 80 10 C80 14 74 14 74 10 Z" stroke="#ecc659" stroke-width="1.4" fill="none"/>
+                        <!-- Center Diamond -->
+                        <path d="M140 3 L147 10 L140 17 L133 10 Z" fill="#fff8db" stroke="#ecc659" stroke-width="1.2"/>
+                        <circle cx="140" cy="10" r="1.5" fill="#ecc659"/>
+                        <!-- Right bar -->
+                        <line x1="152" y1="10" x2="256" y2="10" stroke="url(#barGold)" stroke-width="1.8" stroke-linecap="round"/>
+                        <circle cx="256" cy="10" r="2" fill="#ecc659"/>
+                        <!-- Right loop -->
+                        <path d="M200 10 C200 6 206 6 206 10 C206 14 200 14 200 10 Z" stroke="#ecc659" stroke-width="1.4" fill="none"/>
+                    </svg>
+                </div>
+
+                <!-- Hidden fallback img tags for script safety -->
+                <div style="display:none;" aria-hidden="true">
+                    <img id="groomPhoto" src="assets/images/groom.jpg" alt="Groom">
+                    <img id="bridePhoto" src="assets/images/bride.jpg" alt="Bride">
                 </div>
             </div>
         </section>
@@ -322,109 +408,164 @@
         </div>
 
         <!-- ====================================================
-             SECTION 3: WEDDING SCHEDULE / PROGRAM
+             SECTION 3: WEDDING SCHEDULE / PROGRAM (កម្មវិធីមង្គលការ)
+             Matches modern fancy botanical invitation style
              ==================================================== -->
-        <section id="schedule" class="schedule-section">
+        <section id="schedule" class="schedule-section botanical-schedule-section">
             <div class="section-header">
                 <span class="section-tag">ពេលវេលាកម្មវិធី</span>
-                <h2 class="section-title">កម្មវិធីមង្គលការ</h2>
+                <h2 class="section-title">កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍</h2>
                 <p class="section-desc">កាលវិភាគពិធីមង្គលអាពាហ៍ពិពាហ៍តាមលំដាប់លំដោយ</p>
             </div>
 
-            <!-- Program Tabs -->
-            <div class="schedule-tabs">
-                <button id="tabMorning" class="tab-btn active">
-                    <span>🌅 កម្មវិធីពេលព្រឹក</span>
-                </button>
-                <button id="tabEvening" class="tab-btn">
-                    <span>🌆 កម្មវិធីពេលល្ងាច</span>
-                </button>
+            <!-- Modern Botanical Schedule Showcase Card -->
+            <div class="botanical-card-container">
+                <div class="botanical-card-frame" id="botanicalCardFrame">
+                    <img id="schedulePosterImg" 
+                         src="assets/images/schedule-poster.png" 
+                         alt="កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍" 
+                         class="botanical-poster-img"
+                         loading="lazy">
+                </div>
+
+                <!-- Modern Quick Actions -->
+                <div class="schedule-action-bar">
+                    <button id="btnScheduleAddCalendar" class="btn-schedule-action btn-calendar-action" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>កត់ត្រាក្នុងប្រតិទិន (Add to Calendar)</span>
+                    </button>
+                    <button id="btnScheduleZoom" class="btn-schedule-action btn-zoom-action" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                        <span>ពង្រីកមើលផ្ទាំងធំ</span>
+                    </button>
+                </div>
+
+                <!-- Interactive Timeline Details Accordion -->
+                <div class="schedule-details-accordion">
+                    <button id="btnToggleTimelineDetails" class="btn-details-toggle" type="button" aria-expanded="false">
+                        <span>📋 មើលព័ត៌មានលម្អិតតាមម៉ោង</span>
+                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    
+                    <div id="timelineDetailsCollapse" class="timeline-collapse-content" style="display: none;">
+                        <!-- Program Tabs -->
+                        <div class="schedule-tabs">
+                            <button id="tabMorning" class="tab-btn active" type="button">
+                                <span>🌅 កម្មវិធីពេលព្រឹក</span>
+                            </button>
+                            <button id="tabEvening" class="tab-btn" type="button">
+                                <span>🌆 កម្មវិធីពេលល្ងាច</span>
+                            </button>
+                        </div>
+
+                        <!-- Morning Timeline -->
+                        <div id="timelineMorning" class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ០៧:០០ ព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីហែជំនូន (កំណត់)</h4>
+                                    <p class="timeline-desc">ដង្ហែជំនូនផ្លែឈើ និងគ្រឿងបណ្ណាការចូលគេហដ្ឋាន</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ០៧:៣០ ព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីរៀបរាប់ផ្លែឈើ និងសែនព្រេន</h4>
+                                    <p class="timeline-desc">រៀបចំគ្រឿងដង្វាយផ្លែឈើ និងសែនព្រេនជូនដំណឹងដល់ជីដូនជីតា</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ០៨:០០ ព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីបំពាក់ចិញ្ចៀន</h4>
+                                    <p class="timeline-desc">កូនប្រុស និងកូនស្រីបំពាក់ចិញ្ចៀនអាពាហ៍ពិពាហ៍ជូនគ្នាទៅវិញទៅមក</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ០៩:០០ ព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត</h4>
+                                    <p class="timeline-desc">ព្រះសង្ឃចម្រើនព្រះបរិត្តប្រសិទ្ធពរជ័យ សិរីសួស្ដី ជ័យមង្គល</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ១០:០០ ព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីកាត់សក់បង្កក់សិរី</h4>
+                                    <p class="timeline-desc">ពិធីកាត់សក់ សិតសក់ និងប្រោះព្រំសិរីសួស្តីដល់កូនកំលោះកូនក្រមុំ</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ១១:០០ ព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីក្រាបសំពះផ្ទឹម</h4>
+                                    <p class="timeline-desc">ពិធីក្រាបសំពះផ្ទឹម ចងអំបោះក្រហម និងបង្វិលពពិលប្រសិទ្ធពរជ័យ</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ១២:០០ ថ្ងៃត្រង់</span>
+                                    <h4 class="timeline-title">អញ្ជើញភ្ញៀវពិសាអាហារថ្ងៃត្រង់</h4>
+                                    <p class="timeline-desc">សូមគោរពអញ្ជើញភ្ញៀវកិត្តិយសទាំងអស់រួមពិសាអាហារថ្ងៃត្រង់ជុំគ្នា</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening Timeline -->
+                        <div id="timelineEvening" class="timeline" style="display: none;">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ០៥:០០ ល្ងាច</span>
+                                    <h4 class="timeline-title">ទទួលបដិសណ្ឋារកិច្ចភ្ញៀវកិត្តិយស</h4>
+                                    <p class="timeline-desc">ស្វាគមន៍ភ្ញៀវកិត្តិយស ថតរូបអនុស្សាវរីយ៍នៅមុខក្លោងទ្វារមង្គល</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">ម៉ោង ០៦:០០ ល្ងាច</span>
+                                    <h4 class="timeline-title">ពិសាភោជនាហារពេលល្ងាច</h4>
+                                    <p class="timeline-desc">ពិសាភោជនាហារ ស្តាប់តន្ត្រីកំដរ កាត់នំអាពាហ៍ពិពាហ៍ និងរាំកម្សាន្ត</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Morning Timeline -->
-            <div id="timelineMorning" class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ០៧:០០ ព្រឹក</span>
-                        <h4 class="timeline-title">ពិធីហែជំនូន (កំណត់)</h4>
-                        <p class="timeline-desc">ដង្ហែជំនូនផ្លែឈើ និងគ្រឿងបណ្ណាការចូលគេហដ្ឋាន</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ០៧:៣០ ព្រឹក</span>
-                        <h4 class="timeline-title">ពិធីរៀបរាប់ផ្លែឈើ និងសែនព្រេន</h4>
-                        <p class="timeline-desc">រៀបចំគ្រឿងដង្វាយផ្លែឈើ និងសែនព្រេនជូនដំណឹងដល់ជីដូនជីតា</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ០៨:០០ ព្រឹក</span>
-                        <h4 class="timeline-title">ពិធីបំពាក់ចិញ្ចៀន</h4>
-                        <p class="timeline-desc">កូនប្រុស និងកូនស្រីបំពាក់ចិញ្ចៀនអាពាហ៍ពិពាហ៍ជូនគ្នាទៅវិញទៅមក</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ០៩:០០ ព្រឹក</span>
-                        <h4 class="timeline-title">ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត</h4>
-                        <p class="timeline-desc">ព្រះសង្ឃចម្រើនព្រះបរិត្តប្រសិទ្ធពរជ័យ សិរីសួស្ដី ជ័យមង្គល</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ១០:០០ ព្រឹក</span>
-                        <h4 class="timeline-title">ពិធីកាត់សក់បង្កក់សិរី</h4>
-                        <p class="timeline-desc">ពិធីកាត់សក់ សិតសក់ និងប្រោះព្រំសិរីសួស្តីដល់កូនកំលោះកូនក្រមុំ</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ១១:០០ ព្រឹក</span>
-                        <h4 class="timeline-title">ពិធីក្រាបសំពះផ្ទឹម</h4>
-                        <p class="timeline-desc">ពិធីក្រាបសំពះផ្ទឹម ចងអំបោះក្រហម និងបង្វិលពពិលប្រសិទ្ធពរជ័យ</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ១២:០០ ថ្ងៃត្រង់</span>
-                        <h4 class="timeline-title">អញ្ជើញភ្ញៀវពិសាអាហារថ្ងៃត្រង់</h4>
-                        <p class="timeline-desc">សូមគោរពអញ្ជើញភ្ញៀវកិត្តិយសទាំងអស់រួមពិសាអាហារថ្ងៃត្រង់ជុំគ្នា</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Evening Timeline -->
-            <div id="timelineEvening" class="timeline" style="display: none;">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ០៥:០០ ល្ងាច</span>
-                        <h4 class="timeline-title">ទទួលបដិសណ្ឋារកិច្ចភ្ញៀវកិត្តិយស</h4>
-                        <p class="timeline-desc">ស្វាគមន៍ភ្ញៀវកិត្តិយស ថតរូបអនុស្សាវរីយ៍នៅមុខក្លោងទ្វារមង្គល</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-time-badge">ម៉ោង ០៦:០០ ល្ងាច</span>
-                        <h4 class="timeline-title">ពិសាភោជនាហារពេលល្ងាច</h4>
-                        <p class="timeline-desc">ពិសាភោជនាហារ ស្តាប់តន្ត្រីកំដរ កាត់នំអាពាហ៍ពិពាហ៍ និងរាំកម្សាន្ត</p>
-                    </div>
+            <!-- Fullscreen Lightbox Modal for Poster Zoom -->
+            <div id="schedulePosterModal" class="poster-modal" style="display: none;">
+                <div class="poster-modal-backdrop" id="modalBackdrop"></div>
+                <div class="poster-modal-dialog">
+                    <button id="btnPosterModalClose" class="poster-modal-close" type="button" aria-label="Close">&times;</button>
+                    <img src="assets/images/schedule-poster.png" alt="កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ ផ្ទាំងធំ" class="poster-modal-image">
                 </div>
             </div>
         </section>
@@ -623,7 +764,7 @@
 
                 <!-- KHQR Code Box -->
                 <div class="khqr-box">
-                    <img id="giftQrImage" src="assets/images/qr-code.png" alt="Wedding Gift QR Code" class="khqr-image">
+                    <img id="giftQrImage" src="assets/images/qr-code.jpg" alt="Wedding Gift QR Code" class="khqr-image">
                 </div>
 
                 <!-- Account Details -->

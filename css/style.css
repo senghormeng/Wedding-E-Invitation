@@ -23,8 +23,11 @@
     --border-gold: rgba(198, 146, 41, 0.35);
     
     --font-khmer-title: 'Moul', cursive, serif;
-    --font-khmer-body: 'Kantumruy Pro', 'Battambang', sans-serif;
+    --font-khmer-moul: 'Moul', cursive, serif;
+    --font-khmer-moulpali: 'Moulpali', cursive, serif;
+    --font-khmer-body: 'Siemreap', 'Kantumruy Pro', 'Battambang', sans-serif;
     --font-english-title: 'Playfair Display', Georgia, serif;
+
     
     --shadow-soft: 0 10px 30px rgba(84, 60, 20, 0.08);
     --shadow-gold: 0 8px 25px rgba(198, 146, 41, 0.22);
@@ -698,11 +701,16 @@ section {
 }
 
 .section-title {
-    font-family: var(--font-khmer-title);
-    font-size: 24px;
-    color: var(--text-primary);
+    font-family: var(--font-khmer-moul);
+    font-size: 25px;
+    color: #7d540d;
+    background: linear-gradient(180deg, #996e1b 0%, #644106 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(198, 146, 41, 0.2);
 }
+
 
 .section-desc {
     color: var(--text-secondary);
@@ -769,28 +777,36 @@ section {
 }
 
 .hero-ceremony-title {
-    font-family: var(--font-khmer-title);
-    font-size: 26px;
-    color: var(--maroon-accent);
+    font-family: var(--font-khmer-moul);
+    font-size: 28px;
+    color: #8c631b;
+    background: linear-gradient(180deg, #aa781f 0%, #7d540d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     line-height: 1.5;
     margin-bottom: 6px;
-    text-shadow: 0 1px 2px rgba(198, 146, 41, 0.2);
+    text-shadow: 0 1px 2px rgba(198, 146, 41, 0.25);
 }
 
 .hero-couple-names {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
-    color: var(--text-primary);
-    font-family: var(--font-khmer-body);
+    font-family: var(--font-khmer-moulpali);
+    color: #7d540d;
+    background: linear-gradient(180deg, #996e1b 0%, #644106 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 10px 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    letter-spacing: 0.5px;
 }
 
 .hero-couple-names .heart-icon {
     color: #d12f3e;
+    -webkit-text-fill-color: initial;
     font-size: 22px;
     animation: heartPulse 1.8s ease-in-out infinite;
 }
@@ -830,11 +846,13 @@ section {
 }
 
 .hero-date-khmer {
-    font-size: 18px;
+    font-family: var(--font-khmer-moulpali);
+    font-size: 19px;
     font-weight: 700;
     color: var(--primary-gold);
     display: block;
 }
+
 
 .hero-date-english {
     font-size: 13px;
@@ -890,19 +908,23 @@ section {
 }
 
 .countdown-number {
+    font-family: var(--font-khmer-moul);
     font-size: 26px;
     font-weight: 700;
     color: var(--primary-gold);
-    line-height: 1.1;
+    line-height: 1.25;
     font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5px;
 }
 
 .countdown-text {
-    font-size: 12px;
+    font-family: var(--font-khmer-moulpali), var(--font-khmer-body);
+    font-size: 13px;
     color: var(--text-secondary);
     font-weight: 600;
-    margin-top: 4px;
+    margin-top: 2px;
 }
+
 
 .btn-add-calendar {
     margin-top: 20px;
@@ -928,132 +950,538 @@ section {
 }
 
 /* ========================================================
-   INVITATION & FAMILY CARDS SECTION
+   MODERN ROYAL INVITATION & CEREMONY SECTION (សាមីខ្លួន)
+   Matches royal gold embossed typography from user reference
    ======================================================== */
-.invitation-section {
-    background: #ffffff;
-    text-align: center;
-}
-
-.invitation-formal-box {
-    background: #fdfaf3;
-    border: 1px solid rgba(198, 146, 41, 0.3);
-    border-radius: var(--radius-lg);
-    padding: 24px 20px;
-    margin-bottom: 35px;
-    box-shadow: inset 0 0 15px rgba(198, 146, 41, 0.05);
-}
-
-.invitation-lead {
-    font-family: var(--font-khmer-title);
-    font-size: 18px;
-    color: var(--primary-gold);
-    margin-bottom: 12px;
-}
-
-.invitation-message {
-    font-size: 15px;
-    line-height: 1.9;
-    color: var(--text-primary);
-}
-
-.family-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 25px;
-}
-
-.family-column {
-    background: #faf7f0;
-    border: 1px solid rgba(198, 146, 41, 0.25);
-    border-radius: var(--radius-lg);
-    padding: 22px 14px;
-    text-align: center;
-    box-shadow: var(--shadow-soft);
+.royal-ceremony-section {
     position: relative;
-    transition: var(--transition-smooth);
+    background: linear-gradient(180deg, rgba(14, 10, 6, 0.82) 0%, rgba(20, 15, 10, 0.70) 38%, rgba(14, 10, 6, 0.88) 100%),
+                url('../assets/images/personal-info-bg.jpg') 66% 38% / cover no-repeat;
+    padding: 70px 20px 60px;
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    text-align: center;
+    color: #ffffff;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.65);
+    overflow: hidden;
 }
 
-.family-column:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
-}
-
-.family-tag {
-    display: inline-block;
-    background: var(--gold-gradient);
-    color: #3b2222;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 3px 14px;
-    border-radius: var(--radius-full);
-    margin-bottom: 14px;
-}
-
-.family-parents-box {
-    margin-bottom: 16px;
-    border-bottom: 1px dashed rgba(198, 146, 41, 0.3);
-    padding-bottom: 14px;
-}
-
-.parent-role {
-    font-size: 12px;
-    color: var(--text-secondary);
-    display: block;
-}
-
-.parent-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-}
-
-.couple-portrait-wrapper {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 12px;
-    border-radius: 50%;
-    padding: 4px;
-    background: var(--gold-gradient);
-    box-shadow: var(--shadow-gold);
-}
-
-.couple-portrait-wrapper img {
+.royal-ceremony-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ffffff;
+    background: radial-gradient(ellipse at 50% 25%, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0.32) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
-.couple-role-label {
-    font-size: 13px;
-    color: var(--primary-gold);
-    font-weight: 600;
+.royal-ceremony-content {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* Grand Ceremony Header - Moul Font with 3D Embossed Gold */
+.royal-ceremony-title {
+    font-family: var(--font-khmer-moul);
+    font-size: 33px;
+    line-height: 1.45;
+    letter-spacing: 0.5px;
+    color: #fce588;
+    background: linear-gradient(180deg, #fffbeb 0%, #fad96b 35%, #dfb23e 70%, #9e7215 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 12px rgba(247, 213, 102, 0.45));
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+/* Parents Row - Moulpali Font in Radiant Gold */
+.royal-parents-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 540px;
+    margin: 0 auto 32px;
+    gap: 16px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.royal-parents-col {
+    flex: 1;
+    text-align: center;
+}
+
+.royal-parent-name {
+    font-family: var(--font-khmer-moulpali);
+    font-size: 18px;
+    line-height: 2.0;
+    color: #fae48c;
+    background: linear-gradient(180deg, #fffcee 0%, #f7df88 40%, #dfb547 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.95));
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* Formal Invitation Block */
+.royal-invitation-block {
+    max-width: 540px;
+    margin: 0 auto 32px;
+    text-align: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.royal-invitation-lead {
+    font-family: var(--font-khmer-moul);
+    font-size: 17.5px;
+    line-height: 1.7;
+    color: #fce588;
+    background: linear-gradient(180deg, #fffcee 0%, #fad96b 40%, #e0ab32 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+    margin-bottom: 12px;
+    letter-spacing: 0.4px;
+}
+
+.royal-invitation-body {
+    font-family: var(--font-khmer-body);
+    font-size: 15px;
+    line-height: 2.15;
+    color: #faecc4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+
+/* Couple Row - Moulpali Font in Embossed Gold */
+.royal-couple-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 540px;
+    margin: 0 auto 28px;
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.royal-couple-col {
+    flex: 1;
+    text-align: center;
+}
+
+.royal-role-tag {
+    display: block;
+    font-family: var(--font-khmer-moulpali);
+    font-size: 15px;
+    color: #f7d86f;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.95));
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.royal-couple-name {
+    font-family: var(--font-khmer-moulpali);
+    font-size: 26px;
+    line-height: 1.45;
+    color: #fce588;
+    background: linear-gradient(180deg, #fffcee 0%, #fad96b 35%, #dfb23e 70%, #9e7215 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 12px rgba(247, 213, 102, 0.4));
+    white-space: nowrap;
+    letter-spacing: 0.4px;
+}
+
+/* Center Royal Monogram Crest */
+.royal-crest-wrap {
+    flex-shrink: 0;
+    width: 92px;
+    height: 108px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+.royal-crest-svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.95));
+}
+
+.royal-crest-text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-khmer-moulpali);
+    font-size: 21px;
+    color: #fce588;
+    background: linear-gradient(180deg, #fffcee 0%, #fae28c 40%, #e0b445 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+    letter-spacing: 2px;
+    padding-left: 3px;
+}
+
+/* Wedding Date Block */
+.royal-date-block {
+    max-width: 520px;
+    margin: 0 auto 24px;
+    text-align: center;
+}
+
+.royal-date-lead {
+    display: block;
+    font-family: var(--font-khmer-moulpali);
+    font-size: 13.5px;
+    color: #f7d86f;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.95));
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.royal-wedding-date {
+    font-family: var(--font-khmer-moulpali);
+    font-size: 18.5px;
+    line-height: 1.5;
+    color: #fce588;
+    background: linear-gradient(180deg, #fffcee 0%, #fad96b 40%, #dfb23e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+}
+
+/* Bottom Flourish */
+.royal-bottom-flourish {
+    max-width: 240px;
+    margin: 0 auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+.royal-bottom-flourish svg {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
-.couple-name {
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 2px;
+/* Responsive Royal Ceremony Section */
+@media (max-width: 600px) {
+    .royal-ceremony-section {
+        padding: 48px 10px 38px;
+    }
+    .royal-ceremony-title {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+    .royal-parents-row {
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+    .royal-parent-name {
+        font-size: 13.5px;
+        line-height: 1.9;
+    }
+    .royal-invitation-block {
+        margin-bottom: 24px;
+        padding: 0 4px;
+    }
+    .royal-invitation-lead {
+        font-size: 14.5px;
+        margin-bottom: 10px;
+    }
+    .royal-invitation-body {
+        font-size: 13.5px;
+        line-height: 2.05;
+    }
+    .royal-couple-row {
+        gap: 6px;
+        margin-bottom: 22px;
+    }
+    .royal-role-tag {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+    .royal-couple-name {
+        font-size: 17px;
+    }
+    .royal-crest-wrap {
+        width: 66px;
+        height: 80px;
+    }
+    .royal-crest-text {
+        font-size: 16px;
+    }
+    .royal-date-block {
+        margin-bottom: 20px;
+    }
+    .royal-date-lead {
+        font-size: 12.5px;
+        margin-bottom: 5px;
+    }
+    .royal-wedding-date {
+        font-size: 16px;
+    }
+    .royal-bottom-flourish {
+        max-width: 190px;
+    }
 }
 
-.couple-latin-name {
-    font-family: var(--font-english-title);
-    font-size: 13px;
-    color: var(--text-secondary);
-    font-style: italic;
+@media (max-width: 380px) {
+    .royal-ceremony-title {
+        font-size: 20px;
+    }
+    .royal-parents-row {
+        gap: 4px;
+    }
+    .royal-parent-name {
+        font-size: 12px;
+    }
+    .royal-couple-name {
+        font-size: 14.5px;
+    }
+    .royal-crest-wrap {
+        width: 58px;
+        height: 70px;
+    }
+    .royal-crest-text {
+        font-size: 14px;
+    }
+    .royal-wedding-date {
+        font-size: 14px;
+    }
 }
 
 /* ========================================================
-   PROGRAM / SCHEDULE TIMELINE
+   MODERN FANCY BOTANICAL SCHEDULE SECTION (កម្មវិធីមង្គលការ)
+   Matches upscale tropical watercolor & Khmer ritual theme
    ======================================================== */
-.schedule-section {
-    background: #fdfbf7;
+.botanical-schedule-section {
+    background: #faf7f0;
+    position: relative;
+    padding-top: 55px;
+    padding-bottom: 60px;
+}
+
+.botanical-card-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 14px;
+}
+
+/* Luxury Framed Showcase Card */
+.botanical-card-frame {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 10px;
+    box-shadow: 
+        0 18px 45px rgba(80, 60, 25, 0.14),
+        0 4px 15px rgba(198, 146, 41, 0.12),
+        inset 0 0 0 1px rgba(198, 146, 41, 0.35);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.botanical-card-frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 24px 55px rgba(80, 60, 25, 0.18),
+        0 6px 20px rgba(198, 146, 41, 0.2),
+        inset 0 0 0 1.5px rgba(198, 146, 41, 0.5);
+}
+
+.botanical-poster-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Action Buttons Bar */
+.schedule-action-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.btn-schedule-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-khmer-body);
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    border: none;
+}
+
+.btn-calendar-action {
+    background: var(--gold-gradient);
+    color: #2b1f0c;
+    box-shadow: var(--shadow-gold);
+}
+
+.btn-calendar-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(198, 146, 41, 0.35);
+}
+
+.btn-zoom-action {
+    background: #ffffff;
+    color: var(--text-primary);
+    border: 1px solid rgba(198, 146, 41, 0.35);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-zoom-action:hover {
+    background: #fbf8f2;
+    border-color: var(--primary-gold);
+    transform: translateY(-2px);
+}
+
+/* Collapsible Details Accordion */
+.schedule-details-accordion {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.btn-details-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px dashed rgba(198, 146, 41, 0.4);
+    padding: 9px 20px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-khmer-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-gold);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-details-toggle:hover {
+    background: rgba(198, 146, 41, 0.08);
+    border-color: var(--primary-gold);
+}
+
+.btn-details-toggle.open .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.timeline-collapse-content {
+    margin-top: 24px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(198, 146, 41, 0.2);
+}
+
+/* Fullscreen Modal Lightbox */
+.poster-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.poster-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 12, 10, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.poster-modal-dialog {
+    position: relative;
+    z-index: 10001;
+    max-width: 92vw;
+    max-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoomModalIn 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes zoomModalIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.poster-modal-image {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.poster-modal-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.poster-modal-close:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: scale(1.1);
 }
 
 .schedule-tabs {

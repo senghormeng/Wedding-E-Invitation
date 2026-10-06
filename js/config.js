@@ -20,8 +20,8 @@ const WEDDING_CONFIG = {
         khmerName: "ម៉េង សេងហ័រ",
         englishName: "MENG Senghor",
         photo: "assets/images/groom.jpg",
-        father: "លោក ម៉េង សេងឡៅ",
-        mother: "លោកស្រី លាង ជ័ង"
+        father: "លោក ម៉េង សេងឡោ",
+        mother: "លោកស្រី លាង គុយជ័ង"
     },
     
     // កូនស្រី / Bride
@@ -29,8 +29,8 @@ const WEDDING_CONFIG = {
         khmerName: "កង ច័ន្ទវិច្ឆិកា",
         englishName: "KORNG Chanvicheka",
         photo: "assets/images/bride.jpg",
-        father: "លោក សៅ វ៉ិធ្វី",
-        mother: "លោកស្រី ហេង រតនី"
+        father: "លោក សៅ វុទ្ធី",
+        mother: "លោកស្រី ហេង រ័ត្មនី"
     },
     
     // សារគោរពអញ្ជើញ / Formal Invitation
@@ -67,7 +67,7 @@ const WEDDING_CONFIG = {
         accountName: "KORNG Chanvicheka",
         accountNumber: "010345664",
         bankName: "ABA BANK / KHQR",
-        qrImage: "assets/images/qr-code.png",
+        qrImage: "assets/images/qr-code.jpg",
         note: "លោកអ្នកក៏អាចផ្ញើចំណងដៃតាមរយៈ QR Code របស់ពួកយើងខាងក្រោម"
     },
     
