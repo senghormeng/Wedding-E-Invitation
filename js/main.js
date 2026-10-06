@@ -150,6 +150,8 @@ function renderDynamicContent() {
         if (gan && cfg.gift.accountName) gan.textContent = cfg.gift.accountName;
         const gnum = document.getElementById('giftAccNumber');
         if (gnum && cfg.gift.accountNumber) gnum.textContent = cfg.gift.accountNumber;
+        const gnumKhr = document.getElementById('giftAccNumberKhr');
+        if (gnumKhr && cfg.gift.accountNumberKhr) gnumKhr.textContent = cfg.gift.accountNumberKhr;
         const gbn = document.getElementById('giftBankName');
         if (gbn && cfg.gift.bankName) gbn.textContent = cfg.gift.bankName;
         const gqr = document.getElementById('giftQrImage');
