@@ -22,8 +22,8 @@
     --maroon-accent: #7c1a24;
     --border-gold: rgba(198, 146, 41, 0.35);
     
-    --font-khmer-title: 'Moul', cursive, serif;
-    --font-khmer-moul: 'Moul', cursive, serif;
+    --font-khmer-title: 'Moulpali', 'Moul', cursive, serif;
+    --font-khmer-moul: 'Moulpali', 'Moul', cursive, serif;
     --font-khmer-moulpali: 'Moulpali', cursive, serif;
     --font-khmer-body: 'Siemreap', 'Kantumruy Pro', 'Battambang', sans-serif;
     --font-english-title: 'Playfair Display', Georgia, serif;
@@ -235,8 +235,10 @@ body.envelope-open {
 .cover-greeting-title {
     font-family: var(--font-khmer-title); /* 'Moul' */
     font-size: clamp(24px, 4.5vw, 36px);
-    margin: 12px 0 0;
-    line-height: 1.4;
+    margin: 8px 0 0;
+    padding-top: 0.35em;
+    padding-bottom: 0.15em;
+    line-height: 1.85;
     text-align: center;
     background: linear-gradient(180deg, #ffffff 0%, #ffeaa7 35%, #e1b952 70%, #996e11 100%);
     -webkit-background-clip: text;
@@ -702,13 +704,17 @@ section {
 
 .section-title {
     font-family: var(--font-khmer-moul);
+    font-weight: normal;
     font-size: 25px;
     color: #7d540d;
     background: linear-gradient(180deg, #996e1b 0%, #644106 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.5;
-    text-shadow: 0 1px 2px rgba(198, 146, 41, 0.2);
+    line-height: 1.85;
+    padding-top: 0.35em;
+    padding-bottom: 0.12em;
+    margin-top: -0.15em;
+    filter: drop-shadow(0 1px 1px rgba(198, 146, 41, 0.25));
 }
 
 
@@ -778,14 +784,18 @@ section {
 
 .hero-ceremony-title {
     font-family: var(--font-khmer-moul);
+    font-weight: normal;
     font-size: 28px;
     color: #8c631b;
     background: linear-gradient(180deg, #aa781f 0%, #7d540d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    line-height: 1.5;
-    margin-bottom: 6px;
-    text-shadow: 0 1px 2px rgba(198, 146, 41, 0.25);
+    line-height: 1.85;
+    padding-top: 0.35em;
+    padding-bottom: 0.12em;
+    margin-top: -0.15em;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 1px 1px rgba(198, 146, 41, 0.25));
 }
 
 .hero-couple-names {
@@ -796,7 +806,10 @@ section {
     background: linear-gradient(180deg, #996e1b 0%, #644106 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 10px 0 15px;
+    line-height: 1.85;
+    padding-top: 0.3em;
+    padding-bottom: 0.15em;
+    margin: 6px 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -987,15 +1000,19 @@ section {
 /* Grand Ceremony Header - Moul Font with 3D Embossed Gold */
 .royal-ceremony-title {
     font-family: var(--font-khmer-moul);
+    font-weight: normal;
     font-size: 33px;
-    line-height: 1.45;
+    line-height: 1.85;
     letter-spacing: 0.5px;
+    padding-top: 0.35em;
+    padding-bottom: 0.15em;
+    margin-top: -0.15em;
     color: #fce588;
     background: linear-gradient(180deg, #fffbeb 0%, #fad96b 35%, #dfb23e 70%, #9e7215 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 12px rgba(247, 213, 102, 0.45));
-    margin: 0 auto 32px;
+    margin-bottom: 28px;
     text-align: center;
 }
 
@@ -1098,7 +1115,10 @@ section {
 .royal-couple-name {
     font-family: var(--font-khmer-moulpali);
     font-size: 26px;
-    line-height: 1.45;
+    line-height: 1.85;
+    padding-top: 0.3em;
+    padding-bottom: 0.15em;
+    margin-top: -0.1em;
     color: #fce588;
     background: linear-gradient(180deg, #fffcee 0%, #fad96b 35%, #dfb23e 70%, #9e7215 100%);
     -webkit-background-clip: text;
