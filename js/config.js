@@ -65,11 +65,12 @@ const WEDDING_CONFIG = {
     // ចំណងដៃ / Wedding Gift Info
     gift: {
         accountName: "KORNG Chanvicheka",
-        accountNumber: "010345664",
+        accountNumber: "019 547 742",
         bankName: "ABA BANK / KHQR",
         qrImage: "assets/images/qr-code.jpg",
         note: "លោកអ្នកក៏អាចផ្ញើចំណងដៃតាមរយៈ QR Code របស់ពួកយើងខាងក្រោម"
     },
+
     
     // តន្ត្រីកំដរ / Background Music
     bgMusic: {
