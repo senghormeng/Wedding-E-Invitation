@@ -112,7 +112,11 @@ const WEDDING_CONFIG = {
         bridePhone: "069 275 710",
         telegramUsername: "MSENGHOR", // Username for sending RSVP message
         telegramQr: "assets/images/telegram-qr.png"
-    }
+    },
+    
+    // Cloud Guestbook API (Google Sheet Web App URL)
+    // រក្សាទុកពាក្យជូនពរពីភ្ញៀវទាំងអស់ចូល Google Sheet ក្នុង Drive
+    wishesApiUrl: "https://script.google.com/macros/s/AKfycbzuvYV-_1HCfLaIR8s0HZavpaCLiLHYABHHP2VYxvuID12QdTB8F3THR17VNIV1BnhHlg/exec"
 };
 
 // Export to window

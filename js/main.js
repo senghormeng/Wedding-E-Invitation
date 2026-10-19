@@ -956,7 +956,14 @@ function initGuestbook() {
         });
     });
     
-    // Load wishes from LocalStorage (empty initially, ready for real guests)
+    let cfg = window.WEDDING_CONFIG || {};
+    const localCustom = localStorage.getItem('wedding_custom_config');
+    if (localCustom) {
+        try { cfg = Object.assign({}, cfg, JSON.parse(localCustom)); } catch(err) {}
+    }
+    const apiUrl = cfg.wishesApiUrl && cfg.wishesApiUrl.trim() !== '' ? cfg.wishesApiUrl.trim() : null;
+
+    // Load wishes from LocalStorage first for instant rendering
     let wishes = [];
     try {
         const stored = localStorage.getItem(WISHES_STORAGE_KEY);
@@ -966,8 +973,25 @@ function initGuestbook() {
     } catch (e) {
         wishes = [];
     }
-    
     renderWishes(wishes);
+
+    // If Cloud API (e.g. Google Sheet Web App) is configured, fetch live wishes from cloud
+    if (apiUrl) {
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(cloudWishes => {
+                if (Array.isArray(cloudWishes)) {
+                    wishes = cloudWishes;
+                    try {
+                        localStorage.setItem(WISHES_STORAGE_KEY, JSON.stringify(wishes));
+                    } catch(e) {}
+                    renderWishes(wishes);
+                }
+            })
+            .catch(err => {
+                console.log('Cloud wishes fetch error (using local cache):', err);
+            });
+    }
     
     // Submit new wish
     if (form) {
@@ -989,14 +1013,26 @@ function initGuestbook() {
                 message: msg
             };
             
+            // 1. Instant local update for fast responsiveness
             wishes.unshift(newWish);
             try {
                 localStorage.setItem(WISHES_STORAGE_KEY, JSON.stringify(wishes));
             } catch (err) {}
-            
             renderWishes(wishes);
             if (form) form.reset();
             showToast('អរគុណច្រើនចំពោះពាក្យជូនពរដ៏មានអត្ថន័យ! ❤️');
+
+            // 2. Sync to Cloud (Google Sheets Web App)
+            if (apiUrl) {
+                fetch(apiUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ name: name, message: msg })
+                }).catch(err => {
+                    console.error('Failed to sync wish to cloud:', err);
+                });
+            }
         });
     }
 }

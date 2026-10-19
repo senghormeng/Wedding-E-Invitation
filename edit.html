@@ -297,6 +297,18 @@
                 </div>
             </div>
 
+            <!-- Cloud Guestbook (Google Sheets) -->
+            <div class="section-box">
+                <h3>💌 ពាក្យជូនពរលើ Cloud (Google Sheet API)</h3>
+                <div class="form-group">
+                    <label>Google Apps Script Web App URL (រក្សាទុកពាក្យជូនពរពីភ្ញៀវគ្រប់គ្នា) ៖</label>
+                    <input type="url" id="wishesApiUrl" class="form-control" placeholder="https://script.google.com/macros/s/.../exec">
+                    <small style="color: #666; font-size: 12px; display: block; margin-top: 5px; line-height: 1.5;">
+                        បិទភ្ជាប់ Google Web App URL នៅទីនេះ ដើម្បីរក្សាទុកពាក្យជូនពរដែលភ្ញៀវសរសេរលើ GitHub ចូលទៅក្នុង Google Sheet ក្នុង Drive របស់អ្នក។
+                    </small>
+                </div>
+            </div>
+
             <!-- សកម្មភាព -->
             <div class="actions-box">
                 <button type="button" id="btnSaveAndPreview" class="btn btn-save">
@@ -366,6 +378,10 @@
             if (data.contact) {
                 document.getElementById('telegramUsername').value = data.contact.telegramUsername || '';
             }
+
+            if (data.wishesApiUrl) {
+                document.getElementById('wishesApiUrl').value = data.wishesApiUrl || '';
+            }
         });
 
         function collectFormData() {
@@ -406,7 +422,8 @@
                 },
                 contact: {
                     telegramUsername: document.getElementById('telegramUsername').value.trim()
-                }
+                },
+                wishesApiUrl: document.getElementById('wishesApiUrl').value.trim()
             };
         }
 
