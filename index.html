@@ -278,7 +278,7 @@
                     <!-- Bride Parents (Right) -->
                     <div class="royal-parents-col bride-parents-col">
                         <div id="brideFatherName" class="royal-parent-name">លោក សៅ វុទ្ធី</div>
-                        <div id="brideMotherName" class="royal-parent-name">លោកស្រី ហេង រ័ត្មនី</div>
+                        <div id="brideMotherName" class="royal-parent-name">លោកស្រី ហេង រ័ត្ននី</div>
                     </div>
                 </div>
 
@@ -642,91 +642,185 @@
              SECTION 5: PHOTO GALLERY
              ==================================================== -->
         <section id="gallery" class="gallery-section">
-            <div class="section-header">
-                <span class="section-tag">អនុស្សាវរីយ៍ស្នេហ៍</span>
-                <h2 class="section-title">វិចិត្រសាលរូបថត</h2>
+            <!-- Ornate Golden Photo Frame -->
+            <div class="gallery-photo-frame">
+                <div class="frame-header">
+                    <span class="section-tag">អនុស្សាវរីយ៍ស្នេហ៍</span>
+                    <h2 class="section-title">វិចិត្រសាលរូបថត</h2>
+                </div>
+
+                <!-- Gallery Slideshow Container (3x3 Grid per Slide) -->
+                <div class="gallery-carousel-wrapper">
+                <div class="gallery-slider-viewport" id="gallerySliderViewport">
+                    <div class="gallery-slider-track" id="gallerySliderTrack">
+                        
+                        <!-- Slide 1: Photos 1 to 9 (3x3) -->
+                        <div class="gallery-slide" data-slide="0">
+                            <div class="gallery-grid">
+                                <div class="gallery-item" data-index="0" data-full="assets/images/gallery-1.jpg">
+                                    <img src="assets/images/gallery-1.jpg" alt="Wedding Photo 1" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="1" data-full="assets/images/gallery-2.jpg">
+                                    <img src="assets/images/gallery-2.jpg" alt="Wedding Photo 2" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="2" data-full="assets/images/gallery-3.jpg">
+                                    <img src="assets/images/gallery-3.jpg" alt="Wedding Photo 3" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="3" data-full="assets/images/gallery-4.jpg">
+                                    <img src="assets/images/gallery-4.jpg" alt="Wedding Photo 4" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="4" data-full="assets/images/gallery-5.jpg">
+                                    <img src="assets/images/gallery-5.jpg" alt="Wedding Photo 5" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="5" data-full="assets/images/gallery-6.jpg">
+                                    <img src="assets/images/gallery-6.jpg" alt="Wedding Photo 6" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="6" data-full="assets/images/gallery-7.jpg">
+                                    <img src="assets/images/gallery-7.jpg" alt="Wedding Photo 7" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="7" data-full="assets/images/gallery-8.jpg">
+                                    <img src="assets/images/gallery-8.jpg" alt="Wedding Photo 8" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="8" data-full="assets/images/gallery-9.jpg">
+                                    <img src="assets/images/gallery-9.jpg" alt="Wedding Photo 9" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Photos 10 to 18 (3x3) -->
+                        <div class="gallery-slide" data-slide="1">
+                            <div class="gallery-grid">
+                                <div class="gallery-item" data-index="9" data-full="assets/images/gallery-10.jpg">
+                                    <img src="assets/images/gallery-10.jpg" alt="Wedding Photo 10" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="10" data-full="assets/images/gallery-11.jpg">
+                                    <img src="assets/images/gallery-11.jpg" alt="Wedding Photo 11" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="11" data-full="assets/images/gallery-12.jpg">
+                                    <img src="assets/images/gallery-12.jpg" alt="Wedding Photo 12" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="12" data-full="assets/images/gallery-13.jpg">
+                                    <img src="assets/images/gallery-13.jpg" alt="Wedding Photo 13" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="13" data-full="assets/images/gallery-14.jpg">
+                                    <img src="assets/images/gallery-14.jpg" alt="Wedding Photo 14" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="14" data-full="assets/images/gallery-15.jpg">
+                                    <img src="assets/images/gallery-15.jpg" alt="Wedding Photo 15" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="15" data-full="assets/images/gallery-16.jpg">
+                                    <img src="assets/images/gallery-16.jpg" alt="Wedding Photo 16" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="16" data-full="assets/images/gallery-17.jpg">
+                                    <img src="assets/images/gallery-17.jpg" alt="Wedding Photo 17" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="17" data-full="assets/images/gallery-18.jpg">
+                                    <img src="assets/images/gallery-18.jpg" alt="Wedding Photo 18" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Photos 12 to 20 (3x3 - Modern gowns & Chinese Ceremony) -->
+                        <div class="gallery-slide" data-slide="2">
+                            <div class="gallery-grid">
+                                <div class="gallery-item" data-index="11" data-full="assets/images/gallery-12.jpg">
+                                    <img src="assets/images/gallery-12.jpg" alt="Wedding Photo 12" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="12" data-full="assets/images/gallery-13.jpg">
+                                    <img src="assets/images/gallery-13.jpg" alt="Wedding Photo 13" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="13" data-full="assets/images/gallery-14.jpg">
+                                    <img src="assets/images/gallery-14.jpg" alt="Wedding Photo 14" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="14" data-full="assets/images/gallery-15.jpg">
+                                    <img src="assets/images/gallery-15.jpg" alt="Wedding Photo 15" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="15" data-full="assets/images/gallery-16.jpg">
+                                    <img src="assets/images/gallery-16.jpg" alt="Wedding Photo 16" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="16" data-full="assets/images/gallery-17.jpg">
+                                    <img src="assets/images/gallery-17.jpg" alt="Wedding Photo 17" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="17" data-full="assets/images/gallery-18.jpg">
+                                    <img src="assets/images/gallery-18.jpg" alt="Wedding Photo 18" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="18" data-full="assets/images/gallery-19.jpg">
+                                    <img src="assets/images/gallery-19.jpg" alt="Wedding Photo 19" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                                <div class="gallery-item" data-index="19" data-full="assets/images/gallery-20.jpg">
+                                    <img src="assets/images/gallery-20.jpg" alt="Wedding Photo 20" loading="lazy">
+                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slideshow Navigation Controls -->
+                <div class="gallery-controls">
+                    <button id="galleryPrevBtn" class="gallery-nav-btn prev-btn" aria-label="Previous Slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    
+                    <div class="gallery-dots" id="galleryDots">
+                        <button class="gallery-dot active" data-index="0" aria-label="Slide 1"></button>
+                        <button class="gallery-dot" data-index="1" aria-label="Slide 2"></button>
+                        <button class="gallery-dot" data-index="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <button id="galleryNextBtn" class="gallery-nav-btn next-btn" aria-label="Next Slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                
+                <div class="gallery-page-counter" id="galleryPageCounter">
+                    ទំព័រ <span id="currentSlideNum">១</span> / <span id="totalSlideNum">៣</span>
+                </div>
             </div>
-
-            <!-- Photo Grid -->
-            <div class="gallery-grid">
-                <div class="gallery-item" data-full="assets/images/gallery-1.jpg">
-                    <img src="assets/images/gallery-1.jpg" alt="Wedding Photo 1" loading="lazy">
-                    <div class="gallery-overlay">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-full="assets/images/gallery-2.jpg">
-                    <img src="assets/images/gallery-2.jpg" alt="Wedding Photo 2" loading="lazy">
-                    <div class="gallery-overlay">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-full="assets/images/gallery-3.jpg">
-                    <img src="assets/images/gallery-3.jpg" alt="Wedding Photo 3" loading="lazy">
-                    <div class="gallery-overlay">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-full="assets/images/gallery-4.jpg">
-                    <img src="assets/images/gallery-4.jpg" alt="Wedding Photo 4" loading="lazy">
-                    <div class="gallery-overlay">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-full="assets/images/gallery-5.jpg">
-                    <img src="assets/images/gallery-5.jpg" alt="Wedding Photo 5" loading="lazy">
-                    <div class="gallery-overlay">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-full="assets/images/gallery-6.jpg">
-                    <img src="assets/images/gallery-6.jpg" alt="Wedding Photo 6" loading="lazy">
-                    <div class="gallery-overlay">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Lightbox Modal -->
+        <!-- Lightbox Modal with Slideshow & Navigation -->
         <div id="galleryLightbox" class="lightbox-modal">
-            <button id="lightboxClose" class="lightbox-close-btn">&times;</button>
-            <img id="lightboxImg" class="lightbox-content" src="" alt="Full view">
+            <button id="lightboxClose" class="lightbox-close-btn" aria-label="Close">&times;</button>
+            <button id="lightboxPrev" class="lightbox-nav-btn lightbox-prev-btn" aria-label="Previous Photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button id="lightboxNext" class="lightbox-nav-btn lightbox-next-btn" aria-label="Next Photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="lightbox-content-box">
+                <img id="lightboxImg" class="lightbox-content" src="" alt="Full view">
+                <div id="lightboxCaption" class="lightbox-caption"></div>
+                <div id="lightboxCounter" class="lightbox-counter">១ / ២០</div>
+            </div>
         </div>
 
         <!-- Traditional Divider -->

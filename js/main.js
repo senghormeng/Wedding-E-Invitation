@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAudioController();
     initCopyActions();
     initGalleryLightbox();
+    initGallerySlideshow();
     initGuestbook();
     initRsvpForm();
     initCalendarEvent();
@@ -692,35 +693,240 @@ function showToast(message) {
 }
 
 /* ========================================================
-   7. PHOTO GALLERY LIGHTBOX
+   7. PHOTO GALLERY (3x3 SLIDESHOW & LIGHTBOX)
    ======================================================== */
+const KHMER_DIGITS = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'];
+function toKhmerNumber(num) {
+    return String(num).split('').map(d => KHMER_DIGITS[d] !== undefined ? KHMER_DIGITS[d] : d).join('');
+}
+
+function initGallerySlideshow() {
+    const track = document.getElementById('gallerySliderTrack');
+    const viewport = document.getElementById('gallerySliderViewport');
+    const slides = document.querySelectorAll('.gallery-slide');
+    const dots = document.querySelectorAll('.gallery-dot');
+    const prevBtn = document.getElementById('galleryPrevBtn');
+    const nextBtn = document.getElementById('galleryNextBtn');
+    const currentNumSpan = document.getElementById('currentSlideNum');
+    const totalNumSpan = document.getElementById('totalSlideNum');
+
+    if (!track || slides.length === 0) return;
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoSlideTimer = null;
+
+    if (totalNumSpan) {
+        totalNumSpan.textContent = toKhmerNumber(totalSlides);
+    }
+
+    function goToSlide(index) {
+        currentSlide = (index + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentSlide);
+        });
+
+        if (currentNumSpan) {
+            currentNumSpan.textContent = toKhmerNumber(currentSlide + 1);
+        }
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideTimer = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5500);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideTimer) {
+            clearInterval(autoSlideTimer);
+            autoSlideTimer = null;
+        }
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(currentSlide - 1);
+            startAutoSlide();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(currentSlide + 1);
+            startAutoSlide();
+        });
+    }
+
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
+            goToSlide(idx);
+            startAutoSlide();
+        });
+    });
+
+    // Touch Swipe Support on mobile
+    if (viewport) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let isSwiping = false;
+
+        viewport.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            isSwiping = true;
+            stopAutoSlide();
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+            isSwiping = false;
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+
+            // Horizontal swipe
+            if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX < 0) {
+                    goToSlide(currentSlide + 1); // Swipe left -> Next
+                } else {
+                    goToSlide(currentSlide - 1); // Swipe right -> Prev
+                }
+            }
+            startAutoSlide();
+        }, { passive: true });
+
+        // Pause on mouse hover for desktop
+        viewport.addEventListener('mouseenter', stopAutoSlide);
+        viewport.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    // Check URL param for initial slide (e.g. for previews/testing)
+    const urlSlide = parseInt(new URLSearchParams(window.location.search).get('slide'), 10);
+    if (!isNaN(urlSlide)) {
+        goToSlide(urlSlide);
+    }
+
+    // Start auto slide
+    startAutoSlide();
+}
+
 function initGalleryLightbox() {
     const items = document.querySelectorAll('.gallery-item');
     const modal = document.getElementById('galleryLightbox');
     const modalImg = document.getElementById('lightboxImg');
     const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lightboxPrev');
+    const nextBtn = document.getElementById('lightboxNext');
+    const counterEl = document.getElementById('lightboxCounter');
+    const captionEl = document.getElementById('lightboxCaption');
     
     if (!modal || !modalImg) return;
-    
+
+    // Master list of 20 images from WEDDING_CONFIG or fallback
+    const galleryList = (window.WEDDING_CONFIG && window.WEDDING_CONFIG.media && window.WEDDING_CONFIG.media.galleryImages) || [];
+    let currentImageIndex = 0;
+
+    function renderLightboxImage(idx) {
+        if (galleryList.length === 0) return;
+        currentImageIndex = (idx + galleryList.length) % galleryList.length;
+        const currentItem = galleryList[currentImageIndex];
+        
+        modalImg.style.opacity = '0.3';
+        modalImg.src = currentItem.src;
+        modalImg.onload = () => {
+            modalImg.style.opacity = '1';
+        };
+
+        if (captionEl) {
+            captionEl.textContent = currentItem.caption || '';
+        }
+        if (counterEl) {
+            counterEl.textContent = `${toKhmerNumber(currentImageIndex + 1)} / ${toKhmerNumber(galleryList.length)}`;
+        }
+    }
+
     items.forEach(item => {
-        item.addEventListener('click', () => {
-            const src = item.getAttribute('data-full') || item.querySelector('img').src;
-            modalImg.src = src;
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idxAttr = item.getAttribute('data-index');
+            let idx = idxAttr !== null ? parseInt(idxAttr, 10) : 0;
+            renderLightboxImage(idx);
             modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
     });
-    
+
+    function closeLightbox() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
     if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
         });
     }
-    
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderLightboxImage(currentImageIndex - 1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderLightboxImage(currentImageIndex + 1);
+        });
+    }
+
+    // Close on backdrop tap
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
+        if (e.target === modal || e.target.classList.contains('lightbox-content-box')) {
+            closeLightbox();
         }
     });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') renderLightboxImage(currentImageIndex + 1);
+        if (e.key === 'ArrowLeft') renderLightboxImage(currentImageIndex - 1);
+    });
+
+    // Touch swipe support in lightbox
+    let lbTouchStartX = 0;
+    let lbTouchStartY = 0;
+    modal.addEventListener('touchstart', (e) => {
+        lbTouchStartX = e.touches[0].clientX;
+        lbTouchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+        const lbTouchEndX = e.changedTouches[0].clientX;
+        const lbTouchEndY = e.changedTouches[0].clientY;
+        const diffX = lbTouchEndX - lbTouchStartX;
+        const diffY = lbTouchEndY - lbTouchStartY;
+
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX < 0) {
+                renderLightboxImage(currentImageIndex + 1);
+            } else {
+                renderLightboxImage(currentImageIndex - 1);
+            }
+        }
+    }, { passive: true });
 }
 
 /* ========================================================
@@ -870,7 +1076,7 @@ function initRsvpForm() {
             `សូមអរគុណ!`
         );
         
-        const username = (cfg.contact && cfg.contact.telegramUsername) || 'Senghor_Vicheka_wedding';
+        const username = (cfg.contact && cfg.contact.telegramUsername) || 'MSENGHOR';
         const tgUrl = `https://t.me/${username}?text=${text}`;
         
         window.open(tgUrl, '_blank');

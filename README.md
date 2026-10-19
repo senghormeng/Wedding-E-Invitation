@@ -40,7 +40,7 @@ d:\E-INVITATION/
     │   ├── bride.jpg
     │   ├── couple-cover.jpg
     │   ├── qr-code.png
-    │   └── gallery-1..6.jpg
+    │   └── gallery-1..20.jpg
     └── audio/              # ឯកសារតន្ត្រីបន្ថែម (ជាជម្រើស)
 ```
 
