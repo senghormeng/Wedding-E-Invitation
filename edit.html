@@ -263,19 +263,21 @@
                 <h3>🎁 ព័ត៌មានចំណងដៃ &amp; ធនាគារ</h3>
                 <div class="form-group">
                     <label>ឈ្មោះគណនី ៖</label>
-                    <input type="text" id="giftAccountName" class="form-control" value="MENG SENGHOR AND KANG CHANVICHEKA">
-
+                    <input type="text" id="giftAccountName" class="form-control" value="CHANVICHEKA KANG">
                 </div>
                 <div class="row-2">
                     <div class="form-group">
-                        <label>លេខគណនី ៖</label>
+                        <label>លេខគណនី (USD) ៖</label>
                         <input type="text" id="giftAccountNumber" class="form-control" value="019 547 742">
-
                     </div>
                     <div class="form-group">
-                        <label>ធនាគារ ៖</label>
-                        <input type="text" id="giftBankName" class="form-control" value="ABA Bank">
+                        <label>លេខគណនី (KHR) ៖</label>
+                        <input type="text" id="giftAccountNumberKhr" class="form-control" value="019 866 424">
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>ធនាគារ ៖</label>
+                    <input type="text" id="giftBankName" class="form-control" value="ABA Bank">
                 </div>
             </div>
 
@@ -368,6 +370,9 @@
             if (data.gift) {
                 document.getElementById('giftAccountName').value = data.gift.accountName || '';
                 document.getElementById('giftAccountNumber').value = data.gift.accountNumber || '';
+                if (document.getElementById('giftAccountNumberKhr')) {
+                    document.getElementById('giftAccountNumberKhr').value = data.gift.accountNumberKhr || '';
+                }
                 document.getElementById('giftBankName').value = data.gift.bankName || '';
             }
 
@@ -413,8 +418,9 @@
                 gift: {
                     accountName: document.getElementById('giftAccountName').value.trim(),
                     accountNumber: document.getElementById('giftAccountNumber').value.trim(),
+                    accountNumberKhr: document.getElementById('giftAccountNumberKhr') ? document.getElementById('giftAccountNumberKhr').value.trim() : '019 866 424',
                     bankName: document.getElementById('giftBankName').value.trim(),
-                    qrImage: "assets/images/qr-code.jpg"
+                    qrImage: "assets/images/qr-code.png"
                 },
                 bgMusic: {
                     title: document.getElementById('bgMusicTitle').value.trim(),

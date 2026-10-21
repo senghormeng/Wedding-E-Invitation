@@ -33,125 +33,46 @@
         <!-- Ambient Vignette & Warm Lighting -->
         <div class="cover-overlay-vignette"></div>
 
-        <!-- Top Area: Royal Khmer Crest & Greeting -->
+        <!-- Top Area: Wedding Title & Couple Names (Moved to Upper) -->
         <div class="cover-top-content">
-            <!-- Golden Monogram Crest Emblem -->
-            <div class="cover-crest">
-                <div class="crest-frame">
-                    <svg class="crest-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="crestGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#fff8db"/>
-                                <stop offset="25%" stop-color="#e5c05c"/>
-                                <stop offset="50%" stop-color="#a47514"/>
-                                <stop offset="75%" stop-color="#f8dc81"/>
-                                <stop offset="100%" stop-color="#7a4f08"/>
-                            </linearGradient>
-                            <filter id="crestGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(0,0,0,0.5)"/>
-                                <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="rgba(212,175,55,0.4)"/>
-                            </filter>
-                        </defs>
-                        <g filter="url(#crestGlow)">
-                            <!-- Top Flame Crown -->
-                            <path d="M80 5 C75 14 73 21 80 27 C87 21 85 14 80 5Z" fill="url(#crestGoldGrad)"/>
-                            <circle cx="80" cy="3.5" r="2.5" fill="#fffbe8"/>
-                            <!-- Bottom Flame Tip -->
-                            <path d="M80 155 C75 146 73 139 80 133 C87 139 85 146 80 155Z" fill="url(#crestGoldGrad)"/>
-                            <circle cx="80" cy="156.5" r="2.5" fill="#fffbe8"/>
-                            <!-- Left Flame Tip -->
-                            <path d="M5 80 C14 75 21 73 27 80 C21 87 14 85 5 80Z" fill="url(#crestGoldGrad)"/>
-                            <circle cx="3.5" cy="80" r="2.5" fill="#fffbe8"/>
-                            <!-- Right Flame Tip -->
-                            <path d="M155 80 C146 75 139 73 133 80 C139 87 146 85 155 80Z" fill="url(#crestGoldGrad)"/>
-                            <circle cx="156.5" cy="80" r="2.5" fill="#fffbe8"/>
-                            <!-- Diagonal Leaf Scrolls -->
-                            <path d="M27 27 C34 34 39 37 38 44 C31 43 28 37 27 27Z" fill="url(#crestGoldGrad)"/>
-                            <path d="M133 27 C126 34 121 37 122 44 C129 43 132 37 133 27Z" fill="url(#crestGoldGrad)"/>
-                            <path d="M27 133 C34 126 39 123 38 116 C31 117 28 123 27 133Z" fill="url(#crestGoldGrad)"/>
-                            <path d="M133 133 C126 126 121 123 122 116 C129 117 132 123 133 133Z" fill="url(#crestGoldGrad)"/>
-                            <!-- Outer Beaded Ring -->
-                            <circle cx="80" cy="80" r="58" stroke="url(#crestGoldGrad)" stroke-width="1.8" stroke-dasharray="2 6" stroke-linecap="round"/>
-                            <!-- Middle Filigree Ring -->
-                            <circle cx="80" cy="80" r="51" stroke="url(#crestGoldGrad)" stroke-width="1.6"/>
-                            <!-- Inner Fine Ring -->
-                            <circle cx="80" cy="80" r="44" stroke="url(#crestGoldGrad)" stroke-width="1" stroke-dasharray="1 3"/>
-                            <!-- Center Disc Tint -->
-                            <circle cx="80" cy="80" r="42" fill="rgba(255, 248, 235, 0.18)" stroke="url(#crestGoldGrad)" stroke-width="0.8"/>
-                        </g>
-                    </svg>
-                    <div class="crest-monogram-inner">
-                        <span id="sealMonogramText" class="crest-monogram-text">ស វ</span>
-                    </div>
-                </div>
-            </div>
+            <!-- Hidden fallback for script safety -->
+            <span id="sealMonogramText" style="display:none;" aria-hidden="true">ស វ</span>
 
-            <!-- Greeting Text -->
-            <h1 id="coverGreetingTitle" class="cover-greeting-title">សូមគោរពអញ្ជើញ</h1>
-
-            <!-- Personalized Guest Box (Appears when ?to=... is in URL) -->
-            <div id="guestCardBox" class="cover-guest-box" style="display: none;">
-                <span class="cover-guest-label">សូមគោរពអញ្ជើញ</span>
-                <span id="guestNameText" class="cover-guest-name">ភ្ញៀវកិត្តិយសដ៏ខ្ពង់ខ្ពស់</span>
+            <!-- WEDDING TITLE & COUPLE NAMES -->
+            <div class="cover-wedding-header">
+                <h2 class="cover-wedding-title">សិរីសួស្តីមង្គលអាពាហ៍ពិពាហ៍</h2>
+                <h1 class="cover-couple-names">សេងហ័រ <span class="cover-heart">❤️</span> វិច្ឆិកា</h1>
             </div>
         </div>
 
-        <!-- Center Area: Action Button with Kbach Flourishes -->
+        <!-- Middle Area: Greeting & Guest Box -->
         <div class="cover-center-content">
+            <div class="cover-invitation-greeting">
+                <h3 id="coverGreetingTitle" class="cover-greeting-title">សូមគោរពអញ្ជើញ</h3>
+
+                <!-- Personalized Guest Box (Appears when ?to=... is in URL) -->
+                <div id="guestCardBox" class="cover-guest-box" style="display: none;">
+                    <span id="guestNameText" class="cover-guest-name">ភ្ញៀវកិត្តិយសដ៏ខ្ពង់ខ្ពស់</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Area: Action Button with Kbach Flourishes (Moved Down) -->
+        <div class="cover-bottom-content">
             <div class="cover-action-wrapper">
-                <!-- Top Flourish -->
+                <!-- Top Flourish (Baroque Gold Scroll with Bar) -->
                 <div class="cover-flourish flourish-top">
-                    <svg viewBox="0 0 240 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="flourishGoldTop" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="rgba(212, 175, 55, 0.15)"/>
-                                <stop offset="25%" stop-color="#dfb74b"/>
-                                <stop offset="50%" stop-color="#fff2c6"/>
-                                <stop offset="75%" stop-color="#dfb74b"/>
-                                <stop offset="100%" stop-color="rgba(212, 175, 55, 0.15)"/>
-                            </linearGradient>
-                        </defs>
-                        <path d="M120 2L124 9L120 16L116 9Z" fill="url(#flourishGoldTop)"/>
-                        <circle cx="120" cy="9" r="1.5" fill="#fff9e6"/>
-                        <path d="M113 9H52C42 9 34 4 24 8C18 10 12 7 6 5" stroke="url(#flourishGoldTop)" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M6 5C3 3 6 1 8 2C11 3 9 7 6 7C3 7 1 4 3 2" stroke="url(#flourishGoldTop)" stroke-width="1.4" stroke-linecap="round"/>
-                        <circle cx="52" cy="9" r="2.2" fill="url(#flourishGoldTop)"/>
-                        <circle cx="84" cy="9" r="1.8" fill="url(#flourishGoldTop)"/>
-                        <path d="M127 9H188C198 9 206 4 216 8C222 10 228 7 234 5" stroke="url(#flourishGoldTop)" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M234 5C237 3 234 1 232 2C229 3 231 7 234 7C237 7 239 4 237 2" stroke="url(#flourishGoldTop)" stroke-width="1.4" stroke-linecap="round"/>
-                        <circle cx="188" cy="9" r="2.2" fill="url(#flourishGoldTop)"/>
-                        <circle cx="156" cy="9" r="1.8" fill="url(#flourishGoldTop)"/>
-                    </svg>
+                    <img src="assets/images/cover-flourish-top.png" alt="Flourish Top" class="cover-flourish-img">
                 </div>
 
-                <!-- Open Invitation Button -->
-                <button id="btnOpenEnvelope" class="btn-cover-open" type="button" aria-label="សូមចុចដើម្បីបើកសំបុត្រ">
-                    <span>សូមចុចដើម្បីបើកសំបុត្រ</span>
+                <!-- Open Invitation Button (Redesigned to Match Reference Exactly) -->
+                <button id="btnOpenEnvelope" class="btn-cover-open" type="button" aria-label="សូមចុចដើម្បីបើកមើល">
+                    <span>សូមចុចដើម្បីបើកមើល</span>
                 </button>
 
-                <!-- Bottom Flourish (Mirrored) -->
+                <!-- Bottom Flourish (Inverted Baroque Gold Scroll with Bar) -->
                 <div class="cover-flourish flourish-bottom">
-                    <svg viewBox="0 0 240 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="flourishGoldBtm" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="rgba(212, 175, 55, 0.15)"/>
-                                <stop offset="25%" stop-color="#dfb74b"/>
-                                <stop offset="50%" stop-color="#fff2c6"/>
-                                <stop offset="75%" stop-color="#dfb74b"/>
-                                <stop offset="100%" stop-color="rgba(212, 175, 55, 0.15)"/>
-                            </linearGradient>
-                        </defs>
-                        <path d="M120 2L124 9L120 16L116 9Z" fill="url(#flourishGoldBtm)"/>
-                        <circle cx="120" cy="9" r="1.5" fill="#fff9e6"/>
-                        <path d="M113 9H52C42 9 34 4 24 8C18 10 12 7 6 5" stroke="url(#flourishGoldBtm)" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M6 5C3 3 6 1 8 2C11 3 9 7 6 7C3 7 1 4 3 2" stroke="url(#flourishGoldBtm)" stroke-width="1.4" stroke-linecap="round"/>
-                        <circle cx="52" cy="9" r="2.2" fill="url(#flourishGoldBtm)"/>
-                        <circle cx="84" cy="9" r="1.8" fill="url(#flourishGoldBtm)"/>
-                        <path d="M127 9H188C198 9 206 4 216 8C222 10 228 7 234 5" stroke="url(#flourishGoldBtm)" stroke-width="1.8" stroke-linecap="round"/>
-                        <path d="M234 5C237 3 234 1 232 2C229 3 231 7 234 7C237 7 239 4 237 2" stroke="url(#flourishGoldBtm)" stroke-width="1.4" stroke-linecap="round"/>
-                        <circle cx="188" cy="9" r="2.2" fill="url(#flourishGoldBtm)"/>
-                        <circle cx="156" cy="9" r="1.8" fill="url(#flourishGoldBtm)"/>
-                    </svg>
+                    <img src="assets/images/cover-flourish-bottom.png" alt="Flourish Bottom" class="cover-flourish-img">
                 </div>
             </div>
         </div>
@@ -162,7 +83,7 @@
          ======================================================== -->
     <button id="musicToggleBtn" class="music-toggle-btn" aria-label="Play/Pause Background Music">
         <div class="music-disc"></div>
-        <span id="musicTooltipText" class="music-tooltip">តន្ត្រីកំដរ៖ ជំហានទី ១ (First Step)</span>
+        <span id="musicTooltipText" class="music-tooltip">ចម្រៀងមង្គលការ៖ ជំហានដំបូង (First Step)</span>
     </button>
     <audio id="bgAudioElement" preload="auto" loop playsinline>
         <source src="assets/audio/wedding-song.mp3" type="audio/mpeg">
@@ -170,104 +91,21 @@
     </audio>
 
     <!-- ========================================================
-         MAIN INVITATION CONTAINER
+         MAIN INVITATION CONTENT (Scrollable after Opening)
          ======================================================== -->
-    <div class="page-container">
+    <div id="mainContent" class="page-container main-content">
 
         <!-- ====================================================
-             SECTION 1: HERO & COVER
-             ==================================================== -->
-        <section id="home" class="hero-section">
-            <div class="hero-arch-frame">
-                <!-- Golden Emblem -->
-                <div class="hero-logo-box">
-                    <div class="golden-emblem">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <span class="section-tag">សិរីសួស្ដីពិធីមង្គលការ</span>
-                <h1 id="heroCeremonyTitle" class="hero-ceremony-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
-
-                <!-- Couple Names -->
-                <div id="heroCoupleNames" class="hero-couple-names">
-                    <span id="heroGroomName">សេងហ័រ</span>
-                    <span class="heart-icon">❤️</span>
-                    <span id="heroBrideName">វិច្ឆិកា</span>
-                </div>
-
-                <!-- Cover Image -->
-                <div class="hero-cover-image">
-                    <img id="heroCoverImg" src="assets/images/couple-cover.jpg" alt="Wedding Cover">
-                </div>
-
-                <!-- Date Banner -->
-                <div class="hero-date-banner">
-                    <span id="heroDateKhmer" class="hero-date-khmer">ថ្ងៃអាទិត្យ ទី ២២ ខែវិច្ឆិកា ឆ្នាំ២០២៦</span>
-                    <span id="heroDateEnglish" class="hero-date-english">Sunday, November 22, 2026</span>
-                </div>
-
-                <!-- Countdown Timer -->
-                <div class="countdown-container">
-                    <div class="countdown-label">
-                        <span>💍 រាប់ថយក្រោយទៅកាន់ថ្ងៃពិសេស 💍</span>
-                    </div>
-                    <div class="countdown-grid">
-                        <div class="countdown-box">
-                            <div id="countDays" class="countdown-number">០០</div>
-                            <div class="countdown-text">ថ្ងៃ</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div id="countHours" class="countdown-number">០០</div>
-                            <div class="countdown-text">ម៉ោង</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div id="countMins" class="countdown-number">០០</div>
-                            <div class="countdown-text">នាទី</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div id="countSecs" class="countdown-number">០០</div>
-                            <div class="countdown-text">វិនាទី</div>
-                        </div>
-
-                    </div>
-
-                    <!-- Add to Calendar Button -->
-                    <button id="btnAddCalendar" class="btn-add-calendar">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <span>រក្សាទុកក្នុងប្រតិទិន (Save the Date)</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Traditional Khmer Ornament Divider -->
-        <div class="kbach-divider">
-            <span class="kbach-line"></span>
-            <svg class="kbach-icon" viewBox="0 0 24 24">
-                <path d="M12,2L14.5,8.5L21,9.2L16,13.8L17.5,20.2L12,17L6.5,20.2L8,13.8L3,9.2L9.5,8.5L12,2Z"/>
-            </svg>
-            <span class="kbach-line"></span>
-        </div>
-
-        <!-- ====================================================
-             SECTION 2: FORMAL INVITATION & ROYAL CEREMONY (សាមីខ្លួន)
+             SECTION 1: FORMAL INVITATION & ROYAL CEREMONY (សាមីខ្លួន)
              ==================================================== -->
         <section id="couple" class="invitation-section royal-ceremony-section">
             <div class="royal-ceremony-overlay"></div>
             
             <div class="royal-ceremony-content">
-                <!-- Grand Ceremony Header -->
+                <!-- 1. Grand Ceremony Header (Top of Whole View) -->
                 <h2 id="royalCeremonyTitle" class="royal-ceremony-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h2>
 
-                <!-- Parents Row (Two Balanced Columns) -->
+                <!-- 2. Parents Row (Two Balanced Columns) -->
                 <div class="royal-parents-row">
                     <!-- Groom Parents (Left) -->
                     <div class="royal-parents-col groom-parents-col">
@@ -282,12 +120,13 @@
                     </div>
                 </div>
 
-
-                <!-- Formal Invitation Text Block -->
+                <!-- 3. Formal Invitation Text Block with Lead Heading -->
                 <div class="royal-invitation-block">
                     <h3 class="royal-invitation-lead">យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ</h3>
                     <p id="invitationMessageText" class="royal-invitation-body">
-                        ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្ដីជ័យមង្គលក្នុង ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ
+                        ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួម<br>
+                        ជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គលក្នុង ពិធីសិរីមង្គល<br>
+                        អាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ
                     </p>
                 </div>
 
@@ -300,47 +139,9 @@
                         <div id="groomEnglishName" style="display:none;">MENG Senghor</div>
                     </div>
 
-                    <!-- Center Royal Kbach Crest with Monogram -->
+                    <!-- Center Royal Cartouche Crest with Monogram -->
                     <div class="royal-crest-wrap">
-                        <svg class="royal-crest-svg" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="crestGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#fff8db"/>
-                                    <stop offset="35%" stop-color="#f8dc81"/>
-                                    <stop offset="70%" stop-color="#e0b745"/>
-                                    <stop offset="100%" stop-color="#f8dc81"/>
-                                </linearGradient>
-                            </defs>
-                            <!-- Central oval beaded ring -->
-                            <ellipse cx="60" cy="70" rx="35" ry="45" stroke="url(#crestGold)" stroke-width="1.8" stroke-dasharray="2 4"/>
-                            <ellipse cx="60" cy="70" rx="40" ry="51" stroke="url(#crestGold)" stroke-width="1.2"/>
-                            
-                            <!-- Top crown flame / kbach -->
-                            <path d="M60 8 C57 15 54 21 60 25 C66 21 63 15 60 8 Z" fill="url(#crestGold)"/>
-                            <path d="M60 16 C53 18 47 23 51 29 C55 26 58 25 60 25 C62 25 65 26 69 29 C73 23 67 18 60 16 Z" fill="url(#crestGold)"/>
-                            <circle cx="60" cy="6" r="2.2" fill="#fffbe8"/>
-
-                            <!-- Bottom crown flame / kbach -->
-                            <path d="M60 132 C57 125 54 119 60 115 C66 119 63 125 60 132 Z" fill="url(#crestGold)"/>
-                            <path d="M60 124 C53 122 47 117 51 111 C55 114 58 115 60 115 C62 115 65 114 69 111 C73 117 67 122 60 124 Z" fill="url(#crestGold)"/>
-                            <circle cx="60" cy="134" r="2.2" fill="#fffbe8"/>
-
-                            <!-- Left side scroll leaves -->
-                            <path d="M19 70 C14 65 14 58 20 54 C23 60 26 65 19 70 Z" fill="url(#crestGold)"/>
-                            <path d="M19 70 C14 75 14 82 20 86 C23 80 26 75 19 70 Z" fill="url(#crestGold)"/>
-                            <path d="M23 44 C18 39 21 32 28 32 C27 38 27 42 23 44 Z" fill="url(#crestGold)"/>
-                            <path d="M23 96 C18 101 21 108 28 108 C27 102 27 98 23 96 Z" fill="url(#crestGold)"/>
-
-                            <!-- Right side scroll leaves -->
-                            <path d="M101 70 C106 65 106 58 100 54 C97 60 94 65 101 70 Z" fill="url(#crestGold)"/>
-                            <path d="M101 70 C106 75 106 82 100 86 C97 80 94 75 101 70 Z" fill="url(#crestGold)"/>
-                            <path d="M97 44 C102 39 99 32 92 32 C93 38 93 42 97 44 Z" fill="url(#crestGold)"/>
-                            <path d="M97 96 C102 101 99 108 92 108 C93 102 93 98 97 96 Z" fill="url(#crestGold)"/>
-
-                            <!-- Side Accent Pearls -->
-                            <circle cx="15" cy="70" r="2" fill="url(#crestGold)"/>
-                            <circle cx="105" cy="70" r="2" fill="url(#crestGold)"/>
-                        </svg>
+                        <img src="assets/images/royal-crest-frame.png" alt="Royal Monogram Frame" class="royal-crest-frame-img">
                         <div class="royal-crest-text">
                             <span id="royalMonogramText">ស វ</span>
                         </div>
@@ -362,32 +163,45 @@
                     </div>
                 </div>
 
-                <!-- Traditional Gold Kbach Bottom Flourish -->
+                <!-- Traditional Gold Filigree Divider (Matches Reference Exactly) -->
                 <div class="royal-bottom-flourish">
-                    <svg viewBox="0 0 280 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="barGold" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="rgba(223, 183, 75, 0.05)"/>
-                                <stop offset="25%" stop-color="#ecc659"/>
-                                <stop offset="50%" stop-color="#fff8db"/>
-                                <stop offset="75%" stop-color="#ecc659"/>
-                                <stop offset="100%" stop-color="rgba(223, 183, 75, 0.05)"/>
-                            </linearGradient>
-                        </defs>
-                        <!-- Left bar -->
-                        <line x1="24" y1="10" x2="128" y2="10" stroke="url(#barGold)" stroke-width="1.8" stroke-linecap="round"/>
-                        <circle cx="24" cy="10" r="2" fill="#ecc659"/>
-                        <!-- Left loop -->
-                        <path d="M74 10 C74 6 80 6 80 10 C80 14 74 14 74 10 Z" stroke="#ecc659" stroke-width="1.4" fill="none"/>
-                        <!-- Center Diamond -->
-                        <path d="M140 3 L147 10 L140 17 L133 10 Z" fill="#fff8db" stroke="#ecc659" stroke-width="1.2"/>
-                        <circle cx="140" cy="10" r="1.5" fill="#ecc659"/>
-                        <!-- Right bar -->
-                        <line x1="152" y1="10" x2="256" y2="10" stroke="url(#barGold)" stroke-width="1.8" stroke-linecap="round"/>
-                        <circle cx="256" cy="10" r="2" fill="#ecc659"/>
-                        <!-- Right loop -->
-                        <path d="M200 10 C200 6 206 6 206 10 C206 14 200 14 200 10 Z" stroke="#ecc659" stroke-width="1.4" fill="none"/>
-                    </svg>
+                    <img src="assets/images/royal-divider.png" alt="Divider" class="royal-divider-img">
+                </div>
+
+                <!-- Countdown Timer (Under Date and Divider) -->
+                <div class="countdown-container royal-countdown-container">
+                    <div class="countdown-label">
+                        <span>រាប់ថយក្រោយឆ្ពោះទៅកាន់ថ្ងៃអាពាហ៍ពិពាហ៍ 💍</span>
+                    </div>
+                    <div class="countdown-grid">
+                        <div class="countdown-box">
+                            <div id="countDays" class="countdown-number">00</div>
+                            <div class="countdown-text">ថ្ងៃ</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div id="countHours" class="countdown-number">00</div>
+                            <div class="countdown-text">ម៉ោង</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div id="countMins" class="countdown-number">00</div>
+                            <div class="countdown-text">នាទី</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div id="countSecs" class="countdown-number">00</div>
+                            <div class="countdown-text">វិនាទី</div>
+                        </div>
+                    </div>
+
+                    <!-- Add to Calendar Button -->
+                    <button id="btnAddCalendar" class="btn-add-calendar" type="button">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>រក្សាទុកក្នុងប្រតិទិន (Save the Date)</span>
+                    </button>
                 </div>
 
                 <!-- Hidden fallback img tags for script safety -->
@@ -418,14 +232,56 @@
                 <p class="section-desc">កាលវិភាគពិធីមង្គលអាពាហ៍ពិពាហ៍តាមលំដាប់លំដោយ</p>
             </div>
 
-            <!-- Modern Botanical Schedule Showcase Card -->
+            <!-- Modern Botanical Schedule Showcase Card with 2-Day Slideshow -->
             <div class="botanical-card-container">
-                <div class="botanical-card-frame" id="botanicalCardFrame">
-                    <img id="schedulePosterImg" 
-                         src="assets/images/schedule-poster.png" 
-                         alt="កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍" 
-                         class="botanical-poster-img"
-                         loading="lazy">
+                <!-- Day Switcher Tabs / Pills -->
+                <div class="schedule-carousel-nav" role="tablist" aria-label="ជ្រើសរើសថ្ងៃ">
+                    <button id="btnDay1Slide" class="carousel-day-pill active" type="button" role="tab" aria-selected="true" data-slide="0">
+                        <span class="pill-day">📅 ថ្ងៃទី ១</span>
+                        <span class="pill-date">សៅរ៍ ២១ វិច្ឆិកា</span>
+                    </button>
+                    <button id="btnDay2Slide" class="carousel-day-pill" type="button" role="tab" aria-selected="false" data-slide="1">
+                        <span class="pill-day">💍 ថ្ងៃទី ២</span>
+                        <span class="pill-date">អាទិត្យ ២២ វិច្ឆិកា</span>
+                    </button>
+                </div>
+
+                <!-- Framed Showcase Slideshow -->
+                <div class="botanical-card-frame schedule-carousel" id="botanicalCardFrame">
+                    <div class="schedule-slides-track" id="scheduleSlidesTrack">
+                        <div class="schedule-slide active" data-index="0">
+                            <img id="schedulePosterDay1" 
+                                 src="assets/images/schedule-poster-day1.png" 
+                                 alt="កាលវិភាគមង្គលការ ថ្ងៃទី ១ (សៅរ៍ ២១ វិច្ឆិកា ២០២៦)" 
+                                 class="botanical-poster-img"
+                                 loading="eager">
+                        </div>
+                        <div class="schedule-slide" data-index="1">
+                            <img id="schedulePosterDay2" 
+                                 src="assets/images/schedule-poster-day2.png" 
+                                 alt="កាលវិភាគមង្គលការ ថ្ងៃទី ២ (អាទិត្យ ២២ វិច្ឆិកា ២០២៦)" 
+                                 class="botanical-poster-img"
+                                 loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Carousel Prev/Next Arrows -->
+                    <button id="carouselPrevBtn" class="carousel-arrow carousel-prev" type="button" aria-label="ផ្ទាំងមុន">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button id="carouselNextBtn" class="carousel-arrow carousel-next" type="button" aria-label="ផ្ទាំងបន្ទាប់">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                    
+                    <!-- Carousel Indicator Dots -->
+                    <div class="carousel-dots" id="carouselDots">
+                        <button class="carousel-dot active" data-index="0" aria-label="ស្លាយទី ១"></button>
+                        <button class="carousel-dot" data-index="1" aria-label="ស្លាយទី ២"></button>
+                    </div>
                 </div>
 
                 <!-- Modern Quick Actions -->
@@ -460,58 +316,79 @@
                     </button>
                     
                     <div id="timelineDetailsCollapse" class="timeline-collapse-content" style="display: none;">
-                        <!-- Program Tabs -->
+                        <!-- Program Tabs (2 Days) -->
                         <div class="schedule-tabs">
-                            <button id="tabMorning" class="tab-btn active" type="button">
-                                <span>🌅 កម្មវិធីពេលព្រឹក</span>
+                            <button id="tabDay1" class="tab-btn active" type="button">
+                                <span>📅 ថ្ងៃទី ១ (សៅរ៍ ២១ វិច្ឆិកា)</span>
                             </button>
-                            <button id="tabEvening" class="tab-btn" type="button">
-                                <span>🌆 កម្មវិធីពេលល្ងាច</span>
+                            <button id="tabDay2" class="tab-btn" type="button">
+                                <span>💍 ថ្ងៃទី ២ (អាទិត្យ ២២ វិច្ឆិកា)</span>
                             </button>
                         </div>
 
-                        <!-- Morning Timeline -->
-                        <div id="timelineMorning" class="timeline">
+                        <!-- Day 1 Timeline: Saturday Nov 21 -->
+                        <div id="timelineDay1" class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ០៧:០០ ព្រឹក</span>
-                                    <h4 class="timeline-title">ពិធីហែជំនូន (កំណត់)</h4>
-                                    <p class="timeline-desc">ដង្ហែជំនូនផ្លែឈើ និងគ្រឿងបណ្ណាការចូលគេហដ្ឋាន</p>
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៣:០០ រសៀល</span>
+                                    <h4 class="timeline-title">ពិធីសែនក្រុងពាលី</h4>
+                                    <p class="timeline-desc">ពិធីបួងសួងសែនក្រុងពាលី សុំម្ចាស់ទឹកម្ចាស់ដី</p>
                                 </div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ០៧:៣០ ព្រឹក</span>
-                                    <h4 class="timeline-title">ពិធីរៀបរាប់ផ្លែឈើ និងសែនព្រេន</h4>
-                                    <p class="timeline-desc">រៀបចំគ្រឿងដង្វាយផ្លែឈើ និងសែនព្រេនជូនដំណឹងដល់ជីដូនជីតា</p>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ០៨:០០ ព្រឹក</span>
-                                    <h4 class="timeline-title">ពិធីបំពាក់ចិញ្ចៀន</h4>
-                                    <p class="timeline-desc">កូនប្រុស និងកូនស្រីបំពាក់ចិញ្ចៀនអាពាហ៍ពិពាហ៍ជូនគ្នាទៅវិញទៅមក</p>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ០៩:០០ ព្រឹក</span>
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៤:០០ រសៀល</span>
                                     <h4 class="timeline-title">ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត</h4>
-                                    <p class="timeline-desc">ព្រះសង្ឃចម្រើនព្រះបរិត្តប្រសិទ្ធពរជ័យ សិរីសួស្ដី ជ័យមង្គល</p>
+                                    <p class="timeline-desc">និមន្តព្រះសង្ឃសូត្រមន្តចម្រើនព្រះបរិត្ត ប្រោះព្រំសិរីសួស្តី</p>
                                 </div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ១០:០០ ព្រឹក</span>
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៥:០០ នាទីល្ងាច</span>
+                                    <h4 class="timeline-title">អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារ</h4>
+                                    <p class="timeline-desc">ទទួលស្វាគមន៍ និងអញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារ</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៦:០០ នាទីល្ងាច</span>
+                                    <h4 class="timeline-title">ពិធីជាវខាន់ស្លា</h4>
+                                    <p class="timeline-desc">ពិធីជាវខាន់ស្លា តាមប្រពៃណីទំនៀមទម្លាប់ខ្មែរ</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Day 2 Timeline: Sunday Nov 22 (6 Events) -->
+                        <div id="timelineDay2" class="timeline" style="display: none;">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៧:០០ នាទីព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីហែជំនូន (កំណត់) ចូលរោងជ័យ</h4>
+                                    <p class="timeline-desc">ដង្ហែជំនូនផ្លែឈើ និងគ្រឿងបណ្ណាការចូលរោងជ័យ</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៨:០០ នាទីព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីនិយាយជើងការ រៀបរាប់ផ្លែឈើ</h4>
+                                    <p class="timeline-desc">ពិធីនិយាយជើងការ រៀបរាប់ផ្លែឈើ និងសែនព្រេន</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-card">
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៩:០០ នាទីព្រឹក</span>
                                     <h4 class="timeline-title">ពិធីកាត់សក់បង្កក់សិរី</h4>
                                     <p class="timeline-desc">ពិធីកាត់សក់ សិតសក់ និងប្រោះព្រំសិរីសួស្តីដល់កូនកំលោះកូនក្រមុំ</p>
                                 </div>
@@ -520,39 +397,27 @@
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ១១:០០ ព្រឹក</span>
-                                    <h4 class="timeline-title">ពិធីក្រាបសំពះផ្ទឹម</h4>
-                                    <p class="timeline-desc">ពិធីក្រាបសំពះផ្ទឹម ចងអំបោះក្រហម និងបង្វិលពពិលប្រសិទ្ធពរជ័យ</p>
+                                    <span class="timeline-time-badge">វេលាម៉ោង ១០:០០ នាទីព្រឹក</span>
+                                    <h4 class="timeline-title">ពិធីសំពះផ្ទឹម សែនចងដៃ បង្វិលពពិល</h4>
+                                    <p class="timeline-desc">ពិធីក្រាបសំពះផ្ទឹម សែនចងដៃ និងបង្វិលពពិលប្រសិទ្ធពរជ័យ</p>
                                 </div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ១២:០០ ថ្ងៃត្រង់</span>
-                                    <h4 class="timeline-title">អញ្ជើញភ្ញៀវពិសាអាហារថ្ងៃត្រង់</h4>
-                                    <p class="timeline-desc">សូមគោរពអញ្ជើញភ្ញៀវកិត្តិយសទាំងអស់រួមពិសាអាហារថ្ងៃត្រង់ជុំគ្នា</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Evening Timeline -->
-                        <div id="timelineEvening" class="timeline" style="display: none;">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ០៥:០០ ល្ងាច</span>
-                                    <h4 class="timeline-title">ទទួលបដិសណ្ឋារកិច្ចភ្ញៀវកិត្តិយស</h4>
-                                    <p class="timeline-desc">ស្វាគមន៍ភ្ញៀវកិត្តិយស ថតរូបអនុស្សាវរីយ៍នៅមុខក្លោងទ្វារមង្គល</p>
+                                    <span class="timeline-time-badge">វេលាម៉ោង ១១:០០ ថ្ងៃត្រង់</span>
+                                    <h4 class="timeline-title">អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារ</h4>
+                                    <p class="timeline-desc">អញ្ជើញភ្ញៀវកិត្តិយស និងញាតិមិត្តរួមពិសាអាហារថ្ងៃត្រង់</p>
                                 </div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-card">
-                                    <span class="timeline-time-badge">ម៉ោង ០៦:០០ ល្ងាច</span>
-                                    <h4 class="timeline-title">ពិសាភោជនាហារពេលល្ងាច</h4>
-                                    <p class="timeline-desc">ពិសាភោជនាហារ ស្តាប់តន្ត្រីកំដរ កាត់នំអាពាហ៍ពិពាហ៍ និងរាំកម្សាន្ត</p>
+                                    <span class="timeline-time-badge">វេលាម៉ោង ០៥:០០ នាទីល្ងាច</span>
+                                    <h4 class="timeline-title">អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ</h4>
+                                    <p class="timeline-desc">ទទួលបដិសណ្ឋារកិច្ច និងពិសាភោជនាហារ នៅសាលពិធី ជីម៉ែប៉ែនព្រមៀរសេនដ័រ (យៀកថៃ) ក្រុងកំពង់ចាម</p>
                                 </div>
                             </div>
                         </div>
@@ -565,7 +430,12 @@
                 <div class="poster-modal-backdrop" id="modalBackdrop"></div>
                 <div class="poster-modal-dialog">
                     <button id="btnPosterModalClose" class="poster-modal-close" type="button" aria-label="Close">&times;</button>
-                    <img src="assets/images/schedule-poster.png" alt="កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ ផ្ទាំងធំ" class="poster-modal-image">
+                    <!-- Modal Day Switcher -->
+                    <div class="modal-day-switch">
+                        <button id="modalBtnDay1" class="modal-day-pill active" type="button" data-slide="0">📅 ថ្ងៃទី ១ (២១ វិច្ឆិកា)</button>
+                        <button id="modalBtnDay2" class="modal-day-pill" type="button" data-slide="1">💍 ថ្ងៃទី ២ (២២ វិច្ឆិកា)</button>
+                    </div>
+                    <img id="posterModalImg" src="assets/images/schedule-poster-day1.png" alt="កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ ផ្ទាំងធំ" class="poster-modal-image">
                 </div>
             </div>
         </section>
@@ -638,172 +508,138 @@
             <span class="kbach-line"></span>
         </div>
 
-        <!-- ====================================================
-             SECTION 5: PHOTO GALLERY
+                <!-- ====================================================
+             SECTION 5: PHOTO GALLERY (Canva Editorial Style)
              ==================================================== -->
         <section id="gallery" class="gallery-section">
-            <!-- Ornate Golden Photo Frame -->
-            <div class="gallery-photo-frame">
+            <div class="canva-gallery-container">
                 <div class="frame-header">
                     <span class="section-tag">អនុស្សាវរីយ៍ស្នេហ៍</span>
                     <h2 class="section-title">វិចិត្រសាលរូបថត</h2>
-                </div>
-
-                <!-- Gallery Slideshow Container (3x3 Grid per Slide) -->
-                <div class="gallery-carousel-wrapper">
-                <div class="gallery-slider-viewport" id="gallerySliderViewport">
-                    <div class="gallery-slider-track" id="gallerySliderTrack">
-                        
-                        <!-- Slide 1: Photos 1 to 9 (3x3) -->
-                        <div class="gallery-slide" data-slide="0">
-                            <div class="gallery-grid">
-                                <div class="gallery-item" data-index="0" data-full="assets/images/gallery-1.jpg">
-                                    <img src="assets/images/gallery-1.jpg" alt="Wedding Photo 1" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="1" data-full="assets/images/gallery-2.jpg">
-                                    <img src="assets/images/gallery-2.jpg" alt="Wedding Photo 2" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="2" data-full="assets/images/gallery-3.jpg">
-                                    <img src="assets/images/gallery-3.jpg" alt="Wedding Photo 3" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="3" data-full="assets/images/gallery-4.jpg">
-                                    <img src="assets/images/gallery-4.jpg" alt="Wedding Photo 4" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="4" data-full="assets/images/gallery-5.jpg">
-                                    <img src="assets/images/gallery-5.jpg" alt="Wedding Photo 5" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="5" data-full="assets/images/gallery-6.jpg">
-                                    <img src="assets/images/gallery-6.jpg" alt="Wedding Photo 6" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="6" data-full="assets/images/gallery-7.jpg">
-                                    <img src="assets/images/gallery-7.jpg" alt="Wedding Photo 7" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="7" data-full="assets/images/gallery-8.jpg">
-                                    <img src="assets/images/gallery-8.jpg" alt="Wedding Photo 8" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="8" data-full="assets/images/gallery-9.jpg">
-                                    <img src="assets/images/gallery-9.jpg" alt="Wedding Photo 9" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: Photos 10 to 18 (3x3) -->
-                        <div class="gallery-slide" data-slide="1">
-                            <div class="gallery-grid">
-                                <div class="gallery-item" data-index="9" data-full="assets/images/gallery-10.jpg">
-                                    <img src="assets/images/gallery-10.jpg" alt="Wedding Photo 10" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="10" data-full="assets/images/gallery-11.jpg">
-                                    <img src="assets/images/gallery-11.jpg" alt="Wedding Photo 11" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="11" data-full="assets/images/gallery-12.jpg">
-                                    <img src="assets/images/gallery-12.jpg" alt="Wedding Photo 12" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="12" data-full="assets/images/gallery-13.jpg">
-                                    <img src="assets/images/gallery-13.jpg" alt="Wedding Photo 13" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="13" data-full="assets/images/gallery-14.jpg">
-                                    <img src="assets/images/gallery-14.jpg" alt="Wedding Photo 14" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="14" data-full="assets/images/gallery-15.jpg">
-                                    <img src="assets/images/gallery-15.jpg" alt="Wedding Photo 15" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="15" data-full="assets/images/gallery-16.jpg">
-                                    <img src="assets/images/gallery-16.jpg" alt="Wedding Photo 16" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="16" data-full="assets/images/gallery-17.jpg">
-                                    <img src="assets/images/gallery-17.jpg" alt="Wedding Photo 17" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="17" data-full="assets/images/gallery-18.jpg">
-                                    <img src="assets/images/gallery-18.jpg" alt="Wedding Photo 18" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3: Photos 12 to 20 (3x3 - Modern gowns & Chinese Ceremony) -->
-                        <div class="gallery-slide" data-slide="2">
-                            <div class="gallery-grid">
-                                <div class="gallery-item" data-index="11" data-full="assets/images/gallery-12.jpg">
-                                    <img src="assets/images/gallery-12.jpg" alt="Wedding Photo 12" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="12" data-full="assets/images/gallery-13.jpg">
-                                    <img src="assets/images/gallery-13.jpg" alt="Wedding Photo 13" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="13" data-full="assets/images/gallery-14.jpg">
-                                    <img src="assets/images/gallery-14.jpg" alt="Wedding Photo 14" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="14" data-full="assets/images/gallery-15.jpg">
-                                    <img src="assets/images/gallery-15.jpg" alt="Wedding Photo 15" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="15" data-full="assets/images/gallery-16.jpg">
-                                    <img src="assets/images/gallery-16.jpg" alt="Wedding Photo 16" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="16" data-full="assets/images/gallery-17.jpg">
-                                    <img src="assets/images/gallery-17.jpg" alt="Wedding Photo 17" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="17" data-full="assets/images/gallery-18.jpg">
-                                    <img src="assets/images/gallery-18.jpg" alt="Wedding Photo 18" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="18" data-full="assets/images/gallery-19.jpg">
-                                    <img src="assets/images/gallery-19.jpg" alt="Wedding Photo 19" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                                <div class="gallery-item" data-index="19" data-full="assets/images/gallery-20.jpg">
-                                    <img src="assets/images/gallery-20.jpg" alt="Wedding Photo 20" loading="lazy">
-                                    <div class="gallery-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="section-divider">
+                        <span></span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#c69229"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
+                        <span></span>
                     </div>
                 </div>
 
-                <!-- Slideshow Navigation Controls -->
-                <div class="gallery-controls">
-                    <button id="galleryPrevBtn" class="gallery-nav-btn prev-btn" aria-label="Previous Slide">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    </button>
-                    
-                    <div class="gallery-dots" id="galleryDots">
-                        <button class="gallery-dot active" data-index="0" aria-label="Slide 1"></button>
-                        <button class="gallery-dot" data-index="1" aria-label="Slide 2"></button>
-                        <button class="gallery-dot" data-index="2" aria-label="Slide 3"></button>
+                <!-- Canva-Style Editorial Staggered Photo Grid -->
+                <div class="editorial-gallery-grid" id="editorialGalleryGrid">
+                    <!-- Row 1: Full-width Landscape Banner -->
+                    <div class="gallery-item landscape" data-index="1">
+                        <img src="assets/images/gallery-2.jpg" alt="Wedding Photo 2" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
                     </div>
 
-                    <button id="galleryNextBtn" class="gallery-nav-btn next-btn" aria-label="Next Slide">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <!-- Row 2: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait" data-index="0">
+                        <img src="assets/images/gallery-1.jpg" alt="Wedding Photo 1" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait" data-index="3">
+                        <img src="assets/images/gallery-4.jpg" alt="Wedding Photo 4" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 3: Full-width Landscape Banner -->
+                    <div class="gallery-item landscape" data-index="2">
+                        <img src="assets/images/gallery-3.jpg" alt="Wedding Photo 3" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 4: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait" data-index="5">
+                        <img src="assets/images/gallery-6.jpg" alt="Wedding Photo 6" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait" data-index="6">
+                        <img src="assets/images/gallery-7.jpg" alt="Wedding Photo 7" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 5: Full-width Landscape Banner -->
+                    <div class="gallery-item landscape" data-index="4">
+                        <img src="assets/images/gallery-5.jpg" alt="Wedding Photo 5" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Extra Items (Smoothly toggleable) -->
+                    <!-- Row 6: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait gallery-extra-item" data-index="7">
+                        <img src="assets/images/gallery-8.jpg" alt="Wedding Photo 8" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait gallery-extra-item" data-index="9">
+                        <img src="assets/images/gallery-10.jpg" alt="Wedding Photo 10" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 7: Full-width Landscape Banner -->
+                    <div class="gallery-item landscape gallery-extra-item" data-index="8">
+                        <img src="assets/images/gallery-9.jpg" alt="Wedding Photo 9" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 8: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait gallery-extra-item" data-index="10">
+                        <img src="assets/images/gallery-11.jpg" alt="Wedding Photo 11" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait gallery-extra-item" data-index="11">
+                        <img src="assets/images/gallery-12.jpg" alt="Wedding Photo 12" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 9: Full-width Landscape Banner -->
+                    <div class="gallery-item landscape gallery-extra-item" data-index="12">
+                        <img src="assets/images/gallery-13.jpg" alt="Wedding Photo 13" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 10: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait gallery-extra-item" data-index="13">
+                        <img src="assets/images/gallery-14.jpg" alt="Wedding Photo 14" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait gallery-extra-item" data-index="14">
+                        <img src="assets/images/gallery-15.jpg" alt="Wedding Photo 15" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 11: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait gallery-extra-item" data-index="15">
+                        <img src="assets/images/gallery-16.jpg" alt="Wedding Photo 16" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait gallery-extra-item" data-index="16">
+                        <img src="assets/images/gallery-17.jpg" alt="Wedding Photo 17" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 12: Pair of Vertical Portraits -->
+                    <div class="gallery-item portrait gallery-extra-item" data-index="17">
+                        <img src="assets/images/gallery-18.jpg" alt="Wedding Photo 18" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                    <div class="gallery-item portrait gallery-extra-item" data-index="18">
+                        <img src="assets/images/gallery-19.jpg" alt="Wedding Photo 19" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+
+                    <!-- Row 13: Centerpiece Vertical Portrait -->
+                    <div class="gallery-item portrait gallery-extra-item gallery-center-portrait" data-index="19">
+                        <img src="assets/images/gallery-20.jpg" alt="Wedding Photo 20" loading="lazy">
+                        <div class="gallery-overlay-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+                    </div>
+                </div>
+
+                <!-- See All Photos Toggle Button -->
+                <div class="gallery-action-box">
+                    <button id="btnToggleGallery" class="btn-gallery-more" type="button" aria-expanded="false">
+                        <span id="toggleGalleryText">មើលរូបថតទាំងអស់ (២០ សន្លឹក)</span>
+                        <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </button>
                 </div>
-                
-                <div class="gallery-page-counter" id="galleryPageCounter">
-                    ទំព័រ <span id="currentSlideNum">១</span> / <span id="totalSlideNum">៣</span>
-                </div>
-            </div>
             </div>
         </section>
 
@@ -858,24 +694,34 @@
 
                 <!-- KHQR Code Box -->
                 <div class="khqr-box">
-                    <img id="giftQrImage" src="assets/images/qr-code.jpg" alt="Wedding Gift QR Code" class="khqr-image">
+                    <img id="giftQrImage" src="assets/images/qr-code.png" alt="Wedding Gift QR Code" class="khqr-image">
                 </div>
 
                 <!-- Account Details -->
                 <div class="account-details-box">
                     <div class="account-row">
                         <span class="acc-label">ឈ្មោះគណនី ៖</span>
-                        <span id="giftAccName" class="acc-val">MENG SENGHOR AND KANG CHANVICHEKA</span>
+                        <span id="giftAccName" class="acc-val">CHANVICHEKA KANG</span>
                     </div>
 
-                    <div class="account-row">
+                    <div class="account-row account-row-copyable" id="giftRowUsd" title="ចុចដើម្បីចម្លងលេខគណនី USD">
                         <span class="acc-label">លេខគណនី (USD) ៖</span>
-                        <span id="giftAccNumber" class="acc-val">019 547 742</span>
+                        <div class="acc-val-wrapper">
+                            <span id="giftAccNumber" class="acc-val">019 547 742</span>
+                            <span class="btn-mini-copy" title="ចម្លង USD">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </span>
+                        </div>
                     </div>
 
-                    <div class="account-row" id="giftRowKhr">
+                    <div class="account-row account-row-copyable" id="giftRowKhr" title="ចុចដើម្បីចម្លងលេខគណនី KHR">
                         <span class="acc-label">លេខគណនី (KHR) ៖</span>
-                        <span id="giftAccNumberKhr" class="acc-val">015 748 655</span>
+                        <div class="acc-val-wrapper">
+                            <span id="giftAccNumberKhr" class="acc-val">019 866 424</span>
+                            <span class="btn-mini-copy" title="ចម្លង KHR">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </span>
+                        </div>
                     </div>
 
                     <div class="account-row">
@@ -1020,7 +866,10 @@
              FOOTER
              ==================================================== -->
         <footer class="wedding-footer">
-            <div id="footerMonogramText" class="footer-monogram">ស❤️វ</div>
+            <div class="footer-monogram-frame">
+                <img src="assets/images/royal-crest-frame.png" alt="Royal Monogram Frame" class="royal-crest-frame-img footer-crest-img">
+                <div id="footerMonogramText" class="footer-monogram">ស វ</div>
+            </div>
             <p class="footer-thanks">
                 សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅបំផុត ចំពោះវត្តមានដ៏ឧត្តុង្គឧត្តម និងពរជ័យដ៏មានតម្លៃរបស់ឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា!
             </p>
@@ -1035,14 +884,7 @@
          BOTTOM MOBILE NAVIGATION BAR
          ======================================================== -->
     <nav class="bottom-nav">
-        <a href="#home" class="nav-item active">
-            <svg viewBox="0 0 24 24">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-            <span>ទំព័រដើម</span>
-        </a>
-        <a href="#couple" class="nav-item">
+        <a href="#couple" class="nav-item active">
             <svg viewBox="0 0 24 24">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>

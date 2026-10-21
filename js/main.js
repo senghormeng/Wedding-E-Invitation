@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Main Application Logic for Wedding E-Invitation
  * Ratana & Naza Wedding
  */
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAudioController();
     initCopyActions();
     initGalleryLightbox();
-    initGallerySlideshow();
+    initGalleryToggle();
     initGuestbook();
     initRsvpForm();
     initCalendarEvent();
@@ -104,7 +104,7 @@ function renderDynamicContent() {
     
     // Invitation message
     const invMsg = document.getElementById('invitationMessageText');
-    if (invMsg && cfg.invitationMessage) invMsg.textContent = cfg.invitationMessage;
+    if (invMsg && cfg.invitationMessage) invMsg.innerHTML = cfg.invitationMessage;
     
     // Groom & Bride details
     if (cfg.groom) {
@@ -159,12 +159,15 @@ function renderDynamicContent() {
         if (gqr && cfg.gift.qrImage) gqr.src = cfg.gift.qrImage;
     }
     
-    // Schedule Timelines
+    // Schedule Timelines (Day 1 & Day 2)
     if (cfg.schedule) {
-        if (cfg.schedule.morning && cfg.schedule.morning.length > 0) {
-            const mTimeline = document.getElementById('timelineMorning');
-            if (mTimeline) {
-                mTimeline.innerHTML = cfg.schedule.morning.map(item => `
+        const day1Items = cfg.schedule.day1 || cfg.schedule.morning;
+        const day2Items = cfg.schedule.day2 || cfg.schedule.evening;
+
+        if (day1Items && day1Items.length > 0) {
+            const d1Timeline = document.getElementById('timelineDay1') || document.getElementById('timelineMorning');
+            if (d1Timeline) {
+                d1Timeline.innerHTML = day1Items.map(item => `
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-card">
@@ -176,10 +179,10 @@ function renderDynamicContent() {
                 `).join('');
             }
         }
-        if (cfg.schedule.evening && cfg.schedule.evening.length > 0) {
-            const eTimeline = document.getElementById('timelineEvening');
-            if (eTimeline) {
-                eTimeline.innerHTML = cfg.schedule.evening.map(item => `
+        if (day2Items && day2Items.length > 0) {
+            const d2Timeline = document.getElementById('timelineDay2') || document.getElementById('timelineEvening');
+            if (d2Timeline) {
+                d2Timeline.innerHTML = day2Items.map(item => `
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-card">
@@ -544,36 +547,178 @@ function initCountdown() {
    5. SCHEDULE / PROGRAM TABS
    ======================================================== */
 function initScheduleTabs() {
-    const morningTabBtn = document.getElementById('tabMorning');
-    const eveningTabBtn = document.getElementById('tabEvening');
-    const morningTimeline = document.getElementById('timelineMorning');
-    const eveningTimeline = document.getElementById('timelineEvening');
-    
-    if (morningTabBtn && eveningTabBtn) {
-        morningTabBtn.addEventListener('click', () => {
-            morningTabBtn.classList.add('active');
-            eveningTabBtn.classList.remove('active');
-            if (morningTimeline) morningTimeline.style.display = 'block';
-            if (eveningTimeline) eveningTimeline.style.display = 'none';
+    // 1. CAROUSEL & SLIDESHOW CONTROLS (DAY 1 & DAY 2)
+    const slides = document.querySelectorAll('.schedule-slide');
+    const navPills = document.querySelectorAll('.carousel-day-pill');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const btnPrev = document.getElementById('carouselPrevBtn');
+    const btnNext = document.getElementById('carouselNextBtn');
+    const modalImg = document.getElementById('posterModalImg');
+    const modalPills = document.querySelectorAll('.modal-day-pill');
+
+    const day1Timeline = document.getElementById('timelineDay1');
+    const day2Timeline = document.getElementById('timelineDay2');
+    const tabDay1 = document.getElementById('tabDay1');
+    const tabDay2 = document.getElementById('tabDay2');
+
+    const posterImages = [
+        'assets/images/schedule-poster-day1.png',
+        'assets/images/schedule-poster-day2.png'
+    ];
+
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= slides.length) index = slides.length - 1;
+        currentSlide = index;
+
+        // Update Slides
+        slides.forEach((s, i) => {
+            if (i === currentSlide) {
+                s.classList.add('active');
+            } else {
+                s.classList.remove('active');
+            }
         });
-        
-        eveningTabBtn.addEventListener('click', () => {
-            eveningTabBtn.classList.add('active');
-            morningTabBtn.classList.remove('active');
-            if (morningTimeline) morningTimeline.style.display = 'none';
-            if (eveningTimeline) eveningTimeline.style.display = 'block';
+
+        // Update Top Navigation Pills
+        navPills.forEach((p, i) => {
+            if (i === currentSlide) {
+                p.classList.add('active');
+                p.setAttribute('aria-selected', 'true');
+            } else {
+                p.classList.remove('active');
+                p.setAttribute('aria-selected', 'false');
+            }
+        });
+
+        // Update Dots
+        dots.forEach((d, i) => {
+            if (i === currentSlide) {
+                d.classList.add('active');
+            } else {
+                d.classList.remove('active');
+            }
+        });
+
+        // Update Modal Poster Image & Pills
+        if (modalImg) {
+            modalImg.src = posterImages[currentSlide];
+        }
+        modalPills.forEach((mp, i) => {
+            if (i === currentSlide) {
+                mp.classList.add('active');
+            } else {
+                mp.classList.remove('active');
+            }
+        });
+
+        // Sync with Accordion Timeline Tabs if open
+        if (currentSlide === 0) {
+            if (tabDay1) tabDay1.classList.add('active');
+            if (tabDay2) tabDay2.classList.remove('active');
+            if (day1Timeline) day1Timeline.style.display = 'block';
+            if (day2Timeline) day2Timeline.style.display = 'none';
+        } else {
+            if (tabDay2) tabDay2.classList.add('active');
+            if (tabDay1) tabDay1.classList.remove('active');
+            if (day1Timeline) day1Timeline.style.display = 'none';
+            if (day2Timeline) day2Timeline.style.display = 'block';
+        }
+    }
+
+    // Top Day Pills Clicks
+    navPills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+            e.preventDefault();
+            const slideIdx = parseInt(pill.getAttribute('data-slide') || '0', 10);
+            goToSlide(slideIdx);
+        });
+    });
+
+    // Arrow Buttons
+    if (btnPrev) {
+        btnPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(currentSlide === 0 ? 1 : 0);
+        });
+    }
+    if (btnNext) {
+        btnNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(currentSlide === 1 ? 0 : 1);
         });
     }
 
-    // Modal Zoom for Botanical Poster
+    // Indicator Dots Clicks
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+            goToSlide(idx);
+        });
+    });
+
+    // Modal Day Pills Clicks
+    modalPills.forEach(pill => {
+        pill.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idx = parseInt(pill.getAttribute('data-slide') || '0', 10);
+            goToSlide(idx);
+        });
+    });
+
+    // Touch Swipe Gestures for Mobile
+    const cardFrame = document.getElementById('botanicalCardFrame');
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    if (cardFrame) {
+        cardFrame.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        cardFrame.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const diffX = touchEndX - touchStartX;
+            const diffY = touchEndY - touchStartY;
+
+            // Horizontal swipe detected (threshold 40px, more horizontal than vertical)
+            if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX < 0) {
+                    // Swiped Left -> Next Slide (Day 2)
+                    goToSlide(1);
+                } else {
+                    // Swiped Right -> Previous Slide (Day 1)
+                    goToSlide(0);
+                }
+            }
+        }, { passive: true });
+    }
+
+    // Accordion Timeline Tabs Clicks (Sync back to Carousel)
+    if (tabDay1 && tabDay2) {
+        tabDay1.addEventListener('click', () => {
+            goToSlide(0);
+        });
+        tabDay2.addEventListener('click', () => {
+            goToSlide(1);
+        });
+    }
+
+    // 2. MODAL LIGHTBOX ZOOM
     const modal = document.getElementById('schedulePosterModal');
     const btnZoom = document.getElementById('btnScheduleZoom');
-    const cardFrame = document.getElementById('botanicalCardFrame');
     const btnClose = document.getElementById('btnPosterModalClose');
     const backdrop = document.getElementById('modalBackdrop');
 
     const openModal = () => {
         if (modal) {
+            // Ensure modal image matches current active slide
+            if (modalImg) modalImg.src = posterImages[currentSlide];
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
@@ -586,9 +731,29 @@ function initScheduleTabs() {
     };
 
     if (btnZoom) btnZoom.addEventListener('click', openModal);
-    if (cardFrame) cardFrame.addEventListener('click', openModal);
+    if (cardFrame) {
+        cardFrame.addEventListener('click', (e) => {
+            // Do not open modal if clicking on navigation arrows or dots
+            if (e.target.closest('.carousel-arrow') || e.target.closest('.carousel-dots')) {
+                return;
+            }
+            openModal();
+        });
+    }
     if (btnClose) btnClose.addEventListener('click', closeModal);
     if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+            closeModal();
+        }
+    });
+
+    // Check URL parameter for initial schedule day
+    const schedParam = new URLSearchParams(window.location.search).get('day');
+    if (schedParam === '2' || new URLSearchParams(window.location.search).get('schedSlide') === '1') {
+        goToSlide(1);
+    }
 
     // Toggle Timeline Details Accordion
     const btnToggle = document.getElementById('btnToggleTimelineDetails');
@@ -624,12 +789,30 @@ function initScheduleTabs() {
    6. COPY ACTIONS (Account Number & Address)
    ======================================================== */
 function initCopyActions() {
-    // Copy Account Number
+    // Copy Account Number (Primary Button)
     const copyAccBtn = document.getElementById('btnCopyAccount');
     if (copyAccBtn) {
         copyAccBtn.addEventListener('click', () => {
-            const accNum = WEDDING_CONFIG.gift.accountNumber;
+            const accNum = (WEDDING_CONFIG.gift && WEDDING_CONFIG.gift.accountNumber) || '019 547 742';
             copyToClipboard(accNum, 'បានចម្លងលេខគណនីរួចរាល់! (' + accNum + ')');
+        });
+    }
+
+    // Direct Copy USD Row
+    const rowUsd = document.getElementById('giftRowUsd');
+    if (rowUsd) {
+        rowUsd.addEventListener('click', () => {
+            const accNum = (WEDDING_CONFIG.gift && WEDDING_CONFIG.gift.accountNumber) || '019 547 742';
+            copyToClipboard(accNum, 'បានចម្លងលេខគណនី USD រួចរាល់! (' + accNum + ')');
+        });
+    }
+
+    // Direct Copy KHR Row
+    const rowKhr = document.getElementById('giftRowKhr');
+    if (rowKhr) {
+        rowKhr.addEventListener('click', () => {
+            const accNum = (WEDDING_CONFIG.gift && WEDDING_CONFIG.gift.accountNumberKhr) || '019 866 424';
+            copyToClipboard(accNum, 'បានចម្លងលេខគណនី KHR រួចរាល់! (' + accNum + ')');
         });
     }
     
@@ -700,124 +883,45 @@ function toKhmerNumber(num) {
     return String(num).split('').map(d => KHMER_DIGITS[d] !== undefined ? KHMER_DIGITS[d] : d).join('');
 }
 
-function initGallerySlideshow() {
-    const track = document.getElementById('gallerySliderTrack');
-    const viewport = document.getElementById('gallerySliderViewport');
-    const slides = document.querySelectorAll('.gallery-slide');
-    const dots = document.querySelectorAll('.gallery-dot');
-    const prevBtn = document.getElementById('galleryPrevBtn');
-    const nextBtn = document.getElementById('galleryNextBtn');
-    const currentNumSpan = document.getElementById('currentSlideNum');
-    const totalNumSpan = document.getElementById('totalSlideNum');
+function initGalleryToggle() {
+    const btn = document.getElementById('btnToggleGallery');
+    const textSpan = document.getElementById('toggleGalleryText');
+    const grid = document.getElementById('editorialGalleryGrid');
 
-    if (!track || slides.length === 0) return;
+    if (!btn || !grid) return;
 
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    let autoSlideTimer = null;
-
-    if (totalNumSpan) {
-        totalNumSpan.textContent = toKhmerNumber(totalSlides);
+    // Support ?gallery_expanded=1 for deep-linking or automated verification
+    if (new URLSearchParams(window.location.search).get('gallery_expanded') === '1') {
+        grid.classList.add('expanded');
+        btn.classList.add('is-expanded');
+        btn.setAttribute('aria-expanded', 'true');
+        if (textSpan) {
+            textSpan.textContent = 'បង្រួមមើលតិចវិញ';
+        }
     }
 
-    function goToSlide(index) {
-        currentSlide = (index + totalSlides) % totalSlides;
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    btn.addEventListener('click', () => {
+        const isExpanded = grid.classList.toggle('expanded');
+        btn.classList.toggle('is-expanded', isExpanded);
+        btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
         
-        dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === currentSlide);
-        });
-
-        if (currentNumSpan) {
-            currentNumSpan.textContent = toKhmerNumber(currentSlide + 1);
+        if (textSpan) {
+            textSpan.textContent = isExpanded 
+                ? 'បង្រួមមើលតិចវិញ' 
+                : 'មើលរូបថតទាំងអស់ (២០ សន្លឹក)';
         }
-    }
 
-    function startAutoSlide() {
-        stopAutoSlide();
-        autoSlideTimer = setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, 5500);
-    }
-
-    function stopAutoSlide() {
-        if (autoSlideTimer) {
-            clearInterval(autoSlideTimer);
-            autoSlideTimer = null;
-        }
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            goToSlide(currentSlide - 1);
-            startAutoSlide();
-        });
-    }
-
-    if (nextBtn) {
-        nextBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            goToSlide(currentSlide + 1);
-            startAutoSlide();
-        });
-    }
-
-    dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-            const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
-            goToSlide(idx);
-            startAutoSlide();
-        });
-    });
-
-    // Touch Swipe Support on mobile
-    if (viewport) {
-        let touchStartX = 0;
-        let touchStartY = 0;
-        let isSwiping = false;
-
-        viewport.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-            isSwiping = true;
-            stopAutoSlide();
-        }, { passive: true });
-
-        viewport.addEventListener('touchend', (e) => {
-            if (!isSwiping) return;
-            isSwiping = false;
-            const touchEndX = e.changedTouches[0].clientX;
-            const touchEndY = e.changedTouches[0].clientY;
-            const diffX = touchEndX - touchStartX;
-            const diffY = touchEndY - touchStartY;
-
-            // Horizontal swipe
-            if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
-                if (diffX < 0) {
-                    goToSlide(currentSlide + 1); // Swipe left -> Next
-                } else {
-                    goToSlide(currentSlide - 1); // Swipe right -> Prev
+        if (!isExpanded) {
+            const gallerySection = document.getElementById('gallery');
+            if (gallerySection) {
+                const rect = gallerySection.getBoundingClientRect();
+                if (rect.top < -100) {
+                    gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
-            startAutoSlide();
-        }, { passive: true });
-
-        // Pause on mouse hover for desktop
-        viewport.addEventListener('mouseenter', stopAutoSlide);
-        viewport.addEventListener('mouseleave', startAutoSlide);
-    }
-
-    // Check URL param for initial slide (e.g. for previews/testing)
-    const urlSlide = parseInt(new URLSearchParams(window.location.search).get('slide'), 10);
-    if (!isNaN(urlSlide)) {
-        goToSlide(urlSlide);
-    }
-
-    // Start auto slide
-    startAutoSlide();
+        }
+    });
 }
-
 function initGalleryLightbox() {
     const items = document.querySelectorAll('.gallery-item');
     const modal = document.getElementById('galleryLightbox');
@@ -927,6 +1031,17 @@ function initGalleryLightbox() {
             }
         }
     }, { passive: true });
+
+    // Auto-open lightbox if URL param ?lightbox=INDEX is set
+    const urlLb = new URLSearchParams(window.location.search).get('lightbox');
+    if (urlLb !== null) {
+        const lbIdx = parseInt(urlLb, 10);
+        if (!isNaN(lbIdx)) {
+            renderLightboxImage(lbIdx);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
 }
 
 /* ========================================================
