@@ -1,4 +1,4 @@
-/* ========================================================
+﻿/* ========================================================
    WEDDING E-INVITATION - LUXURY KHMER THEME
    Ratana & Naza Wedding (សិរីមង្គលអាពាហ៍ពិពាហ៍ រតនា & ណាហ្សា)
    ======================================================== */
@@ -571,23 +571,23 @@ body.envelope-open .music-toggle-btn {
         font-size: 20px;
     }
     .cover-flourish {
-        max-width: 330px;
+        max-width: 270px;
     }
     .cover-flourish.flourish-top {
-        margin-bottom: -5px;
+        margin-bottom: 7px;
     }
     .cover-flourish.flourish-bottom {
-        margin-top: -5px;
+        margin-top: 7px;
     }
     .btn-cover-open {
-        padding: 11px 28px;
-        min-height: 48px;
-        min-width: 250px;
-        max-width: 295px;
+        padding: 11px 26px;
+        min-height: 56px;
+        min-width: 200px;
+        max-width: 240px;
         border-radius: 16px;
     }
     .btn-cover-open span {
-        font-size: 17.5px;
+        font-size: 16px;
     }
     .bottom-nav {
         width: calc(100% - 20px);

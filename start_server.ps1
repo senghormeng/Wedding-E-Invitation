@@ -1,4 +1,4 @@
-# Simple Local Web Server for E-INVITATION
+﻿# Simple Local Web Server for E-INVITATION
 param([int]$Port = 8080)
 
 $root = "D:\E-INVITATION"
@@ -72,6 +72,7 @@ try {
                 $header = "HTTP/1.1 200 OK`r`n" +
                           "Content-Type: $mime`r`n" +
                           "Content-Length: $($bytes.Length)`r`n" +
+                          "Cache-Control: no-cache, no-store, must-revalidate`r`n" +
                           "Access-Control-Allow-Origin: *`r`n" +
                           "Connection: close`r`n`r`n"
                 
