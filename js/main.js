@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Main Application Logic for Wedding E-Invitation
  * Ratana & Naza Wedding
  */
@@ -332,25 +332,45 @@ let isAudioPlaying = false;
 let audioCtx = null;
 let audioTimer = null;
 
+function updateMusicUI(isPlaying) {
+    isAudioPlaying = isPlaying;
+    const musicBtn = document.getElementById('musicToggleBtn');
+    const songCountdownBtn = document.getElementById('btnSongCountdown');
+    if (musicBtn) {
+        if (isPlaying) musicBtn.classList.add('playing');
+        else musicBtn.classList.remove('playing');
+    }
+    if (songCountdownBtn) {
+        if (isPlaying) songCountdownBtn.classList.add('playing');
+        else songCountdownBtn.classList.remove('playing');
+    }
+}
+
 function initAudioController() {
     const musicBtn = document.getElementById('musicToggleBtn');
+    const songCountdownBtn = document.getElementById('btnSongCountdown');
+    const songTapWrapper = document.getElementById('songTapWrapper');
     htmlAudio = document.getElementById('bgAudioElement');
     
     if (htmlAudio) {
         htmlAudio.addEventListener('playing', () => {
-            isAudioPlaying = true;
-            if (musicBtn) musicBtn.classList.add('playing');
+            updateMusicUI(true);
         });
         htmlAudio.addEventListener('pause', () => {
-            isAudioPlaying = false;
-            if (musicBtn) musicBtn.classList.remove('playing');
+            updateMusicUI(false);
         });
     }
     
-    if (!musicBtn) return;
-    
+    let lastToggleTime = 0;
     const toggleMusic = (e) => {
-        if (e) e.stopPropagation();
+        if (e) {
+            e.stopPropagation();
+            if (e.cancelable && e.type === 'touchend') e.preventDefault();
+        }
+        const now = Date.now();
+        if (now - lastToggleTime < 300) return;
+        lastToggleTime = now;
+        
         if (isAudioPlaying) {
             pauseBackgroundAudio();
         } else {
@@ -358,12 +378,26 @@ function initAudioController() {
         }
     };
     
-    musicBtn.addEventListener('click', toggleMusic);
-    musicBtn.addEventListener('touchend', toggleMusic);
+    if (musicBtn) {
+        musicBtn.addEventListener('click', toggleMusic);
+        musicBtn.addEventListener('touchend', toggleMusic);
+    }
+    
+    if (songCountdownBtn) {
+        songCountdownBtn.addEventListener('click', toggleMusic);
+        songCountdownBtn.addEventListener('touchend', toggleMusic);
+    }
+    
+    if (songTapWrapper) {
+        songTapWrapper.addEventListener('click', (e) => {
+            if (e.target !== songCountdownBtn && !songCountdownBtn.contains(e.target)) {
+                toggleMusic(e);
+            }
+        });
+    }
 }
 
 function playBackgroundAudio() {
-    const musicBtn = document.getElementById('musicToggleBtn');
     if (!htmlAudio) {
         htmlAudio = document.getElementById('bgAudioElement');
     }
@@ -374,20 +408,18 @@ function playBackgroundAudio() {
         const playPromise = htmlAudio.play();
         if (playPromise !== undefined) {
             playPromise.then(() => {
-                isAudioPlaying = true;
                 if (audioTimer) {
                     clearInterval(audioTimer);
                     audioTimer = null;
                 }
-                if (musicBtn) musicBtn.classList.add('playing');
+                updateMusicUI(true);
             }).catch(err => {
                 console.warn('Audio play restricted by browser policy; unlocking on next touch:', err);
                 // Unlocks audio automatically on next tap anywhere on the screen
                 const unlockAudio = () => {
                     if (htmlAudio) {
                         htmlAudio.play().then(() => {
-                            isAudioPlaying = true;
-                            if (musicBtn) musicBtn.classList.add('playing');
+                            updateMusicUI(true);
                         }).catch(() => {});
                     }
                     document.removeEventListener('touchend', unlockAudio);
@@ -398,8 +430,7 @@ function playBackgroundAudio() {
             });
             return;
         } else {
-            isAudioPlaying = true;
-            if (musicBtn) musicBtn.classList.add('playing');
+            updateMusicUI(true);
             return;
         }
     }
@@ -408,8 +439,7 @@ function playBackgroundAudio() {
 }
 
 function pauseBackgroundAudio() {
-    const musicBtn = document.getElementById('musicToggleBtn');
-    isAudioPlaying = false;
+    updateMusicUI(false);
     
     if (htmlAudio) {
         htmlAudio.pause();
@@ -419,8 +449,6 @@ function pauseBackgroundAudio() {
         clearInterval(audioTimer);
         audioTimer = null;
     }
-    
-    if (musicBtn) musicBtn.classList.remove('playing');
 }
 
 /**
@@ -442,7 +470,7 @@ function startProceduralHarp() {
         isAudioPlaying = true;
         currentAudioMode = 'procedural';
         const musicBtn = document.getElementById('musicToggleBtn');
-        if (musicBtn) musicBtn.classList.add('playing');
+        updateMusicUI(true);
         
         // Romantic pentatonic / wedding notes (Hz)
         const chords = [

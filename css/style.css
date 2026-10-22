@@ -1,4 +1,4 @@
-﻿/* ========================================================
+/* ========================================================
    WEDDING E-INVITATION - LUXURY KHMER THEME
    Ratana & Naza Wedding (សិរីមង្គលអាពាហ៍ពិពាហ៍ រតនា & ណាហ្សា)
    ======================================================== */
@@ -1393,7 +1393,21 @@ section {
     margin-top: 4px;
 }
 
+/* Stacked Actions: Save the Date in Middle and Song Tap Under It */
+.royal-countdown-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 18px;
+    padding-bottom: 14px;
+    position: relative;
+    z-index: 6;
+}
+
 .royal-ceremony-section .btn-add-calendar {
+    margin-top: 0;
     background: transparent;
     border: 1.5px solid rgba(248, 222, 120, 0.85);
     color: #fff2ad;
@@ -1410,6 +1424,169 @@ section {
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 16px rgba(248, 222, 120, 0.5);
+}
+
+/* ========================================================
+   MUSIC PLAY TAP BUTTON UNDER COUNTDOWN
+   Matches reference: compact gold pill button, left orange disc with play/pause,
+   Khmer text "ចុចដេីម្បីស្តាប់ចំរៀង", and front-positioned tapping finger hint
+   ======================================================== */
+.song-tap-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    z-index: 5;
+}
+
+.btn-song-countdown {
+    background: linear-gradient(180deg, #fce5b2 0%, #eab85a 50%, #d89b38 100%);
+    border: 1.5px solid #8b5610;
+    border-radius: 999px;
+    padding: 2.5px 12px 2.5px 3px;
+    min-height: 33px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.9), 
+                0 0 12px rgba(234, 184, 90, 0.35);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    z-index: 2;
+}
+
+.btn-song-countdown:hover {
+    transform: translateY(-1.5px) scale(1.02);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6), 
+                inset 0 1px 2px rgba(255, 255, 255, 1), 
+                0 0 18px rgba(234, 184, 90, 0.55);
+}
+
+.btn-song-countdown:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+.btn-song-countdown .song-disc-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e99127 0%, #bf6a12 100%);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.65), 0 1px 3px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.btn-song-countdown .song-icon-play {
+    display: block;
+    margin-left: 1.5px;
+}
+
+.btn-song-countdown .song-icon-pause {
+    display: none;
+}
+
+.btn-song-countdown.playing .song-icon-play {
+    display: none;
+}
+
+.btn-song-countdown.playing .song-icon-pause {
+    display: block;
+}
+
+.btn-song-countdown.playing {
+    animation: songButtonPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes songButtonPulse {
+    0%, 100% {
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5), 
+                    inset 0 1px 1px rgba(255, 255, 255, 0.9), 
+                    0 0 12px rgba(234, 184, 90, 0.35);
+    }
+    50% {
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65), 
+                    inset 0 1px 2px rgba(255, 255, 255, 1), 
+                    0 0 20px rgba(246, 206, 122, 0.8);
+    }
+}
+
+.btn-song-countdown .song-btn-label {
+    font-family: 'Kantumruy Pro', 'Battambang', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2a1702;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+    padding-top: 1px;
+}
+
+.song-sound-bars {
+    display: none;
+    align-items: flex-end;
+    gap: 2px;
+    height: 11px;
+    margin-left: 2px;
+}
+
+.btn-song-countdown.playing .song-sound-bars {
+    display: inline-flex;
+}
+
+.song-sound-bars span {
+    width: 2px;
+    background: #3b2003;
+    border-radius: 1px;
+    animation: barDance 0.8s ease-in-out infinite alternate;
+}
+
+.song-sound-bars span:nth-child(1) { height: 5px; animation-delay: 0.1s; }
+.song-sound-bars span:nth-child(2) { height: 11px; animation-delay: 0.3s; }
+.song-sound-bars span:nth-child(3) { height: 8px; animation-delay: 0.2s; }
+
+@keyframes barDance {
+    0% { height: 3px; }
+    100% { height: 11px; }
+}
+
+/* Hand Sign: Moved to the Front (left side under play icon) and in front (z-index 10) */
+.song-tap-hand {
+    position: absolute;
+    left: 8px;
+    bottom: -18px;
+    z-index: 10;
+    pointer-events: none;
+    animation: tapBobbing 1.6s ease-in-out infinite;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 6px rgba(246, 206, 122, 0.5));
+}
+
+.song-tap-hand svg {
+    width: 22px;
+    height: 26px;
+    display: block;
+}
+
+@keyframes tapBobbing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
 }
 
 /* Responsive Royal Ceremony Section */
@@ -1485,9 +1662,37 @@ section {
     .royal-ceremony-section .countdown-text {
         font-size: 12.5px;
     }
+    .song-tap-wrapper {
+        margin: 0 auto;
+    }
+    .btn-song-countdown {
+        padding: 2.5px 11px 2.5px 3px;
+        min-height: 32px;
+    }
+    .btn-song-countdown .song-disc-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .btn-song-countdown .song-btn-label {
+        font-size: 11.5px;
+    }
+    .song-tap-hand {
+        left: 7px;
+        bottom: -16px;
+    }
+    .song-tap-hand svg {
+        width: 20px;
+        height: 24px;
+    }
+    .royal-countdown-actions {
+        gap: 12px;
+        margin-top: 14px;
+        padding-bottom: 12px;
+    }
     .royal-ceremony-section .btn-add-calendar {
         font-size: 12.5px;
-        padding: 8px 16px;
+        padding: 8px 18px;
+        margin-top: 0;
     }
 }
 
