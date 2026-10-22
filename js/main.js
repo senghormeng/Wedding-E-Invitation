@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Main Application Logic for Wedding E-Invitation
  * Ratana & Naza Wedding
  */
@@ -75,6 +75,8 @@ function renderDynamicContent() {
     // Title & Hero & Royal Ceremony
     const heroTitle = document.getElementById('heroCeremonyTitle');
     if (heroTitle && cfg.weddingTitle) heroTitle.textContent = cfg.weddingTitle;
+    const coverTitle = document.querySelector('.cover-wedding-title');
+    if (coverTitle && cfg.weddingTitle) coverTitle.textContent = cfg.weddingTitle;
     const royalTitle = document.getElementById('royalCeremonyTitle');
     if (royalTitle && cfg.weddingTitle) royalTitle.textContent = cfg.weddingTitle;
     

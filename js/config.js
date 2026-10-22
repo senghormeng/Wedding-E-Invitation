@@ -52,7 +52,7 @@ const WEDDING_CONFIG = {
             { time: "០៩:០០ នាទីព្រឹក", title: "ពិធីកាត់សក់បង្កក់សិរី", desc: "ពិធីកាត់សក់ សិតសក់ និងប្រោះព្រំសិរីសួស្តីដល់កូនកំលោះកូនក្រមុំ" },
             { time: "១០:០០ នាទីព្រឹក", title: "ពិធីសំពះផ្ទឹម សែនចងដៃ បង្វិលពពិល", desc: "ពិធីក្រាបសំពះផ្ទឹម សែនចងដៃ និងបង្វិលពពិលប្រសិទ្ធពរជ័យ" },
             { time: "១១:០០ ថ្ងៃត្រង់", title: "អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារ", desc: "អញ្ជើញភ្ញៀវកិត្តិយស និងញាតិមិត្តរួមពិសាអាហារថ្ងៃត្រង់" },
-            { time: "០៥:០០ នាទីល្ងាច", title: "អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ", desc: "ទទួលបដិសណ្ឋារកិច្ច និងពិសាភោជនាហារ នៅសាលពិធី ជីម៉ែប៉ែនព្រមៀរសេនដ័រ (យៀកថៃ) ក្រុងកំពង់ចាម" }
+            { time: "០៥:០០ នាទីល្ងាច", title: "អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ", desc: "ទទួលបដិសណ្ឋារកិច្ច និងពិសាភោជនាហារ នៅសាលពិធី ដឹម៉ៃប៊េនព្រេមៀសេនធ័រ (យៀកថៃ) ក្រុងកំពង់ចាម" }
         ],
         // Aliases for compatibility
         get morning() { return this.day1; },
@@ -61,7 +61,7 @@ const WEDDING_CONFIG = {
     
     // ទីតាំង / Venue & Location
     venue: {
-        name: "សាលពិធី ជីម៉ែប៉ែនព្រមៀរសេនដ័រ (យៀកថៃ)",
+        name: "សាលពិធី ដឹម៉ៃប៊េនព្រេមៀសេនធ័រ (យៀកថៃ)",
         address: "ក្រុងកំពង់ចាម ខេត្តកំពង់ចាម",
         googleMapsUrl: "https://maps.app.goo.gl/wcXT9QLLvdLVvjgZ7",
         // Embedded map query for Kampong Cham Phnom Pros Hotel
@@ -89,25 +89,25 @@ const WEDDING_CONFIG = {
     // វិចិត្រសាលរូបថត / Photo Gallery
     media: {
         galleryImages: [
-            { src: "assets/images/gallery-1.jpg", caption: "សេចក្តីស្រលាញ់ដ៏កក់ក្តៅ" },
             { src: "assets/images/gallery-2.jpg", caption: "ស្នាមញញឹមនៃថ្ងៃអនាគត" },
+            { src: "assets/images/gallery-1.jpg", caption: "សេចក្តីស្រលាញ់ដ៏កក់ក្តៅ" },
+            { src: "assets/images/gallery-14.jpg", caption: "ពន្លឺថ្ងៃលិចដ៏រ៉ូមែនទិក" },
             { src: "assets/images/gallery-3.jpg", caption: "ដៃកាន់ដៃឆ្ពោះទៅមុខ" },
-            { src: "assets/images/gallery-4.jpg", caption: "គ្រាដ៏ផ្អែមល្ហែម" },
-            { src: "assets/images/gallery-5.jpg", caption: "ដំណើរជីវិតថ្មីចាប់ផ្តើម" },
             { src: "assets/images/gallery-6.jpg", caption: "សេចក្តីសុខក្នុងចិត្ត" },
             { src: "assets/images/gallery-7.jpg", caption: "បេះដូងតែមួយ" },
-            { src: "assets/images/gallery-8.jpg", caption: "អនុស្សាវរីយ៍ប្រាសាទបុរាណ" },
+            { src: "assets/images/gallery-5.jpg", caption: "ដំណើរជីវិតថ្មីចាប់ផ្តើម" },
+            { src: "assets/images/gallery-21.jpg", caption: "សេចក្តីសន្យាដ៏ពិសិដ្ឋ" },
+            { src: "assets/images/gallery-22.jpg", caption: "ផ្កាស្នេហ៍រីកស្រស់" },
             { src: "assets/images/gallery-9.jpg", caption: "ជិះទូកកម្សាន្តនាទឹកដីអង្គរ" },
+            { src: "assets/images/gallery-8.jpg", caption: "អនុស្សាវរីយ៍ប្រាសាទបុរាណ" },
             { src: "assets/images/gallery-10.jpg", caption: "ស្នាមញញឹមសុភមង្គល" },
+            { src: "assets/images/gallery-13.jpg", caption: "ពេលវេលាដ៏មានអត្ថន័យ" },
             { src: "assets/images/gallery-11.jpg", caption: "សេចក្តីស្រឡាញ់ដ៏ជ្រាលជ្រៅ" },
             { src: "assets/images/gallery-12.jpg", caption: "ភាពស្រស់ស្រាយនៃក្តីស្រឡាញ់" },
-            { src: "assets/images/gallery-13.jpg", caption: "ពេលវេលាដ៏មានអត្ថន័យ" },
-            { src: "assets/images/gallery-14.jpg", caption: "ពន្លឺថ្ងៃលិចដ៏រ៉ូមែនទិក" },
-            { src: "assets/images/gallery-15.jpg", caption: "ចំណងនិស្ស័យអស់មួយជីវិត" },
             { src: "assets/images/gallery-16.jpg", caption: "គ្រាដ៏កក់ក្តៅ" },
             { src: "assets/images/gallery-17.jpg", caption: "សម្រស់កូនក្រមុំ" },
             { src: "assets/images/gallery-18.jpg", caption: "គូព្រេងនិស្ស័យ" },
-            { src: "assets/images/gallery-19.jpg", caption: "ស្នេហ៍ផ្អែមល្ហែម" },
+            { src: "assets/images/gallery-23.jpg", caption: "ស្នាមញញឹម និងភាពស្រស់ស្រាយ" },
             { src: "assets/images/gallery-20.jpg", caption: "អាំងប៉ាវសុភមង្គល" }
         ]
     },
