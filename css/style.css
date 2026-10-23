@@ -2473,6 +2473,11 @@ section {
 .gallery-item img[src*="gallery-21.jpg"] { object-position: center 10%; }
 .gallery-item img[src*="gallery-22.jpg"] { object-position: center 12%; }
 .gallery-item img[src*="gallery-23.jpg"] { object-position: center 8%; }
+.gallery-item img[src*="gallery-24.jpg"] { object-position: center 65%; }
+.gallery-item img[src*="gallery-25.jpg"] { object-position: center 60%; }
+.gallery-item img[src*="gallery-26.jpg"] { object-position: center 15%; }
+.gallery-item img[src*="gallery-27.jpg"] { object-position: center 22%; }
+.gallery-item img[src*="gallery-28.jpg"] { object-position: 60% 60%; }
 
 /* Zoom indicator */
 .gallery-overlay-hint {

@@ -108,7 +108,12 @@ const WEDDING_CONFIG = {
             { src: "assets/images/gallery-17.jpg", caption: "សម្រស់កូនក្រមុំ" },
             { src: "assets/images/gallery-18.jpg", caption: "គូព្រេងនិស្ស័យ" },
             { src: "assets/images/gallery-23.jpg", caption: "ស្នាមញញឹម និងភាពស្រស់ស្រាយ" },
-            { src: "assets/images/gallery-20.jpg", caption: "អាំងប៉ាវសុភមង្គល" }
+            { src: "assets/images/gallery-20.jpg", caption: "អាំងប៉ាវសុភមង្គល" },
+            { src: "assets/images/gallery-24.jpg", caption: "ស្នេហ៍និរន្តរ៍លើទឹកដីអង្គរ" },
+            { src: "assets/images/gallery-26.jpg", caption: "គូព្រេងប្រពៃណីខ្មែរ" },
+            { src: "assets/images/gallery-27.jpg", caption: "ក្រសែភ្នែកពោរពេញដោយក្តីស្រលាញ់" },
+            { src: "assets/images/gallery-25.jpg", caption: "ក្រោមម្លប់ស្នេហា" },
+            { src: "assets/images/gallery-28.jpg", caption: "ដើរកាន់ដៃគ្នារហូតទៅ" }
         ]
     },
     

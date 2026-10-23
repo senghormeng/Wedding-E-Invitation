@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Main Application Logic for Wedding E-Invitation
  * Ratana & Naza Wedding
  */
@@ -938,7 +938,7 @@ function initGalleryToggle() {
         if (textSpan) {
             textSpan.textContent = isExpanded 
                 ? 'បង្រួមមើលតិចវិញ' 
-                : 'មើលរូបថតទាំងអស់ (២០ សន្លឹក)';
+                : `មើលរូបថតទាំងអស់ (${toKhmerNumber(((window.WEDDING_CONFIG && window.WEDDING_CONFIG.media && window.WEDDING_CONFIG.media.galleryImages) || []).length || 25)} សន្លឹក)`;
         }
 
         if (!isExpanded) {
