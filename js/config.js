@@ -63,9 +63,9 @@ const WEDDING_CONFIG = {
     venue: {
         name: "សាលពិធី ដឹម៉ៃប៊េនព្រេមៀសេនធ័រ (យៀកថៃ)",
         address: "ក្រុងកំពង់ចាម ខេត្តកំពង់ចាម",
-        googleMapsUrl: "https://maps.app.goo.gl/wcXT9QLLvdLVvjgZ7",
-        // Embedded map query for Kampong Cham Phnom Pros Hotel
-        embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15623.513758249622!2d105.4419515!3d11.9961201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310b82f6e91cb3b5%3A0x6291a182092305!2sKampong%20Cham!5e0!3m2!1sen!2skh!4v1700000000000"
+        googleMapsUrl: "https://maps.app.goo.gl/WPJGdVxL1gmt3LiD7",
+        // Embedded map query for The May Benz Premier Center (Kampong Cham)
+        embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d105.4547231!3d11.9891663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310c6b24db1c00ab%3A0xde3816b0a167689b!2sThe%20May%20Benz%20Premier%20Center!5e0!3m2!1skm!2skh!4v1700000000000"
     },
     
     // ចំណងដៃ / Wedding Gift Info

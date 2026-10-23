@@ -29,6 +29,16 @@ function renderDynamicContent() {
     if (localCustom) {
         try {
             const parsed = JSON.parse(localCustom);
+            if (parsed && parsed.venue) {
+                if (parsed.venue.googleMapsUrl === 'https://maps.app.goo.gl/wcXT9QLLvdLVvjgZ7' || 
+                    parsed.venue.googleMapsUrl === 'https://maps.app.goo.gl/icsCaF35qS53Zv6G9') {
+                    parsed.venue.googleMapsUrl = 'https://maps.app.goo.gl/WPJGdVxL1gmt3LiD7';
+                }
+                if (parsed.venue.embedMapUrl && parsed.venue.embedMapUrl.includes('0x310b82f6e91cb3b5%3A0x6291a182092305')) {
+                    parsed.venue.embedMapUrl = (window.WEDDING_CONFIG && window.WEDDING_CONFIG.venue && window.WEDDING_CONFIG.venue.embedMapUrl) || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000!2d105.4547231!3d11.9891663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310c6b24db1c00ab%3A0xde3816b0a167689b!2sThe%20May%20Benz%20Premier%20Center!5e0!3m2!1skm!2skh!4v1700000000000';
+                }
+                try { localStorage.setItem('wedding_custom_config', JSON.stringify(parsed)); } catch(e) {}
+            }
             cfg = Object.assign({}, cfg, parsed);
         } catch(e) {}
     }
