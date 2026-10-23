@@ -1079,6 +1079,21 @@ function initGalleryLightbox() {
    ======================================================== */
 const WISHES_STORAGE_KEY = 'wedding_wishes_senghor_vicheka';
 
+// Test wishes to clear / filter out
+function isTestWish(w) {
+    if (!w) return true;
+    const name = (w.name || '').trim();
+    const msg = (w.message || '').trim();
+    if (name === 'តេស្តភ្ញៀវ') return true;
+    if (name === 'Vicheka' && msg.indexOf('សូមឱ្យមានសុភមង្គល ត្រជាក់ត្រជុំ និងទ្រព្យសម្បត្តិហូរហៀរ') !== -1) return true;
+    return false;
+}
+
+function filterWishes(list) {
+    if (!Array.isArray(list)) return [];
+    return list.filter(w => !isTestWish(w));
+}
+
 function initGuestbook() {
     const form = document.getElementById('wishForm');
     const chips = document.querySelectorAll('.chip-blessing');
@@ -1113,7 +1128,8 @@ function initGuestbook() {
     try {
         const stored = localStorage.getItem(WISHES_STORAGE_KEY);
         if (stored) {
-            wishes = JSON.parse(stored);
+            wishes = filterWishes(JSON.parse(stored));
+            localStorage.setItem(WISHES_STORAGE_KEY, JSON.stringify(wishes));
         }
     } catch (e) {
         wishes = [];
@@ -1126,7 +1142,7 @@ function initGuestbook() {
             .then(res => res.json())
             .then(cloudWishes => {
                 if (Array.isArray(cloudWishes)) {
-                    wishes = cloudWishes;
+                    wishes = filterWishes(cloudWishes);
                     try {
                         localStorage.setItem(WISHES_STORAGE_KEY, JSON.stringify(wishes));
                     } catch(e) {}

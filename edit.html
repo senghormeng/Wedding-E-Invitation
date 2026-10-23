@@ -305,6 +305,9 @@
                 <div class="form-group">
                     <label>Google Apps Script Web App URL (រក្សាទុកពាក្យជូនពរពីភ្ញៀវគ្រប់គ្នា) ៖</label>
                     <input type="url" id="wishesApiUrl" class="form-control" placeholder="https://script.google.com/macros/s/.../exec">
+                    <div style="margin-top: 8px;">
+                        <button type="button" id="btnClearWishes" style="background: #fff1f2; border: 1px solid #fecdd3; color: #e11d48; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit;">🗑️ សម្អាតពាក្យជូនពរក្នុងម៉ាស៊ីន (Clear Wishes Cache)</button>
+                    </div>
                     <small style="color: #666; font-size: 12px; display: block; margin-top: 5px; line-height: 1.5;">
                         បិទភ្ជាប់ Google Web App URL នៅទីនេះ ដើម្បីរក្សាទុកពាក្យជូនពរដែលភ្ញៀវសរសេរលើ GitHub ចូលទៅក្នុង Google Sheet ក្នុង Drive របស់អ្នក។
                     </small>
@@ -465,6 +468,14 @@
             if (confirm('តើអ្នកពិតជាចង់កំណត់ព័ត៌មានដើមឡើងវិញមែនទេ?')) {
                 localStorage.removeItem('wedding_custom_config');
                 location.reload();
+            }
+        });
+
+        document.getElementById('btnClearWishes').addEventListener('click', () => {
+            if (confirm('តើអ្នកពិតជាចង់សម្អាតពាក្យជូនពរដែលបានរក្សាទុកក្នុងម៉ាស៊ីនមែនទេ?')) {
+                localStorage.removeItem('wedding_wishes_senghor_vicheka');
+                localStorage.removeItem('ratana_naza_wishes');
+                showToast('បានសម្អាតពាក្យជូនពរក្នុង LocalStorage ដោយជោគជ័យ!');
             }
         });
 
